@@ -17,7 +17,7 @@ module RailsServer
     # the framework and any gems in your application.
 
     # force HTTPS on all environments
-    # config.force_ssl = true
+    config.force_ssl = true
 
   end
 end
