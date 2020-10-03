@@ -39,10 +39,10 @@ export const fetchAstronautsAction = () => {
         fetch('/auth/login', {
                     method: 'POST',
                     mode: "no-cors",
-                    headers: {
-                        // 'Content-Type': "application/x-www-form-urlencoded",
-                        'Content-Type': "application/json",
-                    },
+                    // headers: {
+                    //     // 'Content-Type': "application/x-www-form-urlencoded",
+                    //     'Content-Type': "application/json",
+                    // },
                     // body: data_body,
                     body: JSON.stringify(data),
                     // body: formData,
