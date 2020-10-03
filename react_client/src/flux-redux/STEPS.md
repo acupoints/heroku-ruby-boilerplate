@@ -49,4 +49,7 @@ yarn add isomorphic-fetch
 
 yarn add d3
 
+yarn add http-proxy-middleware
+yarn add axios
+
 ```
