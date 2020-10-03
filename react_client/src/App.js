@@ -3,6 +3,10 @@ import React from 'react';
 import './App.css';
 
 //
+import './components/ui/styles.css'
+import SlyHeader from './components/ui/SlyHeader'
+import SlyBanner from './components/ui/SlyBanner'
+//
 import CountButton from './components/CountButton'
 import CountNum from './components/CountNum'
 import {
@@ -32,6 +36,7 @@ function App() {
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header> */}
+      <SlyHeader />
       <CountButton />
       <CountNum />
       <BrowserRouter>
@@ -49,6 +54,17 @@ function App() {
       </BrowserRouter>
       <AstronautsButton />
       <D3Card />
+      
+      <D3Card />
+      <D3Card />
+      <D3Card />
+
+      <D3Card />
+      <D3Card />
+      <D3Card />
+
+      <SlyBanner />
+
     </div>
   );
 }

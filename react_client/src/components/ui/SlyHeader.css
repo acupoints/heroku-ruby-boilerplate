@@ -1,0 +1,13 @@
+.sly-header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5050;
+  background-color: #fafafb;
+  transition: box-shadow cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+  height: 50px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  box-sizing: border-box;
+  border-top: 3px solid indigo;
+}

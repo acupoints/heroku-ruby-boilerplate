@@ -17,9 +17,9 @@ rails server
 
 ```
 
-## Local migration development environment
+## Local development environment
 ```bash
-rails db:migrate RAILS_ENV=development
+# rails db:migrate RAILS_ENV=development
 yarn build
 yarn start
 
