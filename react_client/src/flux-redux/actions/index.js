@@ -40,6 +40,7 @@ export const fetchAstronautsAction = () => {
                     method: 'POST',
                     mode: "cors",
                     // mode: "no-cors",
+                    credentials: 'include',
                     headers: {
                         'Content-Type': "application/x-www-form-urlencoded",
                         // 'Content-Type': "application/json",
@@ -50,8 +51,14 @@ export const fetchAstronautsAction = () => {
                 }
             )
             .then(async response => {
-                console.log("response: ",response)
-                return response
+                // console.log("response: ",response)
+                if (response.ok) {
+                    console.log('--ok', response)
+                } else {
+                    console.log('--error', response)
+                    throw(response.error)
+                }
+                return response.json()
             })
             .then(response => {
                 if (response.error) {
