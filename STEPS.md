@@ -20,5 +20,7 @@ rails server
 ## Local migration development environment
 ```bash
 rails db:migrate RAILS_ENV=development
+yarn build
+yarn start
 
 ```
