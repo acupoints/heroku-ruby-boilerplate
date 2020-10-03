@@ -34,12 +34,12 @@ export const fetchAstronautsAction = () => {
         // let formData = new FormData()
         // formData.append('email', 'user2@gmail.com')
         // formData.append('password', 'Umph2014$@')
+
         // fetch(`http://api.open-notify.org/astros.json`
         // fetch('api/auth/login'
         fetch('https://hub.fy1m.net/auth/login', {
                     method: 'POST',
                     mode: "cors",
-                    // mode: "no-cors",
                     credentials: 'include',
                     headers: {
                         'Content-Type': "application/x-www-form-urlencoded",
@@ -64,7 +64,7 @@ export const fetchAstronautsAction = () => {
                 if (response.error) {
                     throw(response.error)
                 }
-                dispatch({type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, astronauts: response})
+                dispatch({type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, astronauts: response.token})
                 return response
             })
             .catch(error => {
