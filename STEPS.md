@@ -16,3 +16,9 @@ rails server
 # heroku run rails db:migrate RAILS_ENV=production --app damp-plateau-39759
 
 ```
+
+## Local migration development environment
+```bash
+rails db:migrate RAILS_ENV=development
+
+```
