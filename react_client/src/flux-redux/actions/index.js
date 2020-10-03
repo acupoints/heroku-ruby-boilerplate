@@ -38,8 +38,8 @@ export const fetchAstronautsAction = () => {
         // fetch('api/auth/login'
         fetch('https://hub.fy1m.net/auth/login', {
                     method: 'POST',
-                    // mode: "no-cors",
                     mode: "cors",
+                    // mode: "no-cors",
                     headers: {
                         'Content-Type': "application/x-www-form-urlencoded",
                         // 'Content-Type': "application/json",
