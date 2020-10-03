@@ -37,7 +37,7 @@ export const fetchAstronautsAction = () => {
 
         // fetch(`http://api.open-notify.org/astros.json`
         // fetch('api/auth/login'
-        fetch('https://hub.fy1m.net/auth/login', {
+        fetch('/api/auth/login', {
                     method: 'POST',
                     mode: "cors",
                     credentials: 'include',

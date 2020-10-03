@@ -1,6 +1,7 @@
-# STEPS
+### STEPS
 
-```sh
+## Start the backend service
+```bash
 bundle install
 yarn install
 rails server

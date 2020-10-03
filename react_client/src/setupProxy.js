@@ -1,13 +1,14 @@
-const {createProxyMiddleware} = require('http-proxy-middleware');
+const {createProxyMiddleware} = require('http-proxy-middleware')
 
 module.exports = function(app) {
-    //这里意思是检测到api开头的接口并且给其相应的代理
-    app.use(createProxyMiddleware("/api", { 
-        target: "https://hub.fy1m.net/",  //请求的后台地址（这里就是真正配置代理地址的地方）
-        secure: false,
+    app.use(createProxyMiddleware("/api", {
+        // target: "https://hub.fy1m.net/",
+        target: "http://localhost:3000/",
+        // secure: false,
         changeOrigin: true,
+        // Rewrite part of the interface to ensure correct url splicing
         pathRewrite: {   
-            "^/api": "/"  //重写部分接口，确保url正确拼接
+            "^/api": "/",
         },
-    }));
-};
+    }))
+}
