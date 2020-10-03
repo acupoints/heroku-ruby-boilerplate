@@ -36,7 +36,7 @@ export const fetchAstronautsAction = () => {
         // formData.append('password', 'Umph2014$@')
         // fetch(`http://api.open-notify.org/astros.json`
         // fetch('api/auth/login'
-        fetch('/api/auth/login', {
+        fetch('/auth/login', {
                     method: 'POST',
                     mode: "no-cors",
                     headers: {
