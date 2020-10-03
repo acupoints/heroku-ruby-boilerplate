@@ -25,7 +25,7 @@ export const fetchAstronautsAction = () => {
     return (dispatch) => {
         dispatch({type: C.ADD_ASTRONAUTS_FETCH_START})
         const data = {
-            email: "user2@gmail.com",
+            email: "admin@qq.com",
             password: "Umph2014$@",
         }
         let data_body = Object.keys(data).map(
@@ -36,7 +36,7 @@ export const fetchAstronautsAction = () => {
         // formData.append('password', 'Umph2014$@')
         // fetch(`http://api.open-notify.org/astros.json`
         // fetch('api/auth/login'
-        fetch('/auth/login', {
+        fetch('https://hub.fy1m.net/auth/login', {
                     method: 'POST',
                     mode: "no-cors",
                     headers: {
