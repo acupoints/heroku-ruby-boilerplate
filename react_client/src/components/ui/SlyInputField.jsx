@@ -13,7 +13,7 @@ class SlyInputField extends Component {
             <div className="sly-input-field-container">
                 <label>SlyInputField</label>
                 <input className="sly-input-field" type="text" 
-                    size="30" maxLength="100" placeholder="text..." />
+                    size="26" maxLength="52" placeholder="text..." />
             </div>
         )
     }

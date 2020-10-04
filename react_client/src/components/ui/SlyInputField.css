@@ -1,21 +1,24 @@
 .sly-input-field {
-  width: 100%;
-  margin: 0;
-  padding: .6em .7em;
-  border: 1px solid indigo;
+  width: 90%;
+  padding: 4px 6px;
+  border: 1px solid #6803af;
   border-radius: 3px;
   background-color: #fff;
   color: #0c0d0e;
-  font-size: 13px;
-  font-family: inherit;
+  font-size: 1rem;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   line-height: 1.15384615;
-  margin-right: 0;
-  margin-left: 0;
+  margin: 0 auto;
 }
 .sly-input-field:focus {
-  border: 1px dashed #3bd1db;
+  outline: none;
+  border: 1px solid #310386;
+  box-shadow: 0 0 6px #7f4cd1;
 }
 
 .sly-input-field-container {
+  width: 85%;
+  background-color: rgba(106, 50, 196, 0.075);
   margin: 0 auto;
+  padding: 12px 0;
 }
