@@ -1,0 +1,21 @@
+.sly-input-field {
+  width: 100%;
+  margin: 0;
+  padding: .6em .7em;
+  border: 1px solid indigo;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #0c0d0e;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.15384615;
+  margin-right: 0;
+  margin-left: 0;
+}
+.sly-input-field:focus {
+  border: 1px dashed #3bd1db;
+}
+
+.sly-input-field-container {
+  margin: 0 auto;
+}

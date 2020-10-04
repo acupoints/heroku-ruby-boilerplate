@@ -43,6 +43,7 @@ function App() {
       <CountNum /> */}
       <BrowserRouter>
         <PagesNavigator />
+        <D3Card />
         <div className="main">
           <Switch>
             <Route exact path="/" component={Home} />
@@ -57,9 +58,9 @@ function App() {
         </div>
       </BrowserRouter>
       {/* <AstronautsButton /> */}
-      <D3Card />
+      {/* <D3Card /> */}
       
-      <D3Card />
+      {/* <D3Card />
       <D3Card />
       <D3Card />
       <D3Card />
@@ -69,7 +70,7 @@ function App() {
       <D3Card />
       <D3Card />
       <D3Card />
-      <D3Card />
+      <D3Card /> */}
 
       <SlyBanner />
 

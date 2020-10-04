@@ -24,7 +24,7 @@ SlyButton.propTypes = {
 }
 
 SlyButton.defaultProps = {
-    text: "Sign up"
+    text: "Sign up",
 }
 
 
