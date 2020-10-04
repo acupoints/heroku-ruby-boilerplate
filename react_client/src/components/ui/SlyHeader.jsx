@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './SlyHeader.css'
+//
+import SlyButton from './SlyButton'
 
 class SlyHeader extends Component {
 
@@ -9,7 +11,11 @@ class SlyHeader extends Component {
 
     render () {
         return (
-            <div className="sly-header-container"></div>
+            <div className="sly-header-container">
+                <SlyButton text="Log in" />
+                <SlyButton text="Get started" />
+                <SlyButton />
+            </div>
         )
     }
 }
