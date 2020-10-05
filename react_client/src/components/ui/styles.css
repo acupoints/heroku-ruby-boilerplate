@@ -18,7 +18,7 @@ html, body {
   text-align: left;
 }
 .App .main {
-  margin-top: 50px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
 }
