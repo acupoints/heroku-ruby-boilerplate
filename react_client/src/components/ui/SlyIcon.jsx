@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import './SlyIcon.css'
 //
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 
-class D3Card extends Component {
+class SlyIcon extends Component {
 
     constructor () {
         super()
@@ -43,14 +44,16 @@ class D3Card extends Component {
 
     render () {
         return (
-            <div ref={this.myRef}></div>
+            <div className="sly-icon-container">
+                {/* <h1>[SlyIcon]</h1> */}
+                <div ref={this.myRef} className="sly-icon"></div>
+            </div>
         )
     }
-
 }
 
 //
-D3Card.propTypes = {
+SlyIcon.propTypes = {
     size_x: PropTypes.number,
     size_y: PropTypes.number,
     rect_cx: PropTypes.number,
@@ -58,12 +61,12 @@ D3Card.propTypes = {
     dataset: PropTypes.array.isRequired,
 }
 
-D3Card.defaultProps = {
-    size_x: 75,
-    size_y: 75,
-    rect_cx: 10,
-    fill: "teal",
-    dataset: [35, 20, 30, 15, 50],
+SlyIcon.defaultProps = {
+    size_x: 75/4,
+    size_y: 75/6,
+    rect_cx: 10/4,
+    fill: "white",
+    dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
 }
 
-export default D3Card
+export default SlyIcon

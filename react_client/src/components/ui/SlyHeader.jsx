@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import './SlyHeader.css'
 //
-import SlyButton from './SlyButton'
+
 // import SlyNotice from './SlyNotice'
+import SlyCompLeft from './SlyCompLeft'
+import SlyCompRight from './SlyCompRight'
 
 class SlyHeader extends Component {
 
@@ -16,15 +18,8 @@ class SlyHeader extends Component {
                 <div className="sly-header-wrapper">
                     {/* <SlyNotice /> */}
                     <div className="comp-all">
-                        {/* <div className="comp-left">
-                            <SlyButton text="Sign up" linkAddress="/users/signup" />
-                        </div>
-                        <div className="comp-right">
-                            <SlyButton text="Log in" linkAddress="/users/login" />
-                            <SlyButton text="Get started" linkAddress="/articles/getting-started" />
-                        </div> */}
-                        <SlyButton text="Log in" linkAddress="/users/login" />
-                        <SlyButton text="Get started" linkAddress="/articles/getting-started" />
+                        <SlyCompLeft />
+                        <SlyCompRight />
                     </div>
                 </div>
             </div>
