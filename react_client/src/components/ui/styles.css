@@ -1,4 +1,24 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #e9ecef;
-  padding-top: 50px;
+}
+
+html, body {
+  display: flex;
+  min-height: 100%;
+}
+
+.App {
+  display: flex;
+  min-height: 100%;
+  text-align: left;
+}
+.App .main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }

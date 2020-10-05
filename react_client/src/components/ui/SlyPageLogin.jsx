@@ -5,6 +5,7 @@ import './SlyPageLogin.css'
 import SlyInputField from './SlyInputField'
 import SlyButton from './SlyButton'
 import { Link } from 'react-router-dom'
+import D3Card from '../D3Card'
 
 class SlyPageLogin extends Component {
 
@@ -14,23 +15,25 @@ class SlyPageLogin extends Component {
 
     render () {
         return (
-            <div className="sly-page-login-container">
-                <h1>[SlyPageLogin]</h1>
-                <div className="sly-page-login-form">
-                    <SlyInputField />
-                    <SlyInputField />
-                    <SlyButton text="Log in" />
+            <div className="sly-page-content">
+                <D3Card />
+                <div className="sly-page-login-container">
+                    <h1>[SlyPageLogin]</h1>
+                    <div className="sly-page-login-form">
+                        <SlyInputField />
+                        <SlyInputField />
+                        <SlyButton text="Log in" />
+                    </div>
+                    {/* <AstronautsButton /> */}
+                    <p>
+                        Don’t have an account?
+                        <Link to="/users/signup">Sign up</Link>
+                    </p>
+                    <p>
+                        <Link to="/">Forgot password?</Link>
+                    </p>
                     
                 </div>
-                {/* <AstronautsButton /> */}
-                <p>
-                    Don’t have an account?
-                    <Link to="/users/signup">Sign up</Link>
-                </p>
-                <p>
-                    <Link to="/">Forgot password?</Link>
-                </p>
-                
             </div>
         )
     }

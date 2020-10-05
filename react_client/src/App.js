@@ -29,7 +29,7 @@ import SlyPageGetStarted from './components/ui/SlyPageGetStarted'
 import { PagesNotFound } from './components/PagesNotFound'
 
 // import AstronautsButton from './components/AstronautsButton'
-import D3Card from './components/D3Card'
+// import D3Card from './components/D3Card'
 
 window.React = React
 
@@ -44,8 +44,8 @@ function App() {
       <BrowserRouter>
         <SlyHeader />
         {/* <PagesNavigator /> */}
-        <D3Card />
         <div className="main">
+          {/* <D3Card /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
