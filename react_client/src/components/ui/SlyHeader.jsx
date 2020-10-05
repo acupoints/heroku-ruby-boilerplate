@@ -12,9 +12,9 @@ class SlyHeader extends Component {
     render () {
         return (
             <div className="sly-header-container">
-                <SlyButton text="Log in" />
-                <SlyButton text="Get started" />
-                <SlyButton />
+                <SlyButton text="Log in" linkAddress="/users/login" />
+                <SlyButton text="Get started" linkAddress="/articles/getting-started" />
+                <SlyButton text="Sign up" linkAddress="/users/signup" />
             </div>
         )
     }

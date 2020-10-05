@@ -23,8 +23,9 @@ import {
 } from './components/Pages'
 import SlyPageLogin from './components/ui/SlyPageLogin'
 import SlyPageSignup from './components/ui/SlyPageSignup'
+import SlyPageGetStarted from './components/ui/SlyPageGetStarted'
 
-import { PagesNavigator } from './components/PagesNavigator'
+// import { PagesNavigator } from './components/PagesNavigator'
 import { PagesNotFound } from './components/PagesNotFound'
 
 // import AstronautsButton from './components/AstronautsButton'
@@ -38,11 +39,11 @@ function App() {
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header> */}
-      <SlyHeader />
       {/* <CountButton />
       <CountNum /> */}
       <BrowserRouter>
-        <PagesNavigator />
+        <SlyHeader />
+        {/* <PagesNavigator /> */}
         <D3Card />
         <div className="main">
           <Switch>
@@ -53,6 +54,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/users/login" component={SlyPageLogin} />
             <Route path="/users/signup" component={SlyPageSignup} />
+            <Route path="/articles/getting-started" component={SlyPageGetStarted} />
             <Route component={PagesNotFound} />
           </Switch>
         </div>

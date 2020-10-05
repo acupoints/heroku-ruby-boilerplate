@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './SlyPageSignup.css'
 //
+import { Link } from 'react-router-dom'
 
 class SlyPageSignup extends Component {
 
@@ -21,7 +22,10 @@ class SlyPageSignup extends Component {
                 <p>
                     Use the power of *** inside your organization.
                 </p>
-                <p>Already have an account? <a href="/">Log in</a></p>
+                <p>
+                    Already have an account?
+                    <Link to="/users/login">Log in</Link>
+                </p>
             </div>
         )
     }

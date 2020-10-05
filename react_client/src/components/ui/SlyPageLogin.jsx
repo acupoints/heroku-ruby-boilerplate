@@ -4,6 +4,7 @@ import './SlyPageLogin.css'
 // import AstronautsButton from '../AstronautsButton'
 import SlyInputField from './SlyInputField'
 import SlyButton from './SlyButton'
+import { Link } from 'react-router-dom'
 
 class SlyPageLogin extends Component {
 
@@ -19,10 +20,16 @@ class SlyPageLogin extends Component {
                     <SlyInputField />
                     <SlyInputField />
                     <SlyButton text="Log in" />
+                    
                 </div>
                 {/* <AstronautsButton /> */}
-                <p>Don’t have an account? <a href="/">Sign up</a></p>
-                <p><a href="/">Forgot password?</a></p>
+                <p>
+                    Don’t have an account?
+                    <Link to="/users/signup">Sign up</Link>
+                </p>
+                <p>
+                    <Link to="/">Forgot password?</Link>
+                </p>
                 
             </div>
         )

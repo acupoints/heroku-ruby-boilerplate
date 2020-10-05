@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './SlyButton.css'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 class SlyButton extends Component {
 
@@ -9,10 +10,11 @@ class SlyButton extends Component {
     // }
 
     render () {
-        const { text } = this.props
+        const { text,linkAddress } = this.props
         return (
             <div className="sly-button-container">
-                <a href="/" className="sly-button">{text}</a>
+                {/* <a href="/" className="sly-button">{text}</a> */}
+                <Link to={linkAddress} className="sly-button">{text}</Link>
             </div>
         )
     }
@@ -21,11 +23,12 @@ class SlyButton extends Component {
 //
 SlyButton.propTypes = {
     text: PropTypes.string.isRequired,
+    linkAddress: PropTypes.string.isRequired,
 }
 
 SlyButton.defaultProps = {
     text: "Sign up",
+    linkAddress: "/",
 }
-
 
 export default SlyButton
