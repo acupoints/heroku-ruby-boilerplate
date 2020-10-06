@@ -18,8 +18,10 @@ class SlyCompLeft extends Component {
                 <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="indigo" />
                 <SlyIcon size_x={75/1} size_y={75/6} rect_cx={7} fill="indigo" />
                 <SlyLinkButton text="articles" linkAddress="/users/signup" />
-                <SlyLinkButton text="question banks" linkAddress="/users/signup" />
-                <SlyLinkButton text="surveys" linkAddress="/users/signup" />
+                <div className="sly-comp-left-shadow">
+                    <SlyLinkButton text="question banks" linkAddress="/users/signup" />
+                    <SlyLinkButton text="surveys" linkAddress="/users/signup" />
+                </div>
             </div>
         )
     }

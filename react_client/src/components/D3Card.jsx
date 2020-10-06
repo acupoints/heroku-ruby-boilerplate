@@ -43,7 +43,7 @@ class D3Card extends Component {
 
     render () {
         return (
-            <div ref={this.myRef}></div>
+            <div ref={this.myRef} className="sly-d3card"></div>
         )
     }
 

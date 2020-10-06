@@ -1,3 +1,14 @@
+.sly-search-shadow {
+  flex: 1;
+  display: none;
+}
+@media screen and (min-width: 50.79684rem) {
+  .sly-search-shadow {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .sly-search {
   color: #fff;
   background-color: #590297;
@@ -19,6 +30,7 @@
   border-radius: 3px;
   background-color: #fff;
   color: indigo;
+  flex: 1;
 }
 .sly-search:focus {
   outline: none;
@@ -31,4 +43,7 @@
   margin: 4px;
   display: inline-block;
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }

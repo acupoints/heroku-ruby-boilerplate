@@ -10,7 +10,8 @@ import SlyBanner from './components/ui/SlyBanner'
 // import CountButton from './components/CountButton'
 // import CountNum from './components/CountNum'
 import {
-  BrowserRouter,
+  // BrowserRouter,
+  HashRouter,
   Route,
   Switch
 } from 'react-router-dom'
@@ -41,7 +42,7 @@ function App() {
       </header> */}
       {/* <CountButton />
       <CountNum /> */}
-      <BrowserRouter>
+      <HashRouter>
         <SlyHeader />
         {/* <PagesNavigator /> */}
         <div className="main">
@@ -58,7 +59,7 @@ function App() {
             <Route component={PagesNotFound} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
       {/* <AstronautsButton /> */}
       {/* <D3Card /> */}
       

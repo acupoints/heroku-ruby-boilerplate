@@ -10,6 +10,9 @@ body {
 html, body {
   display: flex;
   min-height: 100%;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 1.30769231;
 }
 
 .App {
@@ -21,4 +24,8 @@ html, body {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
+}
+
+.sly-d3card {
+  padding: 4px;
 }
