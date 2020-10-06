@@ -1,8 +1,18 @@
-.sly-comp-left-shadow {
+.sly-comp-left-shadow-xs {
+  display: none;
+}
+@media screen and (min-width: 25.6789rem) {
+  .sly-comp-left-shadow-xs {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.sly-comp-left-shadow-sm {
   display: none;
 }
 @media screen and (min-width: 41.57239rem) {
-  .sly-comp-left-shadow {
+  .sly-comp-left-shadow-sm {
     display: flex;
     flex-direction: row;
   }
