@@ -4,6 +4,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 20px 48px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   max-width: 22rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .sly-page-content {

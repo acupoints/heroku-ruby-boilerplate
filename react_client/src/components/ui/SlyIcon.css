@@ -30,5 +30,6 @@
 
 .sly-icon-container {
   margin: 4px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }

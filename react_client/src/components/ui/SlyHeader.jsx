@@ -21,6 +21,7 @@ class SlyHeader extends Component {
                         <SlyCompLeft />
                         <SlyCompRight />
                     </div>
+                    {/* <SlyNotice /> */}
                 </div>
             </div>
         )

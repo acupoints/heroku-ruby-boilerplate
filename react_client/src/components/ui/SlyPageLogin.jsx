@@ -18,10 +18,11 @@ class SlyPageLogin extends Component {
             <div className="sly-page-content">
                 <D3Card />
                 <div className="sly-page-login-container">
-                    <h1>[SlyPageLogin]</h1>
+                    {/* <h1>[SlyPageLogin]</h1> */}
+                    <h1>Sign in to FyHub</h1>
                     <div className="sly-page-login-form">
-                        <SlyInputField />
-                        <SlyInputField />
+                        <SlyInputField label="Email" type="email" placeholder="email..." />
+                        <SlyInputField label="Password" type="password" placeholder="password..." />
                         <SlyButton text="Log in" />
                     </div>
                     {/* <AstronautsButton /> */}
