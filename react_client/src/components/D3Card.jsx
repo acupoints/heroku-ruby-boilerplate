@@ -12,7 +12,7 @@ class D3Card extends Component {
     }
 
     componentDidMount () {
-        console.log(this.myRef)
+        // console.log(this.myRef)
         const { size_x, size_y, rect_cx, fill, dataset } = this.props
         //
         // d3.select(this.myRef.current)
@@ -60,7 +60,7 @@ D3Card.propTypes = {
 
 D3Card.defaultProps = {
     size_x: 75,
-    size_y: 75,
+    size_y: 55,
     rect_cx: 10,
     fill: "teal",
     dataset: [35, 20, 30, 15, 50],

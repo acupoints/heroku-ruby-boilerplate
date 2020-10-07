@@ -21,16 +21,17 @@ export const reduceAction = (num) => {
 }
 
 //
-export const fetchAstronautsAction = () => {
+export const fetchAstronautsAction = (data) => {
     return (dispatch) => {
         dispatch({type: C.ADD_ASTRONAUTS_FETCH_START})
-        const data = {
-            email: "admin@qq.com",
-            password: "Umph2014$@",
-        }
+        // const data = {
+        //     email: "admin@qq.com",
+        //     password: "Umph2014$@",
+        // }
+        // console.log("-- data:",data)
         let data_body = Object.keys(data).map(
             key => encodeURIComponent(key)+'='+encodeURIComponent(data[key])).join('&')
-        console.log(data_body)
+        // console.log("-- data_body:", data_body)
         // let formData = new FormData()
         // formData.append('email', 'user2@gmail.com')
         // formData.append('password', 'Umph2014$@')
@@ -49,27 +50,41 @@ export const fetchAstronautsAction = () => {
                     // body: formData,
                 }
             )
-            .then(async response => {
-                // console.log("response: ",response)
+            .then(response => {
                 if (response.ok) {
-                    console.log('--ok', response)
+                    // ok: true
+                    // status: 200
+                    // statusText: "OK"
+                    // console.log('-- ok:', response)
                 } else {
-                    console.log('--error', response)
-                    throw(response.error)
+                    // ok: false
+                    // status: 401
+                    // statusText: "Unauthorized"
+                    // console.log('-- error:', response)
+                    throw(response)
                 }
                 return response.json()
             })
             .then(response => {
-                if (response.error) {
-                    throw(response.error)
-                }
                 dispatch({type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, astronauts: response.token})
                 return response
             })
             .catch(error => {
-                console.log(error)
-                dispatch({type: C.ADD_ASTRONAUTS_FETCH_FAUILE, error: JSON.stringify(error)})
+                const { status, statusText } = error
+                const err = { status, statusText }
+                // console.log("-- err:", err)
+                dispatch({type: C.ADD_ASTRONAUTS_FETCH_FAUILE, error: JSON.stringify(err)})
             })
             
+    }
+}
+
+//
+export const userSignoutAction = () => {
+    return {
+        type: C.USER_SIGNOUT,
+        payload: {
+            
+        }
     }
 }

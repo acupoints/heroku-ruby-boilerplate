@@ -1,0 +1,32 @@
+.sly-menu-item {
+  display: flex;
+  flex-direction: column;
+  z-index: 5051;
+  position: absolute;
+  width: 160px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #2196f3;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px #607D8B;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin: 8px 4px 4px -93px;
+}
+.sly-menu-item::before, .sly-menu-item::after {
+  position: absolute;
+  content: "";
+  border: 6px solid transparent;
+}
+.sly-menu-item::before {
+  left: 65%;
+  top: -12px;
+  border-bottom-color: #2196f3;
+  z-index: 1;
+}
+.sly-menu-item::after {
+  left: 65%;
+  top: -11px;
+  border-bottom-color: #fff;
+  z-index: 2;
+}

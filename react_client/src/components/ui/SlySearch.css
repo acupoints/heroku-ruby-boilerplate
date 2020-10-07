@@ -1,9 +1,9 @@
-.sly-search-shadow-md {
+.sly-search-shadow-xs {
   flex: 1;
   display: none;
 }
-@media screen and (min-width: 50.79684rem) {
-  .sly-search-shadow-md {
+@media screen and (min-width: 36.52387rem) {
+  .sly-search-shadow-xs {
     display: flex;
     flex-direction: row;
   }

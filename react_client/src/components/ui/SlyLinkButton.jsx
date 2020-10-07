@@ -11,12 +11,24 @@ class SlyLinkButton extends Component {
     // }
 
     render () {
-        const { text,linkAddress } = this.props
+        const { text,linkAddress,funcClick } = this.props
+        //
+        let buttons = null
+        if (linkAddress) {
+            buttons = <>
+                <Link to={linkAddress} className="sly-link-button">{text}</Link>
+            </>
+        } else {
+            buttons = <>
+                <button onClick={funcClick} className="sly-link-button">{text}</button>
+            </>
+        }
         return (
             <div className="sly-link-button-container">
                 {/* <h1>[SlyLinkButton]</h1> */}
                 {/* <a href="/" className="sly-button">{text}</a> */}
-                <Link to={linkAddress} className="sly-link-button">{text}</Link>
+                {/* <Link to={linkAddress} className="sly-link-button">{text}</Link> */}
+                {buttons}
             </div>
         )
     }
@@ -26,11 +38,13 @@ class SlyLinkButton extends Component {
 SlyLinkButton.propTypes = {
     text: PropTypes.string.isRequired,
     linkAddress: PropTypes.string.isRequired,
+    funcClick: PropTypes.func.isRequired,
 }
 
 SlyLinkButton.defaultProps = {
     text: "Sign up",
-    linkAddress: "/",
+    linkAddress: undefined,
+    funcClick: f => f,
 }
 
 export default SlyLinkButton

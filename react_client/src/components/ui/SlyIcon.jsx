@@ -13,7 +13,7 @@ class SlyIcon extends Component {
     }
 
     componentDidMount () {
-        console.log(this.myRef)
+        // console.log(this.myRef)
         const { size_x, size_y, rect_cx, fill, dataset } = this.props
         //
         // d3.select(this.myRef.current)

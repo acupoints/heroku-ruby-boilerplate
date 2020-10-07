@@ -5,10 +5,11 @@
 }
 
 .sly-header-wrapper {
-  max-width: 79.77909267692309rem;
+  max-width: 97.2307692rem;
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-right: 16px;
 }
 
 .sly-header-container {

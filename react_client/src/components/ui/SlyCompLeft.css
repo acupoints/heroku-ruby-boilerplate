@@ -1,18 +1,18 @@
-.sly-comp-left-shadow-xs {
+.sly-comp-left-shadow-sm {
   display: none;
 }
-@media screen and (min-width: 25.6789rem) {
-  .sly-comp-left-shadow-xs {
+@media screen and (min-width: 43.94083rem) {
+  .sly-comp-left-shadow-sm {
     display: flex;
     flex-direction: row;
   }
 }
 
-.sly-comp-left-shadow-sm {
+.sly-comp-left-shadow-md {
   display: none;
 }
-@media screen and (min-width: 41.57239rem) {
-  .sly-comp-left-shadow-sm {
+@media screen and (min-width: 55.59606rem) {
+  .sly-comp-left-shadow-md {
     display: flex;
     flex-direction: row;
   }

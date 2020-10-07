@@ -1,0 +1,24 @@
+.sly-comp-left-shadow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px;
+}
+
+.sly-bulletin-board-wrapper {
+  max-width: 97.2307692rem;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-right: 16px;
+  justify-content: space-between;
+}
+
+.sly-bulletin-board-container {
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

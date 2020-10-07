@@ -1,7 +1,7 @@
 import C from '../constants'
 
 const initialState = {
-    astronauts: [],
+    astronauts: null,
     pending: false,
     error: null,
 }
@@ -25,6 +25,13 @@ export const astronautsReducer = (state = initialState, action) => {
                 astronauts: action.astronauts,
                 pending: false,
                 error: action.error,
+            }
+        case C.USER_SIGNOUT:
+            return {
+                ...state,
+                astronauts: null,
+                pending: false,
+                error: null,
             }
         default:
             return state

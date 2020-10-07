@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './SlyBanner.css'
+//
+import SlyBulletinBoard from './SlyBulletinBoard'
 
 class SlyBanner extends Component {
 
@@ -10,10 +12,7 @@ class SlyBanner extends Component {
     render () {
         return (
             <div className="sly-banner-container">
-                <span>By using our site, you acknowledge that 
-                    you have read and understand our Cookie Policy, 
-                    Privacy Policy, and our Terms of Service.</span>
-                <a href="/" className="sly-notice-close">x</a>
+                <SlyBulletinBoard />
             </div>
         )
     }

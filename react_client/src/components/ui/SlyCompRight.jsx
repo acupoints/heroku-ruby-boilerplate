@@ -3,7 +3,11 @@ import './SlyCompRight.css'
 //
 import SlySearch from './SlySearch'
 import SlyButton from './SlyButton'
-// import SlyIcon from './SlyIcon'
+import SlyIcon from './SlyIcon'
+import SlyMenu from './SlyMenu'
+//
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 class SlyCompRight extends Component {
 
@@ -12,17 +16,37 @@ class SlyCompRight extends Component {
     // }
 
     render () {
+        const { astronauts } = this.props
+        //
+        let buttons = null
+        if (astronauts) {
+            buttons = <>
+                <SlyMenu />
+                <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#9E9E9E" />
+                {/* <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#1B78D6" /> */}
+            </>
+        } else {
+            buttons = <>
+                <SlyButton text="Sign in" linkAddress="/users/login" />
+                <SlyButton text="Get started" linkAddress="/articles/getting-started" />
+            </>
+        }
         return (
             <div className="sly-comp-right-container">
                 {/* <h1>[SlyCompRight]</h1> */}
                 <SlySearch />
-                <SlyButton text="Sign in" linkAddress="/users/login" />
-                <SlyButton text="Get started" linkAddress="/articles/getting-started" />
-                {/* <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="white" />
-                <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="white" /> */}
+                {buttons}
+                
             </div>
         )
     }
 }
 
-export default SlyCompRight
+// export default SlyCompRight
+//
+const mapStateToProps = state => {
+    return state.astronautsReducer
+}
+
+// export default connect(mapStateToProps)(SlyCompRight)
+export default connect(mapStateToProps)(withRouter(SlyCompRight))
