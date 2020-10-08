@@ -1,4 +1,4 @@
 class FyrbMicropostSerializer < ActiveModel::Serializer
   belongs_to :fyrb_user
-  attributes :id, :title
+  attributes :id, :title, :content
 end

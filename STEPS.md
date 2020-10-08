@@ -49,6 +49,13 @@ rails g serializer FyrbMicropost
 
 ```
 
+## 
+```bash
+heroku login
+heroku run rails db:migrate --app damp-plateau-39759
+
+```
+
 ## Local development environment
 ```bash
 # rails db:migrate RAILS_ENV=development
