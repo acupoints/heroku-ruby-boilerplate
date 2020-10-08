@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_061714) do
+ActiveRecord::Schema.define(version: 2020_10_08_104010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fyrb_microposts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_microposts_on_fyrb_user_id"
+  end
 
   create_table "fyrb_users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +33,5 @@ ActiveRecord::Schema.define(version: 2020_08_18_061714) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "fyrb_microposts", "fyrb_users"
 end

@@ -1,4 +1,5 @@
 class FyrbUser < ApplicationRecord
+    has_many :fyrb_microposts, dependent: :destroy
     has_secure_password
     # mount_uploader :avatar, AvatarUploader
     validates :email, presence: true, uniqueness: true

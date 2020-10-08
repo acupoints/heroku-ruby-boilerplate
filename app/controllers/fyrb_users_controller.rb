@@ -1,7 +1,7 @@
 class FyrbUsersController < ApplicationController
     before_action :authorize_request, except: :create
-    before_action :find_user, except: %i[create index]
     skip_before_action :verify_authenticity_token, :only => [:create]
+    before_action :find_user, except: %i[create index]
 
     # GET /users
     def index
