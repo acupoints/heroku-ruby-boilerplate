@@ -1,0 +1,2 @@
+module FyrbTagsHelper
+end

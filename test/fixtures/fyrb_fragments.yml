@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  introduction: MyText
+  detail: MyText
+  summary: MyText
+  group: MyText
+  level: 1
+  fyrb_tool: one
+  fyrb_micropost: one
+
+two:
+  title: MyString
+  introduction: MyText
+  detail: MyText
+  summary: MyText
+  group: MyText
+  level: 1
+  fyrb_tool: two
+  fyrb_micropost: two

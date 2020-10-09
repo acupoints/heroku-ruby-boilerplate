@@ -51,6 +51,41 @@ rails g serializer FyrbMicropost
 
 ## 
 ```bash
+rails g model FyrbMicropost title:string content:text fyrb_user:references
+##
+rails g model FyrbTag name:string description:text color:string fyrb_user:references
+rails g model FyrbTool name:string description:text active:integer fyrb_user:references
+rails g model FyrbFragment title:string introduction:text detail:text summary:text group:text level:integer fyrb_tool:references fyrb_micropost:references
+##
+rails g model FyrbTerm phrase:string annotation:text fyrb_user:references fyrb_micropost:references
+rails g model FyrbStatement original:text comprehension:text fyrb_term:references fyrb_micropost:references
+rails db:migrate
+# rails db:seed
+
+rails g controller FyrbMicroposts index show create update destroy
+##
+rails g controller FyrbTags index show create update destroy
+rails g controller FyrbTools index show create update destroy
+rails g controller FyrbFragments index show create update destroy
+##
+rails g controller FyrbTerms index show create update destroy
+rails g controller FyrbStatements index show create update destroy
+
+rails g serializer FyrbUser
+rails g serializer FyrbMicropost
+##
+rails g serializer FyrbTag
+rails g serializer FyrbTool
+rails g serializer FyrbFragment
+##
+rails g serializer FyrbTerm
+rails g serializer FyrbStatement
+
+
+```
+
+## 
+```bash
 heroku login
 heroku run rails db:migrate --app damp-plateau-39759
 
