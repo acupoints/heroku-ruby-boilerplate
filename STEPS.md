@@ -49,7 +49,7 @@ rails g serializer FyrbMicropost
 
 ```
 
-## 
+## Create models, controllers and serializers
 ```bash
 rails g model FyrbMicropost title:string content:text fyrb_user:references
 ##
