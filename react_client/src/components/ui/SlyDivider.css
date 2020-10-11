@@ -1,0 +1,11 @@
+.sly-divider-container {
+  display: block;
+  height: 0;
+  margin: 8px 0;
+  border-top: 1px solid #e1e4e8;
+  border-top: 1px solid #607d8b;
+  border-top: 1px solid #009688;
+  border-top: 1px solid #3f51b5;
+  border-top: 1px solid #673ab7;
+  border-top: 1px solid rgba(72, 2, 121, 0.123);
+}

@@ -7,8 +7,10 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #2196f3;
+  border: 1px solid rgba(72, 2, 121, 0.123);
   border-radius: 6px;
   box-shadow: 0 1px 6px #607D8B;
+  box-shadow: 0 1px 6px rgba(72, 2, 121, 0.123);
   padding-top: 4px;
   padding-bottom: 4px;
   margin: 8px 4px 4px -93px;
@@ -22,6 +24,7 @@
   left: 65%;
   top: -12px;
   border-bottom-color: #2196f3;
+  border-bottom-color: rgba(72, 2, 121, 0.123);
   z-index: 1;
 }
 .sly-menu-item::after {

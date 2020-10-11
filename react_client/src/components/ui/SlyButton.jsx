@@ -36,7 +36,7 @@ class SlyButton extends Component {
         if (linkAddress) {
             button = <Link to={linkAddress} className="sly-button">{text}</Link>
         } else {
-            button = <button onClick={() => this.handleClick(data)} className="sly-button">{text}</button>
+            button = <button onClick={() => this.handleClick(data)} className="sly-button stretch">{text}</button>
         }
 
         return (

@@ -20,7 +20,7 @@ class SlyLinkButton extends Component {
             </>
         } else {
             buttons = <>
-                <button onClick={funcClick} className="sly-link-button">{text}</button>
+                <button onClick={funcClick} className="sly-link-button push">{text}</button>
             </>
         }
         return (
