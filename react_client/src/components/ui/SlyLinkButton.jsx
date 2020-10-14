@@ -11,16 +11,16 @@ class SlyLinkButton extends Component {
     // }
 
     render () {
-        const { text,linkAddress,funcClick } = this.props
+        const { text,linkAddress,funcHandle,extraStyle } = this.props
         //
         let buttons = null
         if (linkAddress) {
             buttons = <>
-                <Link to={linkAddress} className="sly-link-button">{text}</Link>
+                <Link to={linkAddress} className={"sly-link-button "+extraStyle}>{text}</Link>
             </>
         } else {
             buttons = <>
-                <button onClick={funcClick} className="sly-link-button push">{text}</button>
+                <button onClick={funcHandle} className={"sly-link-button "+extraStyle}>{text}</button>
             </>
         }
         return (
@@ -38,13 +38,15 @@ class SlyLinkButton extends Component {
 SlyLinkButton.propTypes = {
     text: PropTypes.string.isRequired,
     linkAddress: PropTypes.string.isRequired,
-    funcClick: PropTypes.func.isRequired,
+    funcHandle: PropTypes.func.isRequired,
+    extraStyle: PropTypes.string.isRequired,
 }
 
 SlyLinkButton.defaultProps = {
     text: "Sign up",
     linkAddress: undefined,
-    funcClick: f => f,
+    funcHandle: f => f,
+    extraStyle: "", //push
 }
 
 export default SlyLinkButton

@@ -3,8 +3,9 @@ import './SlyCompRight.css'
 //
 import SlySearch from './SlySearch'
 import SlyButton from './SlyButton'
-import SlyIcon from './SlyIcon'
-import SlyMenu from './SlyMenu'
+// import SlyIcon from './SlyIcon'
+import SlyMenuTools from './SlyMenuTools'
+import SlyMenuProfiles from './SlyMenuProfiles'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -21,8 +22,9 @@ class SlyCompRight extends Component {
         let buttons = null
         if (astronauts) {
             buttons = <>
-                <SlyMenu />
-                <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#9E9E9E" />
+                <SlyMenuTools />
+                <SlyMenuProfiles />
+                {/* <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#9E9E9E" /> */}
                 {/* <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#1B78D6" /> */}
             </>
         } else {

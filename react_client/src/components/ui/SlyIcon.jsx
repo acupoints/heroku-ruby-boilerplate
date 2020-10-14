@@ -41,12 +41,13 @@ class SlyIcon extends Component {
             .attr('fill', fill)
 
     }
-
+    
     render () {
+        const { funcHandle } = this.props
         return (
             <div className="sly-icon-container">
                 {/* <h1>[SlyIcon]</h1> */}
-                <div ref={this.myRef} className="sly-icon"></div>
+                <div ref={this.myRef} onClick={funcHandle} className="sly-icon"></div>
             </div>
         )
     }
@@ -59,6 +60,7 @@ SlyIcon.propTypes = {
     rect_cx: PropTypes.number,
     fill: PropTypes.string.isRequired,
     dataset: PropTypes.array.isRequired,
+    funcHandle: PropTypes.func.isRequired,
 }
 
 SlyIcon.defaultProps = {
@@ -67,6 +69,7 @@ SlyIcon.defaultProps = {
     rect_cx: 10/4,
     fill: "white",
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
+    funcHandle: f => f,
 }
 
 export default SlyIcon

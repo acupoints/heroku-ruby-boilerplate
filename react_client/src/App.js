@@ -25,6 +25,7 @@ import {
 import SlyPageLogin from './components/ui/SlyPageLogin'
 import SlyPageSignup from './components/ui/SlyPageSignup'
 import SlyPageGetStarted from './components/ui/SlyPageGetStarted'
+import SlyPaperclip from './components/ui/SlyPaperclip'
 
 // import { PagesNavigator } from './components/PagesNavigator'
 import { PagesNotFound } from './components/PagesNotFound'
@@ -56,6 +57,9 @@ function App() {
             <Route path="/users/login" component={SlyPageLogin} />
             <Route path="/users/signup" component={SlyPageSignup} />
             <Route path="/articles/getting-started" component={SlyPageGetStarted} />
+
+            <Route path="/my/SlyPaperclip" component={SlyPaperclip} />
+
             <Route component={PagesNotFound} />
           </Switch>
         </div>
