@@ -27,6 +27,28 @@ class SlyMenuTools extends Component {
         this.props.userSignout()
         this.props.history.push("/users/login")
     }
+    onSlyNotes = () => {
+        this.props.history.push("/my/SlyNotes")
+        this.setState({isVisible: !this.state.isVisible});
+    }
+    
+    onSlyNotesView = () => {
+        this.props.history.push("/my/SlyNotesView")
+        this.setState({isVisible: !this.state.isVisible});
+    }
+    onSlyNotesSearch = () => {
+        this.props.history.push("/my/SlyNotesSearch")
+        this.setState({isVisible: !this.state.isVisible});
+    }
+    onSlyNotesEdit = () => {
+        this.props.history.push("/my/SlyNotesEdit")
+        this.setState({isVisible: !this.state.isVisible});
+    }
+    onSlyPaperclip = () => {
+        this.props.history.push("/my/SlyPaperclip")
+        this.setState({isVisible: !this.state.isVisible});
+    }
+    
 
     handleClickTools = () => {
         console.log("--handleClickTools")
@@ -43,11 +65,12 @@ class SlyMenuTools extends Component {
         if (this.state.isVisible) {
             buttons = <>
             <SlyMenuItem>
-                <SlyLinkButton extraStyle="push" text="New repository" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New gist" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New project" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New organization" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New SlyPaperclip" linkAddress="/my/SlyPaperclip" />
+                <SlyLinkButton extraStyle="push" text="SlyNotes" funcHandle={this.onSlyNotes} />
+                <SlyDivider />
+                <SlyLinkButton extraStyle="push" text="SlyNotesView" funcHandle={this.onSlyNotesView} />
+                <SlyLinkButton extraStyle="push" text="SlyNotesSearch" funcHandle={this.onSlyNotesSearch} />
+                <SlyLinkButton extraStyle="push" text="SlyNotesEdit" funcHandle={this.onSlyNotesEdit} />
+                <SlyLinkButton extraStyle="push" text="SlyPaperclip" funcHandle={this.onSlyPaperclip} />
                 <SlyDivider />
                 <SlyLinkButton extraStyle="push" text="Sign out" funcHandle={this.onSignout} />
             </SlyMenuItem>

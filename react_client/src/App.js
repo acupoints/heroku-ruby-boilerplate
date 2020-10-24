@@ -26,6 +26,10 @@ import SlyPageLogin from './components/ui/SlyPageLogin'
 import SlyPageSignup from './components/ui/SlyPageSignup'
 import SlyPageGetStarted from './components/ui/SlyPageGetStarted'
 import SlyPaperclip from './components/ui/SlyPaperclip'
+import SlyNotes from './components/ui/notes/SlyNotes'
+import SlyNotesView from './components/ui/notes/SlyNotesView'
+import SlyNotesSearch from './components/ui/notes/SlyNotesSearch'
+import SlyNotesEdit from './components/ui/notes/SlyNotesEdit'
 
 // import { PagesNavigator } from './components/PagesNavigator'
 import { PagesNotFound } from './components/PagesNotFound'
@@ -59,6 +63,10 @@ function App() {
             <Route path="/articles/getting-started" component={SlyPageGetStarted} />
 
             <Route path="/my/SlyPaperclip" component={SlyPaperclip} />
+            <Route path="/my/SlyNotes" component={SlyNotes} />
+            <Route path="/my/SlyNotesView" component={SlyNotesView} />
+            <Route path="/my/SlyNotesSearch" component={SlyNotesSearch} />
+            <Route path="/my/SlyNotesEdit" component={SlyNotesEdit} />
 
             <Route component={PagesNotFound} />
           </Switch>
