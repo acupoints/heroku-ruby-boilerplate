@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './SlyCategories.css'
 //
+import SlyCategoryItem from './SlyCategoryItem'
 
 class SlyCategories extends Component {
 
@@ -14,6 +15,9 @@ class SlyCategories extends Component {
                 {/* <h1>[SlyCategories]</h1> */}
                 <div className="sly-categories-wrapper">
                     <h1>[SlyCategories]</h1>
+                    <SlyCategoryItem />
+                    <SlyCategoryItem />
+                    <SlyCategoryItem />
                 </div>
             </div>
         )

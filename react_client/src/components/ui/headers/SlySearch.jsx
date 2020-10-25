@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './SlySearch.css'
 //
 // import SlyIcon from './SlyIcon'
-import D3Card from '../D3Card'
+import D3Card from '../../D3Card'
 
 class SlySearch extends Component {
 

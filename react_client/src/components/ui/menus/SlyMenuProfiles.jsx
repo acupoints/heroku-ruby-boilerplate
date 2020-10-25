@@ -2,30 +2,53 @@ import React, { Component } from 'react'
 import './SlyMenuProfiles.css'
 //
 // import SlyButton from './SlyButton'
-import SlyIcon from './SlyIcon'
+import SlyIcon from '../icons/SlyIcon'
 import SlyLinkButton from './SlyLinkButton'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { userSignoutAction } from '../../flux-redux/actions'
+import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction  } from '../../../flux-redux/actions'
+
 import SlyDivider from './SlyDivider'
 import SlyMenuItem from './SlyMenuItem'
 
 class SlyMenuProfiles extends Component {
 
-    constructor (props) {
-        super(props)
-        // this.onSignout = this.onSignout.bind(this)
-        // this.handleClickProfiles = this.handleClickProfiles.bind(this)
-        this.state = {
-            isVisible: false
-        }
-    }
+    // constructor (props) {
+    //     super(props)
+    // }
 
     onSignout = () => {
-        // console.log("退出")
         this.props.userSignout()
         this.props.history.push("/users/login")
+    }
+    onSlyYourProfiles = () => {
+        this.props.history.push("/my/SlyYourProfiles")
+        this.toggleMenuPanel()
+    }
+    onSlyYourTools = () => {
+        this.props.history.push("/my/SlyYourTools")
+        this.toggleMenuPanel()
+    }
+    onSlyDashboards = () => {
+        this.props.history.push("/my/SlyDashboards")
+        this.toggleMenuPanel()
+    }
+    onSlyBooks = () => {
+        this.props.history.push("/my/SlyBooks")
+        this.toggleMenuPanel()
+    }
+    onSlyManuals = () => {
+        this.props.history.push("/my/SlyManuals")
+        this.toggleMenuPanel()
+    }
+    onSlyWorkflows = () => {
+        this.props.history.push("/my/SlyWorkflows")
+        this.toggleMenuPanel()
+    }
+    onSlySettings = () => {
+        this.props.history.push("/my/SlySettings")
+        this.toggleMenuPanel()
     }
 
     handleClickProfiles = () => {
@@ -35,19 +58,28 @@ class SlyMenuProfiles extends Component {
 
     toggleMenuPanel = () => {
         console.log("--toggleMenuPanel")
-        this.setState({isVisible: !this.state.isVisible});
+        const { menus, addMenu, clearMenu } = this.props
+        clearMenu()
+        addMenu({
+            tag: "menu-profiles",
+            visible: !menus["menu-profiles"],
+        })
     }
 
     render () {
+        const { menus } = this.props
         let buttons = null
-        if (this.state.isVisible) {
+        if (menus["menu-profiles"]) {
             buttons = <>
             <SlyMenuItem>
-                <SlyLinkButton extraStyle="push" text="New repository" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New gist" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New project" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New organization" funcHandle={this.onSignout} />
-                <SlyLinkButton extraStyle="push" text="New SlyPaperclip" linkAddress="/my/SlyPaperclip" />
+                <SlyLinkButton extraStyle="push" text="SlyYourProfiles" funcHandle={this.onSlyYourProfiles} />
+                <SlyLinkButton extraStyle="push" text="SlyYourTools" funcHandle={this.onSlyYourTools} />
+                <SlyDivider />
+                <SlyLinkButton extraStyle="push" text="SlyDashboards" funcHandle={this.onSlyDashboards} />
+                <SlyLinkButton extraStyle="push" text="SlyBooks" funcHandle={this.onSlyBooks} />
+                <SlyLinkButton extraStyle="push" text="SlyManuals" funcHandle={this.onSlyManuals} />
+                <SlyLinkButton extraStyle="push" text="SlyWorkflows" funcHandle={this.onSlyWorkflows} />
+                <SlyLinkButton extraStyle="push" text="SlySettings" funcHandle={this.onSlySettings} />
                 <SlyDivider />
                 <SlyLinkButton extraStyle="push" text="Sign out" funcHandle={this.onSignout} />
             </SlyMenuItem>
@@ -85,6 +117,15 @@ const mapDispatchToProps = dispatch => {
     return {
         userSignout: () => {
             dispatch(userSignoutAction())
+        },
+        addMenu: (menu) => {
+            dispatch(addMenuAction(menu))
+        },
+        removeMenu: (menu) => {
+            dispatch(removeMenuAction(menu))
+        },
+        clearMenu: () => {
+            dispatch(clearMenuAction())
         },
     }
 }

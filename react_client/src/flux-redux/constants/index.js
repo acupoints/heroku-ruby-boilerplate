@@ -7,6 +7,9 @@ const constants = {
     ADD_ASTRONAUTS_FETCH_FAUILE: "ADD_ASTRONAUTS_FETCH_FAUILE",
     // USERS
     USER_SIGNOUT: "USER_SIGNOUT",
+    ADD_MENU: "ADD_MENU",
+    REMOVE_MENU: "REMOVE_MENU",
+    CLEAR_MENU: "CLEAR_MENU",
 }
 
 export default constants

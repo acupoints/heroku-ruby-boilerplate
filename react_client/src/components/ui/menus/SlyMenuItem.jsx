@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { userSignoutAction } from '../../flux-redux/actions'
+import { userSignoutAction } from '../../../flux-redux/actions'
 
 class SlyMenuItem extends Component {
 

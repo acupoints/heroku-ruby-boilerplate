@@ -1,6 +1,7 @@
 import C from '../constants'
 import fetch from 'isomorphic-fetch'
 // import axios from 'axios'
+const store = require('store')
 
 export const addAction = (num) => {
     return {
@@ -66,6 +67,7 @@ export const fetchAstronautsAction = (data) => {
                 return response.json()
             })
             .then(response => {
+                store.set("astronauts", response.token)
                 dispatch({type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, astronauts: response.token})
                 return response
             })
@@ -81,10 +83,33 @@ export const fetchAstronautsAction = (data) => {
 
 //
 export const userSignoutAction = () => {
+    store.remove("astronauts")
     return {
         type: C.USER_SIGNOUT,
         payload: {
             
         }
+    }
+}
+//
+export const addMenuAction = (menu) => {
+    return {
+        type: C.ADD_MENU,
+        menu: {
+            ...menu,
+        }
+    }
+}
+export const removeMenuAction = (menu) => {
+    return {
+        type: C.REMOVE_MENU,
+        menu: {
+            ...menu,
+        }
+    }
+}
+export const clearMenuAction = () => {
+    return {
+        type: C.CLEAR_MENU,
     }
 }

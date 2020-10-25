@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './SlyNotesView.css'
 //
+import SlyCatalogTitles from './SlyCatalogTitles'
+import SlyRadishes from './SlyRadishes'
 
 class SlyNotesView extends Component {
 
@@ -14,6 +16,8 @@ class SlyNotesView extends Component {
                 {/* <h1>[SlyNotesView]</h1> */}
                 <div className="sly-notes-view-wrapper">
                     <h1>[SlyNotesView]</h1>
+                    <SlyCatalogTitles />
+                    <SlyRadishes />
                 </div>
             </div>
         )

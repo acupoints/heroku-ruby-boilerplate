@@ -4,6 +4,10 @@ const initialState = {
     astronauts: null,
     pending: false,
     error: null,
+    menus: {
+        "menu-tools": false,
+        "menu-profiles": false,
+    },
 }
 
 export const astronautsReducer = (state = initialState, action) => {
@@ -32,6 +36,31 @@ export const astronautsReducer = (state = initialState, action) => {
                 astronauts: null,
                 pending: false,
                 error: null,
+            }
+        case C.ADD_MENU:
+            return {
+                ...state,
+                menus: {
+                    ...state.menus,
+                    [action.menu.tag]: action.menu.visible
+                },
+            }
+        case C.REMOVE_MENU:
+            let menus_new = state.menus
+            delete menus_new[action.menu.tag]
+            return {
+                ...state,
+                menus: {
+                    ...menus_new,
+                },
+            }
+        case C.CLEAR_MENU:
+            return {
+                ...state,
+                menus: {
+                    "menu-tools": false,
+                    "menu-profiles": false,
+                },
             }
         default:
             return state

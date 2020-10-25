@@ -11,6 +11,6 @@
   max-width: 97.2307692rem;
   width: 100%;
 }
-.sly-notes-wrapper h1 {
+.sly-notes-wrapper > h1 {
   background-color: #FFEB3B;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './SlyBulletinBoard.css'
 //
 // import SlyButton from './SlyButton'
-import SlyIcon from './SlyIcon'
+import SlyIcon from './icons/SlyIcon'
 
 class SlyBulletinBoard extends Component {
 

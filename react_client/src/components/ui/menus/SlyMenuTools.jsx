@@ -2,54 +2,47 @@ import React, { Component } from 'react'
 import './SlyMenuTools.css'
 //
 // import SlyButton from './SlyButton'
-import SlyIcon from './SlyIcon'
+import SlyIcon from '../icons/SlyIcon'
 import SlyLinkButton from './SlyLinkButton'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { userSignoutAction } from '../../flux-redux/actions'
+import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction } from '../../../flux-redux/actions'
+
 import SlyDivider from './SlyDivider'
 import SlyMenuItem from './SlyMenuItem'
 
 class SlyMenuTools extends Component {
 
-    constructor (props) {
-        super(props)
-        // this.onSignout = this.onSignout.bind(this)
-        // this.handleClickTools = this.handleClickTools.bind(this)
-        this.state = {
-            isVisible: false
-        }
-    }
+    // constructor (props) {
+    //     super(props)
+    // }
 
     onSignout = () => {
-        // console.log("退出")
         this.props.userSignout()
         this.props.history.push("/users/login")
     }
     onSlyNotes = () => {
         this.props.history.push("/my/SlyNotes")
-        this.setState({isVisible: !this.state.isVisible});
+        this.toggleMenuPanel()
     }
-    
     onSlyNotesView = () => {
         this.props.history.push("/my/SlyNotesView")
-        this.setState({isVisible: !this.state.isVisible});
+        this.toggleMenuPanel()
     }
     onSlyNotesSearch = () => {
         this.props.history.push("/my/SlyNotesSearch")
-        this.setState({isVisible: !this.state.isVisible});
+        this.toggleMenuPanel()
     }
     onSlyNotesEdit = () => {
         this.props.history.push("/my/SlyNotesEdit")
-        this.setState({isVisible: !this.state.isVisible});
+        this.toggleMenuPanel()
     }
     onSlyPaperclip = () => {
         this.props.history.push("/my/SlyPaperclip")
-        this.setState({isVisible: !this.state.isVisible});
+        this.toggleMenuPanel()
     }
     
-
     handleClickTools = () => {
         console.log("--handleClickTools")
         this.toggleMenuPanel()
@@ -57,12 +50,18 @@ class SlyMenuTools extends Component {
 
     toggleMenuPanel = () => {
         console.log("--toggleMenuPanel")
-        this.setState({isVisible: !this.state.isVisible});
+        const { menus, addMenu, clearMenu } = this.props
+        clearMenu()
+        addMenu({
+            tag: "menu-tools",
+            visible: !menus["menu-tools"],
+        })
     }
 
     render () {
+        const { menus } = this.props
         let buttons = null
-        if (this.state.isVisible) {
+        if (menus["menu-tools"]) {
             buttons = <>
             <SlyMenuItem>
                 <SlyLinkButton extraStyle="push" text="SlyNotes" funcHandle={this.onSlyNotes} />
@@ -70,9 +69,9 @@ class SlyMenuTools extends Component {
                 <SlyLinkButton extraStyle="push" text="SlyNotesView" funcHandle={this.onSlyNotesView} />
                 <SlyLinkButton extraStyle="push" text="SlyNotesSearch" funcHandle={this.onSlyNotesSearch} />
                 <SlyLinkButton extraStyle="push" text="SlyNotesEdit" funcHandle={this.onSlyNotesEdit} />
-                <SlyLinkButton extraStyle="push" text="SlyPaperclip" funcHandle={this.onSlyPaperclip} />
                 <SlyDivider />
-                <SlyLinkButton extraStyle="push" text="Sign out" funcHandle={this.onSignout} />
+                <SlyLinkButton extraStyle="push" text="SlyPaperclip" funcHandle={this.onSlyPaperclip} />
+                {/* <SlyLinkButton extraStyle="push" text="Sign out" funcHandle={this.onSignout} /> */}
             </SlyMenuItem>
             </>
         } else {
@@ -108,6 +107,15 @@ const mapDispatchToProps = dispatch => {
     return {
         userSignout: () => {
             dispatch(userSignoutAction())
+        },
+        addMenu: (menu) => {
+            dispatch(addMenuAction(menu))
+        },
+        removeMenu: (menu) => {
+            dispatch(removeMenuAction(menu))
+        },
+        clearMenu: () => {
+            dispatch(clearMenuAction())
         },
     }
 }

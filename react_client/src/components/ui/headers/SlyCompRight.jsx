@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import './SlyCompRight.css'
 //
 import SlySearch from './SlySearch'
-import SlyButton from './SlyButton'
+import SlyButton from '../SlyButton'
 // import SlyIcon from './SlyIcon'
-import SlyMenuTools from './SlyMenuTools'
-import SlyMenuProfiles from './SlyMenuProfiles'
+import SlyMenuTools from '../menus/SlyMenuTools'
+import SlyMenuProfiles from '../menus/SlyMenuProfiles'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+//
+const store = require('store')
 
 class SlyCompRight extends Component {
 
@@ -20,7 +22,7 @@ class SlyCompRight extends Component {
         const { astronauts } = this.props
         //
         let buttons = null
-        if (astronauts) {
+        if (astronauts||store.get("astronauts")) {
             buttons = <>
                 <SlyMenuTools />
                 <SlyMenuProfiles />
