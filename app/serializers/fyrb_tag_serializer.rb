@@ -1,3 +1,4 @@
 class FyrbTagSerializer < ActiveModel::Serializer
-  attributes :id
+  belongs_to :fyrb_user
+  attributes :id, :name, :description, :color
 end

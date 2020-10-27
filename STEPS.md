@@ -81,6 +81,13 @@ rails g serializer FyrbFragment
 rails g serializer FyrbTerm
 rails g serializer FyrbStatement
 
+## Operation after generating model, controller, serializer
+# config\routes.rb
+# # Custom routing
+# app\serializers
+# # Custom relationship, filter field
+# app\models
+# # Customize routing, add, delete, modify and check
 
 ```
 

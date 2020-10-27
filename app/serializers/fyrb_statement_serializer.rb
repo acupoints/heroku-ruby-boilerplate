@@ -1,3 +1,5 @@
 class FyrbStatementSerializer < ActiveModel::Serializer
-  attributes :id
+  belongs_to :fyrb_term
+  belongs_to :fyrb_micropost
+  attributes :id, :original, :comprehension
 end
