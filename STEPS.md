@@ -97,6 +97,12 @@ rails g serializer FyrbException
 # config\routes.rb
 ## Configure the relationship of the model and copy to the serializer
 ## Configure the fields to be output in the serializer
+## Copy the controller method and modify the model name
+
+## You can delete the created model, controller, serializer by the following methods
+rails destroy model <ModelName>
+rails destroy controller <ControllerName>s
+rails destroy serializer <SerializerName>
 
 ########################################################
 
