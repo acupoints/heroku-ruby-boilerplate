@@ -3,6 +3,8 @@ class FyrbUser < ApplicationRecord
     has_many :fyrb_tags, dependent: :destroy
     has_many :fyrb_tools, dependent: :destroy
     has_many :fyrb_terms, dependent: :destroy
+    has_many :fyrb_programs, dependent: :destroy
+    has_many :fyrb_exceptions, dependent: :destroy
     has_secure_password
     # mount_uploader :avatar, AvatarUploader
     validates :email, presence: true, uniqueness: true

@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_143831) do
+ActiveRecord::Schema.define(version: 2020_10_29_152220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fyrb_exceptions", force: :cascade do |t|
+    t.text "platforms"
+    t.text "steps"
+    t.text "mul_errors"
+    t.text "solutions"
+    t.bigint "fyrb_user_id", null: false
+    t.bigint "fyrb_program_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_program_id"], name: "index_fyrb_exceptions_on_fyrb_program_id"
+    t.index ["fyrb_user_id"], name: "index_fyrb_exceptions_on_fyrb_user_id"
+  end
 
   create_table "fyrb_fragments", force: :cascade do |t|
     t.string "title"
@@ -37,6 +50,21 @@ ActiveRecord::Schema.define(version: 2020_10_09_143831) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fyrb_user_id"], name: "index_fyrb_microposts_on_fyrb_user_id"
+  end
+
+  create_table "fyrb_programs", force: :cascade do |t|
+    t.string "name"
+    t.string "alias"
+    t.string "platform"
+    t.string "version"
+    t.text "description"
+    t.text "shortcuts"
+    t.text "installation"
+    t.text "uninstall"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_programs_on_fyrb_user_id"
   end
 
   create_table "fyrb_statements", force: :cascade do |t|
@@ -90,9 +118,12 @@ ActiveRecord::Schema.define(version: 2020_10_09_143831) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "fyrb_exceptions", "fyrb_programs"
+  add_foreign_key "fyrb_exceptions", "fyrb_users"
   add_foreign_key "fyrb_fragments", "fyrb_microposts"
   add_foreign_key "fyrb_fragments", "fyrb_tools"
   add_foreign_key "fyrb_microposts", "fyrb_users"
+  add_foreign_key "fyrb_programs", "fyrb_users"
   add_foreign_key "fyrb_statements", "fyrb_microposts"
   add_foreign_key "fyrb_statements", "fyrb_terms"
   add_foreign_key "fyrb_tags", "fyrb_users"

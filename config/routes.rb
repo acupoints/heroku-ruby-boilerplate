@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  # get 'fyrb_exceptions/index'
+  # get 'fyrb_exceptions/show'
+  # get 'fyrb_exceptions/create'
+  # get 'fyrb_exceptions/update'
+  # get 'fyrb_exceptions/destroy'
+  # get 'fyrb_programs/index'
+  # get 'fyrb_programs/show'
+  # get 'fyrb_programs/create'
+  # get 'fyrb_programs/update'
+  # get 'fyrb_programs/destroy'
   # get 'fyrb_statements/index'
   # get 'fyrb_statements/show'
   # get 'fyrb_statements/create'
@@ -37,5 +47,7 @@ Rails.application.routes.draw do
   resources :fyrb_terms
   resources :fyrb_statements
   resources :fyrb_fragments
+  resources :fyrb_programs
+  resources :fyrb_exceptions
   get '/*a', to: 'fyrb_auths#not_found'
 end
