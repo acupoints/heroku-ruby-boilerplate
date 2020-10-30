@@ -14,7 +14,7 @@ class SlyIcon extends Component {
 
     componentDidMount () {
         // console.log(this.myRef)
-        const { size_x, size_y, rect_cx, fill, dataset } = this.props
+        const { size_x, size_y, rect_width, fill, dataset, direction } = this.props
         //
         // d3.select(this.myRef.current)
         //     .append('p')
@@ -28,17 +28,48 @@ class SlyIcon extends Component {
             .attr('height', size_y)
         //
         // const rect_cx = 10
-        const rect_gap = size_x/dataset.length-rect_cx
+        let rect_gap = 0
 
-        svg.selectAll('rect')
-            .data(dataset)
-            .enter()
-            .append('rect')
-            .attr('x', (d, i) => rect_gap/2 + i * (rect_cx + rect_gap))
-            .attr('y', d => size_y - d)
-            .attr('width', rect_cx)
-            .attr('height', d => d)
-            .attr('fill', fill)
+        if (direction.toLowerCase()==="vertical") {
+            rect_gap = size_x/dataset.length-rect_width
+
+            svg.selectAll('rect')
+                .data(dataset)
+                .enter()
+                .append('rect')
+                .attr('x', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
+                .attr('y', d => size_y - d)
+                .attr('width', rect_width)
+                .attr('height', d => d)
+                .attr('fill', fill)
+                
+        } else if (direction.toLowerCase()==="horizontal") {
+            rect_gap = size_y/dataset.length-rect_width
+            svg.selectAll('rect')
+                .data(dataset)
+                .enter()
+                .append('rect')
+                .attr('x', d => size_x - d)
+                .attr('y', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
+                .attr('width', d => d)
+                .attr('height', rect_width)
+                .attr('fill', fill)
+            
+        } else if (direction.toLowerCase()==="orthogonal") {
+            rect_gap = size_y/dataset.length-rect_width
+            svg.selectAll('rect')
+                .data([...dataset,...dataset,...dataset])
+                .enter()
+                .append('rect')
+                // .attr('x', d => size_x - d)
+                .attr('x', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
+                .attr('y', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
+                // .attr('width', d => d)
+                .attr('width', rect_width)
+                .attr('height', rect_width)
+                .attr('fill', fill)
+                
+        }
 
     }
     
@@ -57,18 +88,22 @@ class SlyIcon extends Component {
 SlyIcon.propTypes = {
     size_x: PropTypes.number,
     size_y: PropTypes.number,
-    rect_cx: PropTypes.number,
+    rect_width: PropTypes.number,
     fill: PropTypes.string.isRequired,
     dataset: PropTypes.array.isRequired,
+    direction: PropTypes.string.isRequired,
+    shape: PropTypes.string.isRequired,
     funcHandle: PropTypes.func.isRequired,
 }
 
 SlyIcon.defaultProps = {
     size_x: 75/4,
     size_y: 75/6,
-    rect_cx: 10/4,
+    rect_width: 10/4,
     fill: "white",
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
+    direction: "vertical", // horizontal/vertical/orthogonal
+    shape: "square", // square/round
     funcHandle: f => f,
 }
 

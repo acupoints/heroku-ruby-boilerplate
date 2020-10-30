@@ -16,6 +16,9 @@
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .sly-icon:hover {
   padding: .35rem;
