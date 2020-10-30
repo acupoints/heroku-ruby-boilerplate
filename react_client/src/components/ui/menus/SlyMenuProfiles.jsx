@@ -21,6 +21,7 @@ class SlyMenuProfiles extends Component {
     onSignout = () => {
         this.props.userSignout()
         this.props.history.push("/users/login")
+        this.toggleMenuPanel()
     }
     onSlyYourProfiles = () => {
         this.props.history.push("/my/SlyYourProfiles")
