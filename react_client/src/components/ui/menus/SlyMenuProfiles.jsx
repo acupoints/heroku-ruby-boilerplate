@@ -91,7 +91,7 @@ class SlyMenuProfiles extends Component {
         return (
             <div className="sly-menu-profiles-container">
                 {/* <h1>[SlyMenuProfiles]</h1> */}
-                <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#9E9E9E"
+                <SlyIcon  size_x={20} size_y={20} rect_width={10/3} fill="#9E9E9E" dataset={[40, 40, 40]} direction="corner" shape="avatar"
                 funcHandle={this.handleClickProfiles} />
                 {/* <SlyMenuItem>
                     <SlyLinkButton extraStyle="push" text="New repository" funcHandle={this.onSignout} />

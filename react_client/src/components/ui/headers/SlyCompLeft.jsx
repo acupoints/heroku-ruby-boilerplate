@@ -45,7 +45,7 @@ class SlyCompLeft extends Component {
                 <SlyIcon size_x={20} size_y={20} rect_width={10/4} fill="#607d8b" dataset={[40, 40, 40]} direction="horizontal"
                 funcHandle={this.handleClickFeatures} />
                 <div className="sly-comp-left-shadow-sm">
-                    <SlyIcon size_x={75/1} size_y={75/6} rect_cx={7} fill="indigo"
+                    <SlyIcon size_x={40} size_y={40} rect_width={10/4} fill="#673ab7" direction="embedded"
                     funcHandle={this.handleClickSolutions} />
                 </div>
                 <SlyLinkButton text="articles" funcHandle={this.onSlyCommonArticles} />
