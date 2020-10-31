@@ -42,7 +42,7 @@ class SlyCompLeft extends Component {
         return (
             <div className="sly-comp-left-container">
                 {/* <h1>[SlyCompLeft]</h1> */}
-                <SlyIcon size_x={20} size_y={20} rect_width={10/4} fill="indigo" dataset={[40, 40, 40]} direction="orthogonal"
+                <SlyIcon size_x={20} size_y={20} rect_width={10/4} fill="#607d8b" dataset={[40, 40, 40]} direction="horizontal"
                 funcHandle={this.handleClickFeatures} />
                 <div className="sly-comp-left-shadow-sm">
                     <SlyIcon size_x={75/1} size_y={75/6} rect_cx={7} fill="indigo"

@@ -14,7 +14,7 @@ class SlyIcon extends Component {
 
     componentDidMount () {
         // console.log(this.myRef)
-        const { size_x, size_y, rect_width, fill, dataset, direction } = this.props
+        const { size_x, size_y, rect_width, fill, dataset, direction, shape } = this.props
         //
         // d3.select(this.myRef.current)
         //     .append('p')
@@ -56,17 +56,42 @@ class SlyIcon extends Component {
                 .attr('fill', fill)
             
         } else if (direction.toLowerCase()==="orthogonal") {
+            const sh_line_count = dataset.length
             rect_gap = size_y/dataset.length-rect_width
+            if (shape.toLowerCase()==="square") {
+                svg.selectAll('rect')
+                    .data([...dataset,...dataset,...dataset])
+                    .enter()
+                    .append('rect')
+                    .attr('x', (el, i) => rect_gap/2 + i%sh_line_count * (rect_width + rect_gap))
+                    .attr('y', (el, i) => rect_gap/2 + Math.floor(i/sh_line_count) * (rect_width + rect_gap))
+                    .attr('width', rect_width)
+                    .attr('height', rect_width)
+                    .attr('fill', fill)
+                    
+            } else if (shape.toLowerCase()==="round") {
+                svg.selectAll('circle')
+                    .data([...dataset,...dataset,...dataset])
+                    .enter()
+                    .append('circle')
+                    .attr('cx', (el, i) => rect_width/2 + rect_gap/2 + i%sh_line_count * (rect_width + rect_gap))
+                    .attr('cy', (el, i) => rect_width/2 + rect_gap/2 + Math.floor(i/sh_line_count) * (rect_width + rect_gap))
+                    .attr('r', rect_width/2)
+                    .attr('fill', fill)
+                
+            }
+                
+        } else if (direction.toLowerCase()==="loading") {
+            rect_gap = size_x/dataset.length-rect_width
+
             svg.selectAll('rect')
-                .data([...dataset,...dataset,...dataset])
+                .data(dataset)
                 .enter()
                 .append('rect')
-                // .attr('x', d => size_x - d)
-                .attr('x', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
-                .attr('y', (d, i) => rect_gap/2 + i * (rect_width + rect_gap))
-                // .attr('width', d => d)
+                .attr('x', (el, i) => rect_gap/2 + i * (rect_width + rect_gap))
+                .attr('y', el => size_y/2 - size_y/4)
                 .attr('width', rect_width)
-                .attr('height', rect_width)
+                .attr('height', el => size_y/2)
                 .attr('fill', fill)
                 
         }
@@ -102,8 +127,8 @@ SlyIcon.defaultProps = {
     rect_width: 10/4,
     fill: "white",
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
-    direction: "vertical", // horizontal/vertical/orthogonal
-    shape: "square", // square/round
+    direction: "vertical", // horizontal/vertical/orthogonal/loading
+    shape: "square", // square/round/pulse/avatar
     funcHandle: f => f,
 }
 

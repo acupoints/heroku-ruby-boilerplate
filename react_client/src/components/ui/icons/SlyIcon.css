@@ -6,6 +6,7 @@
   display: inline-block;
   padding: .35rem;
   border: 1px solid transparent;
+  border: 1px solid #F44336;
   border-radius: 3px;
   outline: none;
   font-family: inherit;
@@ -23,6 +24,7 @@
 .sly-icon:hover {
   padding: .35rem;
   border: 1px solid transparent;
+  border: 1px solid #F44336;
   border-radius: 3px;
   background-color: rgba(72, 2, 121, 0.123);
   outline: none;

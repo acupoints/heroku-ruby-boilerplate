@@ -80,7 +80,7 @@ class SlyMenuTools extends Component {
         return (
             <div className="sly-menu-tools-container">
                 {/* <h1>[SlyMenuTools]</h1> */}
-                <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#009688"
+                <SlyIcon size_x={20} size_y={20} rect_width={10/3} fill="#009688" dataset={[40, 40, 40]} direction="orthogonal" shape="round"
                 funcHandle={this.handleClickTools} />
                 {/* <SlyMenuItem isVisible={this.state.isVisible}>
                     <SlyLinkButton extraStyle="push" text="New repository" funcHandle={this.onSignout} />
