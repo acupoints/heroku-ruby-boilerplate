@@ -151,7 +151,7 @@ class SlyIcon extends Component {
     
     render () {
         const { funcHandle } = this.props
-        const { size_x, size_y, fill, direction } = this.props
+        const { size_x, size_y, fill, padding, direction } = this.props
         //
         let buttons = null
         if (direction.toLowerCase()==="embedded") {
@@ -182,7 +182,7 @@ class SlyIcon extends Component {
         return (
             <div className="sly-icon-container">
                 {/* <h1>[SlyIcon]</h1> */}
-                <div ref={this.myRef} onClick={funcHandle} className="sly-icon">
+                <div ref={this.myRef} onClick={funcHandle} style={{padding: padding}} className="sly-icon">
                     {buttons}
                 </div>
             </div>
@@ -196,6 +196,7 @@ SlyIcon.propTypes = {
     size_y: PropTypes.number,
     rect_width: PropTypes.number,
     fill: PropTypes.string.isRequired,
+    padding: PropTypes.string.isRequired,
     dataset: PropTypes.array.isRequired,
     direction: PropTypes.string.isRequired,
     shape: PropTypes.string.isRequired,
@@ -208,8 +209,9 @@ SlyIcon.defaultProps = {
     size_y: 75/6,
     rect_width: 10/4,
     fill: "white",
+    padding: "5px",
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
-    direction: "vertical", // horizontal/vertical/orthogonal/loading/corner/embedded
+    direction: "vertical", // horizontal/vertical/orthogonal/loading/corner/embedded/diagonal
     shape: "square", // square/round/pulse/avatar
     uuid4: "", // Generate a comic background for empty, a corner image for uuid4, and an initial capital pattern for others
     funcHandle: f => f,

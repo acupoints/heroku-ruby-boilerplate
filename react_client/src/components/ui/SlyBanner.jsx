@@ -2,20 +2,57 @@ import React, { Component } from 'react'
 import './SlyBanner.css'
 //
 import SlyBulletinBoard from './SlyBulletinBoard'
+//
+import { connect } from 'react-redux'
+import { setContainerHeightAction } from '../../flux-redux/actions'
+import { withRouter } from 'react-router-dom'
 
 class SlyBanner extends Component {
 
-    // constructor () {
-    //     super()
-    // }
+    constructor () {
+        super()
+        //
+        this.myRef = React.createRef()
+    }
+
+    componentDidMount() {
+        let containerHeight = 0
+        // console.log("--> SlyBanner:", this.myRef.current)
+        if (this.myRef.current!==null) {
+            containerHeight = this.myRef.current.clientHeight
+        }
+
+        const { setContainerHeight } = this.props
+        setContainerHeight({
+            tag: "bannerHeight",
+            height: containerHeight,
+        })
+    }
 
     render () {
         return (
-            <div className="sly-banner-container">
-                <SlyBulletinBoard />
+            <div ref={this.myRef} className="sly-banner-container">
+                {/* <SlyBulletinBoard /> */}
+                <div className="sly-banner-wrapper">
+                    <SlyBulletinBoard />
+                </div>
             </div>
         )
     }
 }
 
-export default SlyBanner
+// export default SlyBanner
+//
+const mapStateToProps = state => {
+    return state.settingsReducer
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setContainerHeight: (container) => {
+            dispatch(setContainerHeightAction(container))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SlyBanner))

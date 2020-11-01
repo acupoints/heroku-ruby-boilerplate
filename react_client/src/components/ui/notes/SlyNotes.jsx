@@ -4,6 +4,10 @@ import './SlyNotes.css'
 import SlyCategories from './SlyCategories'
 import SlyArticles from './SlyArticles'
 import SlyTraversalPages from './SlyTraversalPages'
+//
+import { connect } from 'react-redux'
+import { setContainerHeightAction } from '../../../flux-redux/actions'
+import { withRouter } from 'react-router-dom'
 
 class SlyNotes extends Component {
 
@@ -12,8 +16,16 @@ class SlyNotes extends Component {
     // }
 
     render () {
+        const {containers } = this.props
+        const { headerHeight, noticeHeight } = containers
+
+        const style = {
+            paddingTop: headerHeight,
+            paddingBottom: noticeHeight,
+        }
+        
         return (
-            <div className="sly-notes-container">
+            <div className="sly-notes-container" style={style} >
                 {/* <h1>[SlyNotes]</h1> */}
                 <div className="sly-notes-wrapper">
                     <h1>[SlyNotes]</h1>
@@ -26,4 +38,18 @@ class SlyNotes extends Component {
     }
 }
 
-export default SlyNotes
+// export default SlyNotes
+//
+const mapStateToProps = state => {
+    return state.settingsReducer
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setContainerHeight: (container) => {
+            dispatch(setContainerHeightAction(container))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SlyNotes))

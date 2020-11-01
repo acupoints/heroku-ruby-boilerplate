@@ -5,6 +5,7 @@ html {
 
 body {
   background-color: #e9ecef;
+  overflow-x: hidden;
 }
 
 html, body {
@@ -21,7 +22,6 @@ html, body {
   text-align: left;
 }
 .App .main {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
 }

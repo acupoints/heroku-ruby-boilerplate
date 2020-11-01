@@ -7,11 +7,9 @@
 }
 
 .sly-bulletin-board-wrapper {
-  max-width: 97.2307692rem;
   flex: 1;
   display: flex;
   flex-direction: row;
-  padding-right: 16px;
   justify-content: space-between;
 }
 

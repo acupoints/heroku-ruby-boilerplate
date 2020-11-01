@@ -113,3 +113,21 @@ export const clearMenuAction = () => {
         type: C.CLEAR_MENU,
     }
 }
+
+// Settings
+export const setContainerHeightAction = (container) => {
+    return {
+        type: C.SETTINGS_SET_CONTAINER_HEIGHT,
+        container: {
+            ...container,
+        }
+    }
+}
+export const setContainerThemeColorAction = (container) => {
+    return {
+        type: C.SETTINGS_SET_CONTAINER_HEIGHT,
+        container: {
+            ...container,
+        }
+    }
+}

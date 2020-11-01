@@ -1,3 +1,11 @@
+.sly-banner-wrapper {
+  max-width: 97.2307692rem;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
 .sly-banner-container {
   position: fixed;
   background-color: #242729;
@@ -6,7 +14,12 @@
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  padding: 12px 0;
 }
 .sly-banner-container span {
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;

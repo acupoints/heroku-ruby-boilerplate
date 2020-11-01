@@ -106,6 +106,7 @@ function App() {
             <Route component={PagesNotFound} />
           </Switch>
         </div>
+        <SlyBanner />
       </HashRouter>
       {/* <AstronautsButton /> */}
       {/* <D3Card /> */}
@@ -122,7 +123,6 @@ function App() {
       <D3Card />
       <D3Card /> */}
 
-      <SlyBanner />
 
     </div>
   );
