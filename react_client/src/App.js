@@ -22,6 +22,9 @@ import {
 //   Products,
 //   Contact
 // } from './components/Pages'
+
+import SlyMainComponents from './components/ui/SlyMainComponents'
+
 import SlyPageLogin from './components/ui/SlyPageLogin'
 import SlyPageSignup from './components/ui/SlyPageSignup'
 import SlyPageGetStarted from './components/ui/SlyPageGetStarted'
@@ -67,7 +70,8 @@ function App() {
       <HashRouter>
         <SlyHeader />
         {/* <PagesNavigator /> */}
-        <div className="main">
+        {/* <div className="main"> */}
+        <SlyMainComponents>
           {/* <D3Card /> */}
           <Switch>
             <Route exact path="/" component={SlyCommonHome} />
@@ -105,7 +109,9 @@ function App() {
 
             <Route component={PagesNotFound} />
           </Switch>
-        </div>
+          
+        </SlyMainComponents>
+        {/* </div> */}
         <SlyBanner />
       </HashRouter>
       {/* <AstronautsButton /> */}

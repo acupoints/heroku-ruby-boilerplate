@@ -16,16 +16,16 @@ class SlyNotes extends Component {
     // }
 
     render () {
-        const {containers } = this.props
-        const { headerHeight, noticeHeight } = containers
+        // const {containers } = this.props
+        // const { headerHeight, noticeHeight } = containers
 
-        const style = {
-            paddingTop: headerHeight,
-            paddingBottom: noticeHeight,
-        }
-        
+        // const style = {
+        //     paddingTop: headerHeight,
+        //     paddingBottom: noticeHeight,
+        // }
+
         return (
-            <div className="sly-notes-container" style={style} >
+            <div className="sly-notes-container">
                 {/* <h1>[SlyNotes]</h1> */}
                 <div className="sly-notes-wrapper">
                     <h1>[SlyNotes]</h1>

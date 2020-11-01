@@ -1,0 +1,4 @@
+.sly-main-components-container {
+  display: flex;
+  flex-direction: column;
+}
