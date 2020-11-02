@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './SlySearch.css'
 //
-// import SlyIcon from './SlyIcon'
-import D3Card from '../../D3Card'
+// import D3Card from '../../D3Card'
+import SlyIcon from '../icons/SlyIcon'
 
 class SlySearch extends Component {
 
@@ -14,7 +14,8 @@ class SlySearch extends Component {
         return (
             <div className="sly-search-container">
                 {/* <h1>[SlySearch]</h1> */}
-                <D3Card size_x={24} size_y={18} rect_cx={3} fill="teal" dataset={[16, 12, 15, 14, 17]} />
+                {/* <D3Card size_x={24} size_y={18} rect_cx={3} fill="teal" dataset={[16, 12, 15, 14, 17]} /> */}
+                <SlyIcon size_x={32} size_y={32} fill="#607d8b" padding="0" direction="embedded" pattern="search" />
                 <div className="sly-search-shadow-xs">
                     <input className="sly-search" type="text" autocomplete="off" 
                         // name="email" id="email" 

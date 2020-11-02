@@ -47,6 +47,14 @@ class SlyCompLeft extends Component {
                 <div className="sly-comp-left-shadow-sm">
                     <SlyIcon size_x={40} size_y={40} rect_width={10/4} fill="#673ab7" padding="0" direction="embedded"
                     funcHandle={this.handleClickSolutions} />
+                    {/* <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="search" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="setting" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="new" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="remove" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="up" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="down" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="left" />
+                    <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="right" /> */}
                 </div>
                 <SlyLinkButton text="articles" funcHandle={this.onSlyCommonArticles} />
                 <div className="sly-comp-left-shadow-md">
