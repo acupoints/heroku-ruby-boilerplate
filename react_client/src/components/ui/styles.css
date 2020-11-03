@@ -21,10 +21,6 @@ html, body {
   min-height: 100%;
   text-align: left;
 }
-.App .main {
-  display: flex;
-  flex-direction: column;
-}
 
 .sly-d3card {
   padding: 4px;
