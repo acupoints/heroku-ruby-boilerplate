@@ -3,6 +3,7 @@ import './SlyCommonMissingParts.css'
 //
 import SlyCommonPrograms from './SlyCommonPrograms'
 import SlyCommonExceptions from './SlyCommonExceptions'
+import SlyNamingConventions from '../utilities/SlyNamingConventions'
 
 class SlyCommonMissingParts extends Component {
 
@@ -16,6 +17,7 @@ class SlyCommonMissingParts extends Component {
                 {/* <h1>[SlyCommonMissingParts]</h1> */}
                 <div className="sly-common-missing-parts-wrapper">
                     <h1>[SlyCommonMissingParts]</h1>
+                    <SlyNamingConventions />
                     <SlyCommonPrograms />
                     <SlyCommonExceptions />
                 </div>
