@@ -84,7 +84,7 @@ rails g serializer FyrbStatement
 ## 20201029 Add multiple models
 ## Open the terminal in the root directory and execute the following commands
 rails g model FyrbProgram name:string alias:string platform:string version:string description:text shortcuts:text installation:text uninstall:text fyrb_user:references
-rails g model FyrbException platforms:text steps:text errors:text solutions:text fyrb_user:references fyrb_program:references
+rails g model FyrbException platforms:text steps:text mul_errors:text solutions:text fyrb_user:references fyrb_program:references
 rails db:migrate
 
 rails g controller FyrbPrograms index show create update destroy
@@ -92,6 +92,15 @@ rails g controller FyrbExceptions index show create update destroy
 
 rails g serializer FyrbProgram
 rails g serializer FyrbException
+
+##
+rails g model FyrbInterface platforms:text steps:text mul_errors:text solutions:text fyrb_user:references fyrb_program:references
+rails db:migrate
+
+rails g controller FyrbInterfaces index show create update destroy
+
+rails g serializer FyrbInterface
+
 
 ## Configure the routing of the model
 # config\routes.rb

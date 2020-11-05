@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  platforms: MyText
+  steps: MyText
+  mul_errors: MyText
+  solutions: MyText
+  fyrb_user: one
+  fyrb_program: one
+
+two:
+  platforms: MyText
+  steps: MyText
+  mul_errors: MyText
+  solutions: MyText
+  fyrb_user: two
+  fyrb_program: two

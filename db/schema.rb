@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_152220) do
+ActiveRecord::Schema.define(version: 2020_11_05_000415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 2020_10_29_152220) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fyrb_micropost_id"], name: "index_fyrb_fragments_on_fyrb_micropost_id"
     t.index ["fyrb_tool_id"], name: "index_fyrb_fragments_on_fyrb_tool_id"
+  end
+
+  create_table "fyrb_interfaces", force: :cascade do |t|
+    t.text "platforms"
+    t.text "steps"
+    t.text "mul_errors"
+    t.text "solutions"
+    t.bigint "fyrb_user_id", null: false
+    t.bigint "fyrb_program_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_program_id"], name: "index_fyrb_interfaces_on_fyrb_program_id"
+    t.index ["fyrb_user_id"], name: "index_fyrb_interfaces_on_fyrb_user_id"
   end
 
   create_table "fyrb_microposts", force: :cascade do |t|
@@ -122,6 +135,8 @@ ActiveRecord::Schema.define(version: 2020_10_29_152220) do
   add_foreign_key "fyrb_exceptions", "fyrb_users"
   add_foreign_key "fyrb_fragments", "fyrb_microposts"
   add_foreign_key "fyrb_fragments", "fyrb_tools"
+  add_foreign_key "fyrb_interfaces", "fyrb_programs"
+  add_foreign_key "fyrb_interfaces", "fyrb_users"
   add_foreign_key "fyrb_microposts", "fyrb_users"
   add_foreign_key "fyrb_programs", "fyrb_users"
   add_foreign_key "fyrb_statements", "fyrb_microposts"
