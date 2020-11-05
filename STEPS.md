@@ -1,5 +1,30 @@
 ### STEPS
 
+## essentials
+```bash
+### Start backend
+bundle install
+# npm install -g yarn
+# yarn --version
+# get-ExecutionPolicy
+# admin> set-ExecutionPolicy RemoteSigned
+# admin> Y
+yarn install
+rails server
+
+### Start frontend
+# Switch directory to react_client
+yarn install
+yarn start
+yarn build
+
+### New environment needs to create database and migration model
+rails db:drop
+rails db:create
+rails db:migrate
+
+```
+
 ## Start the backend service
 ```bash
 bundle install

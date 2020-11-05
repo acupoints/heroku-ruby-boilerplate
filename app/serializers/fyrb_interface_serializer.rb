@@ -1,3 +1,5 @@
 class FyrbInterfaceSerializer < ActiveModel::Serializer
-  attributes :id
+  belongs_to :fyrb_user
+  belongs_to :fyrb_program
+  attributes :id, :platforms, :steps, :mul_errors, :solutions
 end
