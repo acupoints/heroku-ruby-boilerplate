@@ -15,11 +15,11 @@ class SlyMainComponents extends Component {
 
     render () {
         const {containers } = this.props
-        const { headerHeight, noticeHeight } = containers
+        const { headerHeight, bannerHeight } = containers
 
         const style = {
             paddingTop: headerHeight,
-            paddingBottom: noticeHeight,
+            paddingBottom: bannerHeight,
         }
         
         return (
