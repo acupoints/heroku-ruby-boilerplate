@@ -28,7 +28,7 @@ class SlyNamingConventions extends Component {
                         theme="dracula"
                         fontSize={16}
                         height="480px"
-                        width="80vw"
+                        width="100%"
                         onChange={this.onChange}
                         name="UNIQUE_ID_OF_DIV"
                         editorProps={

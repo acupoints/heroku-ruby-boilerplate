@@ -16,10 +16,16 @@ class SlyCommonMissingParts extends Component {
             <div className="sly-common-missing-parts-container">
                 {/* <h1>[SlyCommonMissingParts]</h1> */}
                 <div className="sly-common-missing-parts-wrapper">
-                    <h1>[SlyCommonMissingParts]</h1>
-                    <SlyNamingConventions />
-                    <SlyCommonPrograms />
-                    <SlyCommonExceptions />
+                    {/* <h1>[SlyCommonMissingParts]</h1> */}
+                    <div className="sly-common-missing-parts-comp-left">
+                        <SlyCommonPrograms />
+                        <SlyCommonExceptions />
+
+                    </div>
+                    <div className="sly-common-missing-parts-comp-right">
+                        <SlyNamingConventions />
+
+                    </div>
                 </div>
             </div>
         )

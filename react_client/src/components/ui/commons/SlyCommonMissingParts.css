@@ -1,0 +1,25 @@
+.sly-common-missing-parts-comp-left {
+  background-color: #ffd54f;
+  margin-right: 4px;
+}
+
+.sly-common-missing-parts-comp-right {
+  flex: 1;
+  padding-left: 16px;
+  background-color: aliceblue;
+}
+
+.sly-common-missing-parts-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: black;
+}
+
+.sly-common-missing-parts-container {
+  background-color: #f44336;
+  padding-right: 16px;
+  margin-right: 4px;
+  flex: 1;
+}
