@@ -1,20 +1,29 @@
 .sly-common-missing-parts-comp-left {
-  background-color: #ffd54f;
+  background-color: aliceblue;
   margin-right: 4px;
+  overflow-y: auto;
+  position: sticky;
+  overflow-x: hidden;
+  width: 90px;
+}
+@media screen and (min-width: 97.2931rem) {
+  .sly-common-missing-parts-comp-left {
+    width: 360px;
+  }
 }
 
 .sly-common-missing-parts-comp-right {
   flex: 1;
-  padding-left: 16px;
+  padding-left: 4px;
   background-color: aliceblue;
 }
 
 .sly-common-missing-parts-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
   background-color: black;
+  width: 100vw;
 }
 
 .sly-common-missing-parts-container {
@@ -22,4 +31,6 @@
   padding-right: 16px;
   margin-right: 4px;
   flex: 1;
+  display: flex;
+  flex-direction: row;
 }

@@ -9,6 +9,7 @@ const initialState = {
         headerContainer: "#FAFAFB",
         // headerWrapper: "#F3E5F5",
         headerWrapper: "#FAFAFB",
+        serviceItem: "",
     }
 }
 
@@ -29,6 +30,11 @@ export const settingsReducer = (state = initialState, action) => {
                     ...state.containers,
                     [action.container.tag]: action.container.color
                 },
+            }
+        case C.SETTINGS_SET_SERVICE_ITEM:
+            return {
+                ...state,
+                serviceItem: action.payload.serviceItem,
             }
         default:
             return state

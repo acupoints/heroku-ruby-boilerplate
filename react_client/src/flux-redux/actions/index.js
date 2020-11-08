@@ -131,3 +131,11 @@ export const setContainerThemeColorAction = (container) => {
         }
     }
 }
+export const setServiceItemAction = (serviceItem) => {
+    return {
+        type: C.SETTINGS_SET_SERVICE_ITEM,
+        payload: {
+            serviceItem
+        }
+    }
+}

@@ -27,7 +27,7 @@ class SlyNamingConventions extends Component {
                         mode="sh"
                         theme="dracula"
                         fontSize={16}
-                        height="480px"
+                        height="720px"
                         width="100%"
                         onChange={this.onChange}
                         name="UNIQUE_ID_OF_DIV"
@@ -36,13 +36,13 @@ class SlyNamingConventions extends Component {
                                 $blockScrolling: true,
                             }
                         }
-                        setOptions={
-                            {
-                                enableBasicAutocompletion: true,
-                                enableLiveAutocompletion: true,
-                                enableSnippets: true,
-                            }
-                        }
+                        // setOptions={
+                        //     {
+                        //         enableBasicAutocompletion: true,
+                        //         enableLiveAutocompletion: true,
+                        //         enableSnippets: true,
+                        //     }
+                        // }
                     />
                 </div>
             </div>
