@@ -72,6 +72,8 @@ class SlyCommonMissingParts extends Component {
                     {/* <h1>[SlyCommonMissingParts]</h1> */}
                     <div className="sly-common-missing-parts-comp-left" style={styleCompLeft} >
                         <SlyServiceModules />
+                        <SlyServiceModules />
+                        <SlyServiceModules />
                     </div>
                     <div className="sly-common-missing-parts-comp-right" style={styleCompRight} >
                         {buttons}

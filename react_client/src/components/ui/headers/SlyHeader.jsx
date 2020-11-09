@@ -27,7 +27,7 @@ class SlyHeader extends Component {
         const { setContainerHeight } = this.props
         setContainerHeight({
             tag: "headerHeight",
-            height: containerHeight,
+            height: containerHeight + 3,
         })
     }
 

@@ -47,18 +47,18 @@ class SlyServiceModules extends Component {
         let buttons = null
         buttons = <>
         <SlyServiceItem>
-            <SlyLinkButton extraStyle="push" text="Naming Conventions" funcHandle={this.onSlyServiceItem1} />
-            <SlyLinkButton extraStyle="push" text="Common Programs" funcHandle={this.onSlyServiceItem2} />
-            <SlyLinkButton extraStyle="push" text="Common Exceptions" funcHandle={this.onSlyServiceItem3} />
-            <SlyLinkButton extraStyle="push" text="SlyServiceItem4" funcHandle={this.onSlyServiceItem4} />
-            <SlyLinkButton extraStyle="push" text="SlyServiceItem5" funcHandle={this.onSlyServiceItem5} />
+            <SlyLinkButton extraStyle="push" text="命名规范" funcHandle={this.onSlyServiceItem1} />
+            <SlyLinkButton extraStyle="push" text="应用程序" funcHandle={this.onSlyServiceItem2} />
+            <SlyLinkButton extraStyle="push" text="异常修复" funcHandle={this.onSlyServiceItem3} />
+            <SlyLinkButton extraStyle="push" text="SQL查询" funcHandle={this.onSlyServiceItem4} />
+            <SlyLinkButton extraStyle="push" text="文本校对" funcHandle={this.onSlyServiceItem5} />
         </SlyServiceItem>
         </>
         return (
             <div className="sly-service-modules-container">
                 {/* <h1>[SlyServiceModules]</h1> */}
                 <div className="sly-service-modules-wrapper">
-                    <h1>[SlyServiceModules]</h1>
+                    <h1>实用工具</h1>
                     {buttons}
                 </div>
             </div>
