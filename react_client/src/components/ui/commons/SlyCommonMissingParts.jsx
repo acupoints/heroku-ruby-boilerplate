@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import './SlyCommonMissingParts.css'
 //
+import SlyServiceModules from '../services/SlyServiceModules'
+import SlyNamingConventions from '../utilities/SlyNamingConventions'
 import SlyCommonPrograms from './SlyCommonPrograms'
 import SlyCommonExceptions from './SlyCommonExceptions'
-import SlyNamingConventions from '../utilities/SlyNamingConventions'
-import SlyServiceModules from '../services/SlyServiceModules'
+import SlyCommonInterfaces from './SlyCommonInterfaces'
+import SlyCompareCharacters from './SlyCompareCharacters'
+import SlyParsingWords from './SlyParsingWords'
+import SlyBatchGenerators from './SlyBatchGenerators'
 
 //
 import { connect } from 'react-redux'
@@ -40,28 +44,33 @@ class SlyCommonMissingParts extends Component {
         const { serviceItem } = this.props
 
         let buttons = null
-        if (serviceItem === "SlyServiceItem1") {
+        if (serviceItem === "SlyNamingConventions") {
             buttons = <>
-            <h3>SlyServiceItem1</h3>
             <SlyNamingConventions />
             </>
-        } else if (serviceItem === "SlyServiceItem2") {
+        } else if (serviceItem === "SlyCommonPrograms") {
             buttons = <>
-            <h3>SlyServiceItem2</h3>
             <SlyCommonPrograms />
             </>
-        } else if (serviceItem === "SlyServiceItem3") {
+        } else if (serviceItem === "SlyCommonExceptions") {
             buttons = <>
-            <h3>SlyServiceItem3</h3>
             <SlyCommonExceptions />
             </>
-        } else if (serviceItem === "SlyServiceItem4") {
+        } else if (serviceItem === "SlyCommonInterfaces") {
             buttons = <>
-            <h3>SlyServiceItem4</h3>
+            <SlyCommonInterfaces />
             </>
-        } else if (serviceItem === "SlyServiceItem5") {
+        } else if (serviceItem === "SlyCompareCharacters") {
             buttons = <>
-            <h3>SlyServiceItem5</h3>
+            <SlyCompareCharacters />
+            </>
+        } else if (serviceItem === "SlyParsingWords") {
+            buttons = <>
+            <SlyParsingWords />
+            </>
+        } else if (serviceItem === "SlyBatchGenerators") {
+            buttons = <>
+            <SlyBatchGenerators />
             </>
         }
 
@@ -71,8 +80,6 @@ class SlyCommonMissingParts extends Component {
                 <div className="sly-common-missing-parts-wrapper">
                     {/* <h1>[SlyCommonMissingParts]</h1> */}
                     <div className="sly-common-missing-parts-comp-left" style={styleCompLeft} >
-                        <SlyServiceModules />
-                        <SlyServiceModules />
                         <SlyServiceModules />
                     </div>
                     <div className="sly-common-missing-parts-comp-right" style={styleCompRight} >

@@ -4,7 +4,7 @@
   overflow-y: auto;
   position: sticky;
   overflow-x: hidden;
-  width: 108px;
+  width: 128px;
 }
 @media screen and (min-width: 97.2931rem) {
   .sly-common-missing-parts-comp-left {
