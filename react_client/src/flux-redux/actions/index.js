@@ -1,7 +1,7 @@
 import C from '../constants'
 import fetch from 'isomorphic-fetch'
-// import axios from 'axios'
-const store = require('store')
+import axios from 'axios'
+const zlstore = require('store')
 
 export const addAction = (num) => {
     return {
@@ -67,8 +67,13 @@ export const fetchAstronautsAction = (data) => {
                 return response.json()
             })
             .then(response => {
-                store.set("astronauts", response.token)
-                dispatch({type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, astronauts: response.token})
+                zlstore.set("astronauts", response.token)
+                zlstore.set("username", response.username)
+                dispatch({
+                    type: C.ADD_ASTRONAUTS_FETCH_SUCCESS, 
+                    astronauts: response.token,
+                    username: response.username,
+                })
                 return response
             })
             .catch(error => {
@@ -83,13 +88,73 @@ export const fetchAstronautsAction = (data) => {
 
 //
 export const userSignoutAction = () => {
-    store.remove("astronauts")
+    zlstore.remove("astronauts")
+    zlstore.remove("username")
     return {
         type: C.USER_SIGNOUT,
         payload: {
             
         }
     }
+}
+//
+export const userRestoreAction = (profile) => {
+    return {
+        type: C.USER_RESTORE,
+        // payload: {
+        //     ...profile,
+        // },
+        ...profile,
+    }
+}
+export const fetchUserNativeDataAction = (profile) => {
+    return (dispatch) => {
+        if (!profile.username) {
+            dispatch({
+                type: C.USER_NATIVE_DATA, 
+                payload: {
+                    // ...response.data,
+                }
+            })
+            return
+        }
+        axios
+        .get(`/fyrb_users/${profile.username}`, 
+            {
+                params: {
+
+                },
+                headers: {
+                    'Authorization': profile.astronauts,
+                }
+            }
+        )
+        .then((response) => {
+            dispatch({
+                type: C.USER_NATIVE_DATA, 
+                payload: {
+                    ...response.data,
+                }
+            })
+
+        })
+        .catch((error) => {
+            console.log(error)
+            dispatch({
+                type: C.USER_NATIVE_DATA, 
+                payload: {
+                    // ...response.data,
+                }
+            })
+        })
+    }
+    // return {
+    //     type: C.USER_NATIVE_DATA,
+    //     // payload: {
+    //     //     ...profile,
+    //     // },
+    //     ...profile,
+    // }
 }
 //
 export const addMenuAction = (menu) => {

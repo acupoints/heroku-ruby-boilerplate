@@ -9,8 +9,10 @@ import SlyMenuProfiles from '../menus/SlyMenuProfiles'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { userRestoreAction } from '../../../flux-redux/actions'
+import { fetchUserNativeDataAction } from '../../../flux-redux/actions'
 //
-const store = require('store')
+const zlstore = require('store')
 
 class SlyCompRight extends Component {
 
@@ -18,11 +20,33 @@ class SlyCompRight extends Component {
     //     super()
     // }
 
+    componentDidMount () {
+        const profile = {
+            astronauts: zlstore.get("astronauts"),
+            username: zlstore.get("username"),
+        }
+        const { astronauts } = this.props
+        const { userRestore } = this.props
+        if (profile.astronauts && !astronauts) {
+            userRestore(profile)
+        }
+        //
+        // const { fetchUserNativeData, nativeData } = this.props
+        // if (JSON.stringify(nativeData) === '{}') {
+        //     fetchUserNativeData(profile)
+        // }
+    }
+
     render () {
         const { astronauts } = this.props
+        const profile = {
+            astronauts: zlstore.get("astronauts"),
+            username: zlstore.get("username"),
+        }
+        
         //
         let buttons = null
-        if (astronauts||store.get("astronauts")) {
+        if (astronauts||profile.astronauts) {
             buttons = <>
                 <SlyMenuTools />
                 <SlyMenuProfiles />
@@ -52,5 +76,15 @@ const mapStateToProps = state => {
     return state.astronautsReducer
 }
 
-// export default connect(mapStateToProps)(SlyCompRight)
-export default connect(mapStateToProps)(withRouter(SlyCompRight))
+const mapDispatchToProps = dispatch => {
+    return {
+        userRestore: (profile) => {
+            dispatch(userRestoreAction(profile))
+        },
+        fetchUserNativeData: (profile) => {
+            dispatch(fetchUserNativeDataAction(profile))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SlyCompRight))

@@ -2,12 +2,14 @@ import C from '../constants'
 
 const initialState = {
     astronauts: null,
+    username: null,
     pending: false,
     error: null,
     menus: {
         "menu-tools": false,
         "menu-profiles": false,
     },
+    nativeData: {},
 }
 
 export const astronautsReducer = (state = initialState, action) => {
@@ -21,12 +23,14 @@ export const astronautsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 astronauts: action.astronauts,
+                username: action.username,
                 pending: false,
             }
         case C.ADD_ASTRONAUTS_FETCH_FAUILE:
             return {
                 ...state,
-                astronauts: action.astronauts,
+                astronauts: null,
+                username: null,
                 pending: false,
                 error: action.error,
             }
@@ -34,8 +38,22 @@ export const astronautsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 astronauts: null,
+                username: null,
                 pending: false,
                 error: null,
+            }
+        case C.USER_RESTORE:
+            return {
+                ...state,
+                astronauts: action.astronauts,
+                username: action.username,
+                pending: false,
+                error: null,
+            }
+        case C.USER_NATIVE_DATA:
+            return {
+                ...state,
+                nativeData: action.payload,
             }
         case C.ADD_MENU:
             return {

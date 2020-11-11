@@ -10,10 +10,12 @@ import SlyCompareCharacters from './SlyCompareCharacters'
 import SlyParsingWords from './SlyParsingWords'
 import SlyBatchGenerators from './SlyBatchGenerators'
 
+import SlyCommonEcho from './SlyCommonEcho'
+
 //
 import { connect } from 'react-redux'
-import { setContainerHeightAction } from '../../../flux-redux/actions'
 import { withRouter } from 'react-router-dom'
+import { setContainerHeightAction } from '../../../flux-redux/actions'
 
 class SlyCommonMissingParts extends Component {
 
@@ -71,6 +73,10 @@ class SlyCommonMissingParts extends Component {
         } else if (serviceItem === "SlyBatchGenerators") {
             buttons = <>
             <SlyBatchGenerators />
+            </>
+        } else {
+            buttons = <>
+            <SlyCommonEcho />
             </>
         }
 

@@ -8,6 +8,7 @@ import SlyLinkButton from '../menus/SlyLinkButton'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction } from '../../../flux-redux/actions'
+import { setServiceItemAction, fetchUserNativeDataAction } from '../../../flux-redux/actions'
 
 
 class SlyCompLeft extends Component {
@@ -29,6 +30,9 @@ class SlyCompLeft extends Component {
     handleClickFeatures = () => {
         console.log("--handleClickFeatures")
         this.props.history.push("/my/SlyCommonMissingParts")
+        // this.modifyServiceItem("")
+        // this.modifyServiceItem("SlyCommonEcho")
+        // this.refreshUserNativeData()
     }
     
     handleClickSolutions = () => {
@@ -37,6 +41,25 @@ class SlyCompLeft extends Component {
         this.props.history.push("/my/SlyCommonSolutions")
     }
 
+    modifyServiceItem = (tag) => {
+        return () => {
+            const { setServiceItem } = this.props
+            console.log(`--> ${tag}`)
+            setServiceItem(tag)
+        }
+    }
+
+    refreshUserNativeData = () => {
+        const { astronauts, username, nativeData } = this.props
+        const { fetchUserNativeData } = this.props
+        const profile = {
+            astronauts,
+            username,
+        }
+        if (JSON.stringify(nativeData) === '{}') {
+            fetchUserNativeData(profile)
+        }
+    }
 
     render () {
         return (
@@ -85,6 +108,12 @@ const mapDispatchToProps = dispatch => {
         },
         clearMenu: () => {
             dispatch(clearMenuAction())
+        },
+        setServiceItem: (serviceItem) => {
+            dispatch(setServiceItemAction(serviceItem))
+        },
+        fetchUserNativeData: (profile) => {
+            dispatch(fetchUserNativeDataAction(profile))
         },
     }
 }
