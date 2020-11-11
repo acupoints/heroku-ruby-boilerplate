@@ -6,6 +6,7 @@ import SlyInputField from './SlyInputField'
 import SlyButton from './SlyButton'
 import { Link } from 'react-router-dom'
 import D3Card from '../D3Card'
+import SlyLoginPrompt from './specials/SlyLoginPrompt'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -39,12 +40,22 @@ class SlyPageLogin extends Component {
 
     render () {
         const { error } = this.props
+        let buttons = null
+        if (error) {
+            buttons=<>
+            <SlyLoginPrompt text={JSON.parse(error).statusText} />
+            </>
+        } else {
+            buttons=<>
+            </>
+        }
         return (
             <div className="sly-page-content">
                 <D3Card />
                 <div className="sly-page-login-container">
                     {/* <h1>[SlyPageLogin]</h1> */}
-                    {error&&JSON.parse(error).statusText}
+                    {/* {error&&JSON.parse(error).statusText} */}
+                    {buttons}
                     <h1>Sign in to FyHub</h1>
                     <div className="sly-page-login-form">
                         <SlyInputField label="Email" type="email" ref={this.email} placeholder="email..." />

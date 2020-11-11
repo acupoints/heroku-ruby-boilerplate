@@ -29,36 +29,23 @@ class SlyCompLeft extends Component {
 
     handleClickFeatures = () => {
         console.log("--handleClickFeatures")
-        this.props.history.push("/my/SlyCommonMissingParts")
-        // this.modifyServiceItem("")
-        // this.modifyServiceItem("SlyCommonEcho")
-        // this.refreshUserNativeData()
+        // this.props.history.push("/my/SlyCommonMissingParts")
+
+        const { history } = this.props
+        const { setServiceItem } = this.props
+        console.log("-->", history.location.pathname)
+        if (history.location.pathname === "/my/SlyCommonMissingParts") {
+            // setServiceItem("SlyCommonEcho")
+            setServiceItem("")
+        } else {
+            this.props.history.push("/my/SlyCommonMissingParts")
+        }
     }
     
     handleClickSolutions = () => {
         console.log("--handleClickSolutions")
         // this.props.history.push("/")
         this.props.history.push("/my/SlyCommonSolutions")
-    }
-
-    modifyServiceItem = (tag) => {
-        return () => {
-            const { setServiceItem } = this.props
-            console.log(`--> ${tag}`)
-            setServiceItem(tag)
-        }
-    }
-
-    refreshUserNativeData = () => {
-        const { astronauts, username, nativeData } = this.props
-        const { fetchUserNativeData } = this.props
-        const profile = {
-            astronauts,
-            username,
-        }
-        if (JSON.stringify(nativeData) === '{}') {
-            fetchUserNativeData(profile)
-        }
     }
 
     render () {

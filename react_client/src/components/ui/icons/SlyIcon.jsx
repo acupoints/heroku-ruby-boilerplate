@@ -152,6 +152,7 @@ class SlyIcon extends Component {
     render () {
         const { funcHandle } = this.props
         const { size_x, size_y, fill, padding, direction, pattern } = this.props
+        const { extclass } = this.props
         //
         let buttons = null
         if (direction.toLowerCase()==="embedded") {
@@ -351,7 +352,7 @@ class SlyIcon extends Component {
             </>
         }
         return (
-            <div className="sly-icon-container">
+            <div className={["sly-icon-container"].concat(extclass.split(" ")).join(" ")}>
                 {/* <h1>[SlyIcon]</h1> */}
                 <div ref={this.myRef} onClick={funcHandle} style={{padding: padding}} className="sly-icon">
                     {buttons}
@@ -374,6 +375,7 @@ SlyIcon.propTypes = {
     pattern: PropTypes.string.isRequired,
     uuid4: PropTypes.string.isRequired,
     funcHandle: PropTypes.func.isRequired,
+    extclass: PropTypes.string.isRequired,
 }
 
 SlyIcon.defaultProps = {
@@ -388,6 +390,7 @@ SlyIcon.defaultProps = {
     pattern: "logo", // embedded:=logo/search/setting/new/remove/up/down/left/right //Ignore the value of rect_width
     uuid4: "", // Generate a comic background for empty, a corner image for uuid4, and an initial capital pattern for others
     funcHandle: f => f,
+    extclass: "",
 }
 
 export default SlyIcon

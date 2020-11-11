@@ -36,3 +36,12 @@
   flex-direction: row;
   align-items: center;
 }
+.sly-icon-container.common {
+  position: absolute;
+  z-index: 1;
+}
+@media screen and (min-width: 36.52387rem) {
+  .sly-icon-container.common {
+    pointer-events: none;
+  }
+}
