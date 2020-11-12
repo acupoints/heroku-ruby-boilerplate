@@ -28,19 +28,12 @@ class SlyCommonMissingParts extends Component {
         const { headerHeight, bannerHeight } = containers
 
         const styleCompLeft = {
-            // paddingTop: headerHeight,
-            // paddingBottom: bannerHeight,
             top: headerHeight,
-            // height: `calc(100vh - ${headerHeight + bannerHeight + 48}px)`,
             height: `calc(100vh - ${headerHeight + bannerHeight}px)`,
         }
         const styleCompRight = {
-            // paddingTop: headerHeight,
-            // paddingBottom: bannerHeight,
-            marginBottom: bannerHeight,
-            // top: headerHeight,
-            // height: `calc(100vh - ${headerHeight + bannerHeight + 48}px)`,
-            // height: `calc(100vh - ${headerHeight + bannerHeight}px)`,
+            top: headerHeight,
+            height: `calc(100vh - ${headerHeight + bannerHeight}px)`,
         }
         //
         const { serviceItem } = this.props

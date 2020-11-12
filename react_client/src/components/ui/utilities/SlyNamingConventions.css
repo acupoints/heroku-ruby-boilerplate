@@ -1,3 +1,11 @@
+.sly-naming-conventions-wrapper {
+  background-color: aliceblue;
+  flex: 1;
+  display: flex;
+}
+
 .sly-naming-conventions-container {
   background-color: #cfd8dc;
+  flex: 1;
+  display: flex;
 }

@@ -15,7 +15,11 @@ class SlyBanner extends Component {
         this.myRef = React.createRef()
     }
 
-    componentDidMount() {
+    componentDidMount () {
+        this.refreshContainerHeight()
+    }
+
+    refreshContainerHeight = () => {
         let containerHeight = 0
         // console.log("--> SlyBanner:", this.myRef.current)
         if (this.myRef.current!==null) {
@@ -28,6 +32,7 @@ class SlyBanner extends Component {
             height: containerHeight,
         })
     }
+
 
     render () {
         return (
