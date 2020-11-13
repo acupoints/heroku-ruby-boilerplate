@@ -1,14 +1,27 @@
 import React, { Component } from 'react'
 import './SlyCommonMissingParts.css'
 //
-import SlyServiceModules from '../services/SlyServiceModules'
-import SlyNamingConventions from '../utilities/SlyNamingConventions'
+// import SlyServiceModules from '../services/SlyServiceModules'
+import SlyServiceUtilities from '../services/SlyServiceUtilities'
+import SlyServiceAlternatives from '../services/SlyServiceAlternatives'
+// Utilities
 import SlyCommonPrograms from './SlyCommonPrograms'
 import SlyCommonExceptions from './SlyCommonExceptions'
 import SlyCommonInterfaces from './SlyCommonInterfaces'
-import SlyCompareCharacters from './SlyCompareCharacters'
 import SlyParsingWords from './SlyParsingWords'
+import SlyNamingConventions from '../utilities/SlyNamingConventions'
 import SlyBatchGenerators from './SlyBatchGenerators'
+import SlyCompareCharacters from './SlyCompareCharacters'
+// Alternatives
+import SlyColorExtractors from './SlyColorExtractors'
+import SlyThreadWorkers from './SlyThreadWorkers'
+import SlyScheduledTasks from './SlyScheduledTasks'
+import SlyIconModifiers from './SlyIconModifiers'
+import SlyShellMappers from './SlyShellMappers'
+import SlyCodeConverters from './SlyCodeConverters'
+import SlyVectorEditors from './SlyVectorEditors'
+import SlyChartGenerators from './SlyChartGenerators'
+import SlyAtomicRenderers from './SlyAtomicRenderers'
 
 import SlyCommonEcho from './SlyCommonEcho'
 
@@ -39,11 +52,8 @@ class SlyCommonMissingParts extends Component {
         const { serviceItem } = this.props
 
         let buttons = null
-        if (serviceItem === "SlyNamingConventions") {
-            buttons = <>
-            <SlyNamingConventions />
-            </>
-        } else if (serviceItem === "SlyCommonPrograms") {
+        // Utilities
+        if (serviceItem === "SlyCommonPrograms") {
             buttons = <>
             <SlyCommonPrograms />
             </>
@@ -55,17 +65,59 @@ class SlyCommonMissingParts extends Component {
             buttons = <>
             <SlyCommonInterfaces />
             </>
-        } else if (serviceItem === "SlyCompareCharacters") {
-            buttons = <>
-            <SlyCompareCharacters />
-            </>
         } else if (serviceItem === "SlyParsingWords") {
             buttons = <>
             <SlyParsingWords />
             </>
+        } else if (serviceItem === "SlyNamingConventions") {
+            buttons = <>
+            <SlyNamingConventions />
+            </>
         } else if (serviceItem === "SlyBatchGenerators") {
             buttons = <>
             <SlyBatchGenerators />
+            </>
+        } else if (serviceItem === "SlyCompareCharacters") {
+            buttons = <>
+            <SlyCompareCharacters />
+            </>
+        } else 
+        // Alternatives
+        if (serviceItem === "SlyColorExtractors") {
+            buttons = <>
+            <SlyColorExtractors />
+            </>
+        } else if (serviceItem === "SlyThreadWorkers") {
+            buttons = <>
+            <SlyThreadWorkers />
+            </>
+        } else if (serviceItem === "SlyScheduledTasks") {
+            buttons = <>
+            <SlyScheduledTasks />
+            </>
+        } else if (serviceItem === "SlyIconModifiers") {
+            buttons = <>
+            <SlyIconModifiers />
+            </>
+        } else if (serviceItem === "SlyShellMappers") {
+            buttons = <>
+            <SlyShellMappers />
+            </>
+        } else if (serviceItem === "SlyCodeConverters") {
+            buttons = <>
+            <SlyCodeConverters />
+            </>
+        } else if (serviceItem === "SlyVectorEditors") {
+            buttons = <>
+            <SlyVectorEditors />
+            </>
+        } else if (serviceItem === "SlyChartGenerators") {
+            buttons = <>
+            <SlyChartGenerators />
+            </>
+        } else if (serviceItem === "SlyAtomicRenderers") {
+            buttons = <>
+            <SlyAtomicRenderers />
             </>
         } else {
             buttons = <>
@@ -79,7 +131,9 @@ class SlyCommonMissingParts extends Component {
                 <div className="sly-common-missing-parts-wrapper">
                     {/* <h1>[SlyCommonMissingParts]</h1> */}
                     <div className="sly-common-missing-parts-comp-left" style={styleCompLeft} >
-                        <SlyServiceModules />
+                        {/* <SlyServiceModules /> */}
+                        <SlyServiceUtilities />
+                        <SlyServiceAlternatives />
                     </div>
                     <div className="sly-common-missing-parts-comp-right" style={styleCompRight} >
                         {buttons}
