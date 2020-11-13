@@ -17,9 +17,17 @@ class SlyHeader extends Component {
         this.myRef = React.createRef()
     }
 
-    componentDidMount() {
+    componentDidMount () {
+        this.updateDimensions()
+        window.addEventListener("resize", this.updateDimensions)
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener("resize", this.updateDimensions)
+    }
+
+    updateDimensions = () => {
         let containerHeight = 0
-        // console.log("--> SlyNotice:", this.myRef.current)
         if (this.myRef.current!==null) {
             containerHeight = this.myRef.current.clientHeight
         }
