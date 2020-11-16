@@ -28,20 +28,27 @@ class SlyCommonEcho extends Component {
         //     userRestore(profile)
         // }
         //
-        const { fetchUserNativeData, nativeData } = this.props
-        if (JSON.stringify(nativeData) === '{}') {
-            fetchUserNativeData(profile)
-        }
+        const { fetchUserNativeData } = this.props
+        // const { fetchUserNativeData, nativeData } = this.props
+        // if (JSON.stringify(nativeData) === '{}') {
+        //     fetchUserNativeData(profile)
+        // }
+        fetchUserNativeData(profile)
     }
 
     render () {
         const { nativeData } = this.props
+        let buttons = null
+        buttons = <>
+        {JSON.stringify(nativeData)}
+        </>
+
         return (
             <div className="sly-common-echo-container">
                 {/* <h1>[SlyCommonEcho]</h1> */}
                 <div className="sly-common-echo-wrapper">
                     <h1>[SlyCommonEcho]</h1>
-                    {JSON.stringify(nativeData)}
+                    {buttons}
                 </div>
             </div>
         )

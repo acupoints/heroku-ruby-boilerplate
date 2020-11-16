@@ -345,6 +345,85 @@ class SlyIcon extends Component {
                         </g>
                     </svg>
                 </>
+            } else if (pattern.toLowerCase()==="feather") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 26.595095,262.0862 c 0,0 29.168704,-50.62047 78.309595,-68.20348 0,0 -73.726829,44.43869 -77.318722,75.60993"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.22665381px"}}
+                                />
+                                <path
+                                d="m 39.693137,253.45506 c 0,0 15.730044,2.77012 31.460083,-8.33955 15.730049,-11.10968 -11.45691,-3.70321 -11.45691,-3.70321 0,0 43.90788,-12.97588 24.895575,-13.26747 -19.012301,-0.32074 -1.641131,-17.90378 14.770157,-20.38231 16.380298,-2.4494 14.088908,-22.8317 14.088908,-22.8317"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.22665381px"}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
+            } else if (pattern.toLowerCase()==="topper") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 38.634145,221.49503 c -2.308323,4.13014 -28.6538086,23.83495 -4.616615,33.41934 24.067927,9.55292 71.55752,-32.25282 71.28052,-51.45318 -0.24618,-19.20036 -26.407045,-13.11551 -33.762835,0 -7.35582,13.11552 -32.90107,18.03384 -32.90107,18.03384 z"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.30830741px"}}
+                                />
+                                <path
+                                d="m 55.100047,226.50795 c 0,0 -18.958871,12.42191 -4.92438,19.23189 14.065287,6.80996 36.963685,-17.43482 36.963685,-17.43482 0,0 31.023658,-33.32475 -9.233198,-14.78649 -40.287686,18.5383 -11.78779,5.32819 2.308292,8.85928"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.30830741px"}}
+                                />
+                                <path
+                                d="m 57.13137,256.23856 c 4.924379,-5.67501 19.081988,0.40986 32.316302,5.89566 13.234288,5.48583 8.67923,-3.68873 11.264528,-23.362 2.55452,-19.64176 -7.232668,14.78649 -7.232668,14.78649"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.30830741px"}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
+            } else if (pattern.toLowerCase()==="clock") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 67.564936,181.68573 -43.001721,23.56637 -0.167288,47.47531 43.336094,24.11447 43.336129,-23.94317 -0.33424,-47.81788 z"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.30830741px"}}
+                                />
+                                <path
+                                d="m 34.26035,210.32161 c 0,0 31.331708,-16.92122 64.770088,-2.53474 19.327362,8.32359 -47.081203,14.31794 -47.081203,14.31794 0,0 -7.256123,1.64418 0.902812,7.26176 8.125545,5.61755 11.502793,0 12.204995,19.59296 l 4.781687,7.94682 c 0,0 -2.675047,-20.9974 9.897779,-24.45697"
+                                style={{fill: "none", stroke: fill, strokeWidth:"2.30830741px"}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
             }
             
         } else {
@@ -387,7 +466,7 @@ SlyIcon.defaultProps = {
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
     direction: "vertical", // horizontal/vertical/orthogonal/loading/corner/embedded
     shape: "square", // loading,corner:=square/round/pulse/avatar
-    pattern: "logo", // embedded:=logo/search/setting/new/remove/up/down/left/right //Ignore the value of rect_width
+    pattern: "logo", // embedded:=logo/search/setting/new/remove/up/down/left/right/feather/topper/clock //Ignore the value of rect_width
     uuid4: "", // Generate a comic background for empty, a corner image for uuid4, and an initial capital pattern for others
     funcHandle: f => f,
     extclass: "",

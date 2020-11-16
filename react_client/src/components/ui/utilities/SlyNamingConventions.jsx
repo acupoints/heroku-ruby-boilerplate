@@ -12,7 +12,7 @@ import 'ace-builds/src-noconflict/mode-sh'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { setContainerHeightAction } from '../../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../../flux-redux/actions'
 
 
 class SlyNamingConventions extends Component {
@@ -87,8 +87,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

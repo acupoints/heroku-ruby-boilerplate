@@ -16,10 +16,26 @@ class SlyServiceItem extends Component {
     // }
 
     render () {
+        const { direction } = this.props
+        let style = {}
+        if (direction === "horizontal") {
+            style = {
+                "flex": 1,
+                "display": "flex",
+                "flexDirection": "row",
+            }
+        } else if (direction === "vertical") {
+            style = {
+                "flex": 1,
+                "display": "flex",
+                "flexDirection": "column",
+            }
+        }
+        
         return (
             <div className="sly-service-item-container">
                 {/* <h1>[SlyServiceItem]</h1> */}
-                <div className="sly-service-item-wrapper">
+                <div className="sly-service-item-wrapper" style={style}>
                     {/* <h1>[SlyServiceItem]</h1> */}
                     {this.props.children}
                 </div>
@@ -30,11 +46,11 @@ class SlyServiceItem extends Component {
 
 //
 SlyServiceItem.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
+    direction: PropTypes.string.isRequired,
 }
 
 SlyServiceItem.defaultProps = {
-    isVisible: false,
+    direction: "vertical", // horizontal/vertical
 }
 
 // export default SlyServiceItem

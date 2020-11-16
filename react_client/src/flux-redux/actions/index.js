@@ -180,9 +180,9 @@ export const clearMenuAction = () => {
 }
 
 // Settings
-export const setContainerHeightAction = (container) => {
+export const setContainerDimensionsAction = (container) => {
     return {
-        type: C.SETTINGS_SET_CONTAINER_HEIGHT,
+        type: C.SETTINGS_SET_CONTAINER_DIMENSIONS,
         container: {
             ...container,
         }
@@ -190,17 +190,17 @@ export const setContainerHeightAction = (container) => {
 }
 export const setContainerThemeColorAction = (container) => {
     return {
-        type: C.SETTINGS_SET_CONTAINER_HEIGHT,
+        type: C.SETTINGS_SET_CONTAINER_THEME_COLOR,
         container: {
             ...container,
         }
     }
 }
-export const setServiceItemAction = (serviceItem) => {
+export const setSelectedItemAction = (container) => {
     return {
-        type: C.SETTINGS_SET_SERVICE_ITEM,
-        payload: {
-            serviceItem
+        type: C.SETTINGS_SET_SELECTED_ITEM,
+        container: {
+            ...container,
         }
     }
 }

@@ -8,7 +8,7 @@ import SlyLinkButton from '../menus/SlyLinkButton'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction } from '../../../flux-redux/actions'
-import { setServiceItemAction, fetchUserNativeDataAction } from '../../../flux-redux/actions'
+import { fetchUserNativeDataAction } from '../../../flux-redux/actions'
 
 
 class SlyCompLeft extends Component {
@@ -96,14 +96,10 @@ const mapDispatchToProps = dispatch => {
         clearMenu: () => {
             dispatch(clearMenuAction())
         },
-        setServiceItem: (serviceItem) => {
-            dispatch(setServiceItemAction(serviceItem))
-        },
         fetchUserNativeData: (profile) => {
             dispatch(fetchUserNativeDataAction(profile))
         },
     }
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(SlyCompLeft)
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SlyCompLeft))

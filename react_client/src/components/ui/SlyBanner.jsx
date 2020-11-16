@@ -4,7 +4,7 @@ import './SlyBanner.css'
 import SlyBulletinBoard from './SlyBulletinBoard'
 //
 import { connect } from 'react-redux'
-import { setContainerHeightAction } from '../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../flux-redux/actions'
 import { withRouter } from 'react-router-dom'
 
 class SlyBanner extends Component {
@@ -34,10 +34,10 @@ class SlyBanner extends Component {
             containerHeight = this.myRef.current.clientHeight
         }
 
-        const { setContainerHeight } = this.props
-        setContainerHeight({
+        const { setContainerDimensions } = this.props
+        setContainerDimensions({
             tag: "bannerHeight",
-            height: containerHeight,
+            dimensions: containerHeight,
         })
     }
 
@@ -61,8 +61,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

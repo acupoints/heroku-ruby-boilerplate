@@ -6,7 +6,7 @@ import SlyCompLeft from './SlyCompLeft'
 import SlyCompRight from './SlyCompRight'
 //
 import { connect } from 'react-redux'
-import { setContainerHeightAction } from '../../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../../flux-redux/actions'
 import { withRouter } from 'react-router-dom'
 
 class SlyHeader extends Component {
@@ -32,10 +32,10 @@ class SlyHeader extends Component {
             containerHeight = this.myRef.current.clientHeight
         }
 
-        const { setContainerHeight } = this.props
-        setContainerHeight({
+        const { setContainerDimensions } = this.props
+        setContainerDimensions({
             tag: "headerHeight",
-            height: containerHeight + 3,
+            dimensions: containerHeight + 3,
         })
     }
 
@@ -73,8 +73,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

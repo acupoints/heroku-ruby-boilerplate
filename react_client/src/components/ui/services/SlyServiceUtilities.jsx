@@ -8,7 +8,7 @@ import SlyServiceItem from './SlyServiceItem'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction  } from '../../../flux-redux/actions'
-import { setServiceItemAction  } from '../../../flux-redux/actions'
+import { setSelectedItemAction  } from '../../../flux-redux/actions'
 
 
 class SlyServiceUtilities extends Component {
@@ -17,11 +17,15 @@ class SlyServiceUtilities extends Component {
     //     super()
     // }
 
-    modifyServiceItem = (tag) => {
+    modifySelectedItem = (tag) => {
         return () => {
-            const { setServiceItem } = this.props
+            const { setSelectedItem } = this.props
             console.log(`--> ${tag}`)
-            setServiceItem(tag)
+            setSelectedItem({
+                tag: "serviceItem",
+                selected: tag,
+                // target: "parsing_words",
+            })
         }
     }
 
@@ -29,13 +33,13 @@ class SlyServiceUtilities extends Component {
         let buttons = null
         buttons = <>
         <SlyServiceItem>
-            <SlyLinkButton extraStyle="push" text="SlyCommonPrograms" funcHandle={this.modifyServiceItem("SlyCommonPrograms")} />
-            <SlyLinkButton extraStyle="push" text="SlyCommonExceptions" funcHandle={this.modifyServiceItem("SlyCommonExceptions")} />
-            <SlyLinkButton extraStyle="push" text="SlyCommonInterfaces" funcHandle={this.modifyServiceItem("SlyCommonInterfaces")} />
-            <SlyLinkButton extraStyle="push" text="SlyParsingWords" funcHandle={this.modifyServiceItem("SlyParsingWords")} />
-            <SlyLinkButton extraStyle="push" text="SlyNamingConventions" funcHandle={this.modifyServiceItem("SlyNamingConventions")} />
-            <SlyLinkButton extraStyle="push" text="SlyBatchGenerators" funcHandle={this.modifyServiceItem("SlyBatchGenerators")} />
-            <SlyLinkButton extraStyle="push" text="SlyCompareCharacters" funcHandle={this.modifyServiceItem("SlyCompareCharacters")} />
+            <SlyLinkButton extraStyle="push" text="SlyCommonPrograms" funcHandle={this.modifySelectedItem("SlyCommonPrograms")} />
+            <SlyLinkButton extraStyle="push" text="SlyCommonExceptions" funcHandle={this.modifySelectedItem("SlyCommonExceptions")} />
+            <SlyLinkButton extraStyle="push" text="SlyCommonInterfaces" funcHandle={this.modifySelectedItem("SlyCommonInterfaces")} />
+            <SlyLinkButton extraStyle="push" text="SlyParsingWords" funcHandle={this.modifySelectedItem("SlyParsingWords")} />
+            <SlyLinkButton extraStyle="push" text="SlyNamingConventions" funcHandle={this.modifySelectedItem("SlyNamingConventions")} />
+            <SlyLinkButton extraStyle="push" text="SlyBatchGenerators" funcHandle={this.modifySelectedItem("SlyBatchGenerators")} />
+            <SlyLinkButton extraStyle="push" text="SlyCompareCharacters" funcHandle={this.modifySelectedItem("SlyCompareCharacters")} />
         </SlyServiceItem>
         </>
         return (
@@ -74,10 +78,9 @@ const mapDispatchToProps = dispatch => {
         clearMenu: () => {
             dispatch(clearMenuAction())
         },
-        setServiceItem: (serviceItem) => {
-            dispatch(setServiceItemAction(serviceItem))
+        setSelectedItem: (container) => {
+            dispatch(setSelectedItemAction(container))
         },
-        
     }
 }
 

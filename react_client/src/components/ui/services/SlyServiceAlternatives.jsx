@@ -8,7 +8,7 @@ import SlyServiceItem from './SlyServiceItem'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction  } from '../../../flux-redux/actions'
-import { setServiceItemAction  } from '../../../flux-redux/actions'
+import { setSelectedItemAction  } from '../../../flux-redux/actions'
 
 
 class SlyServiceAlternatives extends Component {
@@ -17,11 +17,15 @@ class SlyServiceAlternatives extends Component {
     //     super()
     // }
 
-    modifyServiceItem = (tag) => {
+    modifySelectedItem = (tag) => {
         return () => {
-            const { setServiceItem } = this.props
+            const { setSelectedItem } = this.props
             console.log(`--> ${tag}`)
-            setServiceItem(tag)
+            setSelectedItem({
+                tag: "serviceItem",
+                selected: tag,
+                // target: "parsing_words",
+            })
         }
     }
 
@@ -29,15 +33,17 @@ class SlyServiceAlternatives extends Component {
         let buttons = null
         buttons = <>
         <SlyServiceItem>
-            <SlyLinkButton extraStyle="push" text="SlyColorExtractors" funcHandle={this.modifyServiceItem("SlyColorExtractors")} />
-            <SlyLinkButton extraStyle="push" text="SlyThreadWorkers" funcHandle={this.modifyServiceItem("SlyThreadWorkers")} />
-            <SlyLinkButton extraStyle="push" text="SlyScheduledTasks" funcHandle={this.modifyServiceItem("SlyScheduledTasks")} />
-            <SlyLinkButton extraStyle="push" text="SlyIconModifiers" funcHandle={this.modifyServiceItem("SlyIconModifiers")} />
-            <SlyLinkButton extraStyle="push" text="SlyShellMappers" funcHandle={this.modifyServiceItem("SlyShellMappers")} />
-            <SlyLinkButton extraStyle="push" text="SlyCodeConverters" funcHandle={this.modifyServiceItem("SlyCodeConverters")} />
-            <SlyLinkButton extraStyle="push" text="SlyVectorEditors" funcHandle={this.modifyServiceItem("SlyVectorEditors")} />
-            <SlyLinkButton extraStyle="push" text="SlyChartGenerators" funcHandle={this.modifyServiceItem("SlyChartGenerators")} />
-            <SlyLinkButton extraStyle="push" text="SlyAtomicRenderers" funcHandle={this.modifyServiceItem("SlyAtomicRenderers")} />
+            <SlyLinkButton extraStyle="push" text="SlyColorExtractors" funcHandle={this.modifySelectedItem("SlyColorExtractors")} />
+            <SlyLinkButton extraStyle="push" text="SlyThreadWorkers" funcHandle={this.modifySelectedItem("SlyThreadWorkers")} />
+            <SlyLinkButton extraStyle="push" text="SlyScheduledTasks" funcHandle={this.modifySelectedItem("SlyScheduledTasks")} />
+            <SlyLinkButton extraStyle="push" text="SlyIconModifiers" funcHandle={this.modifySelectedItem("SlyIconModifiers")} />
+            <SlyLinkButton extraStyle="push" text="SlyShellMappers" funcHandle={this.modifySelectedItem("SlyShellMappers")} />
+            <SlyLinkButton extraStyle="push" text="SlyCodeConverters" funcHandle={this.modifySelectedItem("SlyCodeConverters")} />
+            <SlyLinkButton extraStyle="push" text="SlyVectorEditors" funcHandle={this.modifySelectedItem("SlyVectorEditors")} />
+            <SlyLinkButton extraStyle="push" text="SlyChartGenerators" funcHandle={this.modifySelectedItem("SlyChartGenerators")} />
+            <SlyLinkButton extraStyle="push" text="SlyAtomicRenderers" funcHandle={this.modifySelectedItem("SlyAtomicRenderers")} />
+            <SlyLinkButton extraStyle="push" text="SlySymbolSheets" funcHandle={this.modifySelectedItem("SlySymbolSheets")} />
+            <SlyLinkButton extraStyle="push" text="SlyOfficialLinks" funcHandle={this.modifySelectedItem("SlyOfficialLinks")} />
         </SlyServiceItem>
         </>
         return (
@@ -76,10 +82,9 @@ const mapDispatchToProps = dispatch => {
         clearMenu: () => {
             dispatch(clearMenuAction())
         },
-        setServiceItem: (serviceItem) => {
-            dispatch(setServiceItemAction(serviceItem))
+        setSelectedItem: (container) => {
+            dispatch(setSelectedItemAction(container))
         },
-        
     }
 }
 

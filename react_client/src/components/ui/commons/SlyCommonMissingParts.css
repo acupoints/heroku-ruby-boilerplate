@@ -1,5 +1,6 @@
 .sly-common-missing-parts-comp-left {
   background-color: aliceblue;
+  margin-right: 4px;
   overflow-y: auto;
   position: sticky;
   overflow-x: hidden;

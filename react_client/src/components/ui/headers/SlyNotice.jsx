@@ -4,7 +4,7 @@ import './SlyNotice.css'
 
 //
 import { connect } from 'react-redux'
-import { setContainerHeightAction } from '../../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../../flux-redux/actions'
 import { withRouter } from 'react-router-dom'
 
 class SlyNotice extends Component {
@@ -22,10 +22,10 @@ class SlyNotice extends Component {
             containerHeight = this.myRef.current.clientHeight
         }
 
-        const { setContainerHeight } = this.props
-        setContainerHeight({
+        const { setContainerDimensions } = this.props
+        setContainerDimensions({
             tag: "noticeHeight",
-            height: containerHeight,
+            dimensions: containerHeight,
         })
     }
 
@@ -46,8 +46,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

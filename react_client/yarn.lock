@@ -1696,6 +1696,11 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
   integrity sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
 
+"@types/lodash@^4.14.165":
+  version "4.14.165"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.165.tgz#74d55d947452e2de0742bad65270433b63a8c30f"
+  integrity sha512-tjSSOTHhI5mCHTy/OOXYIhi2Wt1qcbHmuXD1Ha7q70CgI/I71afO4XtLb/cVexki1oVYchpul/TOuu3Arcdxrg==
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -3149,6 +3154,11 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codemirror@^5.58.2:
+  version "5.58.2"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
+  integrity sha512-K/hOh24cCwRutd1Mk3uLtjWzNISOkm4fvXiMO7LucCrqbh6aJDdtqUziim3MZUI6wOY0rvY1SlL1Ork01uMy6w==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -9379,6 +9389,11 @@ react-beautiful-dnd@^13.0.0:
     react-redux "^7.1.1"
     redux "^4.0.4"
     use-memo-one "^1.1.1"
+
+react-codemirror2@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-7.2.1.tgz#38dab492fcbe5fb8ebf5630e5bb7922db8d3a10c"
+  integrity sha512-t7YFmz1AXdlImgHXA9Ja0T6AWuopilub24jRaQdPVbzUJVNKIYuy3uCFZYa7CE5S3UW6SrSa5nAqVQvtzRF9gw==
 
 react-dev-utils@^10.2.1:
   version "10.2.1"

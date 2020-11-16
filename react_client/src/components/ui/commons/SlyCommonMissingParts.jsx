@@ -8,7 +8,7 @@ import SlyServiceAlternatives from '../services/SlyServiceAlternatives'
 import SlyCommonPrograms from './SlyCommonPrograms'
 import SlyCommonExceptions from './SlyCommonExceptions'
 import SlyCommonInterfaces from './SlyCommonInterfaces'
-import SlyParsingWords from './SlyParsingWords'
+import SlyParsingWords from './parsing-words/SlyParsingWords'
 import SlyNamingConventions from '../utilities/SlyNamingConventions'
 import SlyBatchGenerators from './SlyBatchGenerators'
 import SlyCompareCharacters from './SlyCompareCharacters'
@@ -22,13 +22,15 @@ import SlyCodeConverters from './SlyCodeConverters'
 import SlyVectorEditors from './SlyVectorEditors'
 import SlyChartGenerators from './SlyChartGenerators'
 import SlyAtomicRenderers from './SlyAtomicRenderers'
+import SlySymbolSheets from './SlySymbolSheets'
+import SlyOfficialLinks from './SlyOfficialLinks'
 
 import SlyCommonEcho from './SlyCommonEcho'
 
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { setContainerHeightAction } from '../../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../../flux-redux/actions'
 
 class SlyCommonMissingParts extends Component {
 
@@ -49,7 +51,7 @@ class SlyCommonMissingParts extends Component {
             height: `calc(100vh - ${headerHeight + bannerHeight}px)`,
         }
         //
-        const { serviceItem } = this.props
+        const { serviceItem } = this.props.containers
 
         let buttons = null
         // Utilities
@@ -119,6 +121,14 @@ class SlyCommonMissingParts extends Component {
             buttons = <>
             <SlyAtomicRenderers />
             </>
+        } else if (serviceItem === "SlySymbolSheets") {
+            buttons = <>
+            <SlySymbolSheets />
+            </>
+        } else if (serviceItem === "SlyOfficialLinks") {
+            buttons = <>
+            <SlyOfficialLinks />
+            </>
         } else {
             buttons = <>
             <SlyCommonEcho />
@@ -156,8 +166,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

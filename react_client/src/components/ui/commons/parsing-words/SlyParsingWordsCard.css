@@ -1,0 +1,48 @@
+.sly-parsing-words-card-wrapper {
+  margin: 12px 4px;
+  padding: 12px;
+  color: #673ab7;
+  background-color: #ede7f6;
+  border-left: 7px solid #673ab7;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  cursor: pointer;
+  user-select: none;
+}
+.sly-parsing-words-card-wrapper > h1 {
+  font-size: 1.2rem;
+}
+.sly-parsing-words-card-wrapper:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+  border-left: 7px solid #673ab7;
+}
+
+.sly-parsing-words-card-content {
+  border-top: 1px dashed #673ab7;
+  padding-top: 12px;
+}
+
+.sly-parsing-words-code-mirror {
+  font-size: 1.2rem;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  margin: 12px 4px;
+  border-left: 7px solid #ff9800;
+}
+
+.CodeMirror {
+  height: auto;
+}
+.CodeMirror.CodeMirror-wrap {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.CodeMirror-scroll {
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+}

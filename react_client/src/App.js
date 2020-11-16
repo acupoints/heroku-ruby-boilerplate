@@ -33,7 +33,7 @@ import SlyNotes from './components/ui/notes/SlyNotes'
 import SlyNotesView from './components/ui/notes/SlyNotesView'
 import SlyNotesSearch from './components/ui/notes/SlyNotesSearch'
 import SlyNotesEdit from './components/ui/notes/SlyNotesEdit'
-import SlyPaperclip from './components/ui/SlyPaperclip'
+import SlyPaperclip from './components/ui/notes/SlyPaperclip'
 
 import SlyYourProfiles from './components/ui/yours/SlyYourProfiles'
 import SlyYourTools from './components/ui/yours/SlyYourTools'

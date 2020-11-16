@@ -4,7 +4,7 @@ import './SlyMainComponents.css'
 
 //
 import { connect } from 'react-redux'
-import { setContainerHeightAction } from '../../flux-redux/actions'
+import { setContainerDimensionsAction } from '../../flux-redux/actions'
 import { withRouter } from 'react-router-dom'
 
 class SlyMainComponents extends Component {
@@ -42,8 +42,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setContainerHeight: (container) => {
-            dispatch(setContainerHeightAction(container))
+        setContainerDimensions: (container) => {
+            dispatch(setContainerDimensionsAction(container))
         },
     }
 }

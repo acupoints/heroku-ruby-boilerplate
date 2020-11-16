@@ -41,6 +41,7 @@ export const astronautsReducer = (state = initialState, action) => {
                 username: null,
                 pending: false,
                 error: null,
+                nativeData: {},
             }
         case C.USER_RESTORE:
             return {
