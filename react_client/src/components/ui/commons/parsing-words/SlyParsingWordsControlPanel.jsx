@@ -4,6 +4,7 @@ import './SlyParsingWordsControlPanel.css'
 // import SlyMenuItem from '../menus/SlyMenuItem'
 import SlyLinkButton from '../../menus/SlyLinkButton'
 import SlyServiceItem from '../../services/SlyServiceItem'
+import SlyIcon from '../../icons/SlyIcon'
 //
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -43,9 +44,15 @@ class SlyParsingWordsControlPanel extends Component {
         let buttons = null
         buttons = <>
         <SlyServiceItem direction="horizontal">
-            <SlyLinkButton extraStyle="push" text="reset" funcHandle={this.onReset} />
-            <SlyLinkButton extraStyle="push" text="save" funcHandle={this.onSave} />
-            <SlyLinkButton extraStyle="push" text="new" funcHandle={this.onReset} />
+            {/* <SlyLinkButton extraStyle="push" text="reset" funcHandle={this.onReset} /> */}
+            {/* <SlyLinkButton extraStyle="push" text="save" funcHandle={this.onSave} />
+            <SlyLinkButton extraStyle="push" text="new" funcHandle={this.onReset} /> */}
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="reload"
+                funcHandle={this.onReset} />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="okay"
+                funcHandle={this.onSave} />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="plus"
+                funcHandle={this.onReset} />
         </SlyServiceItem>
         </>
         return (
