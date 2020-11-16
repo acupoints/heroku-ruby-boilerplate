@@ -97,7 +97,8 @@ class SlyServiceManagers extends Component {
         }
 
         //
-        const { fyrb_terms } = this.props.nativeData
+        let { fyrb_terms } = this.props.nativeData
+        fyrb_terms = fyrb_terms || []
         const { tagTabPage } = this.props.parsing_words
         const { indexCard } = this.props.parsing_words
         let buttons = null

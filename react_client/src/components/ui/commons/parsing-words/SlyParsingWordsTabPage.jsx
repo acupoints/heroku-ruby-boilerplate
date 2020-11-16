@@ -34,20 +34,23 @@ class SlyParsingWordsTabPage extends Component {
         let buttons = null
         buttons = <>
         <SlyServiceItem direction="vertical">
-            <SlyLinkButton extraStyle="push" text="history" funcHandle={this.modifySelectedItem("history")} />
+            {/* <SlyLinkButton extraStyle="push" text="history" funcHandle={this.modifySelectedItem("history")} />
             <SlyLinkButton extraStyle="push" text="edit" funcHandle={this.modifySelectedItem("edit")} />
-            <SlyLinkButton extraStyle="push" text="remove" funcHandle={this.modifySelectedItem("remove")} />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="clock" />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="feather" />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="topper" />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="search" />
+            <SlyLinkButton extraStyle="push" text="remove" funcHandle={this.modifySelectedItem("remove")} /> */}
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="clock"
+                funcHandle={this.modifySelectedItem("history")} />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="feather"
+                funcHandle={this.modifySelectedItem("edit")} />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="topper"
+                funcHandle={this.modifySelectedItem("remove")} />
+            {/* <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="search" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="setting" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="new" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="remove" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="up" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="down" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="left" />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="right" />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="right" /> */}
         </SlyServiceItem>
         </>
         return (
