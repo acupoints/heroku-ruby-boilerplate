@@ -17,9 +17,9 @@ class SlyFoldedFilters extends Component {
             <div className="sly-folded-filters-container">
                 {/* <h1>[SlyFoldedFilters]</h1> */}
                 <div className="sly-folded-filters-wrapper">
-                    <h1>[SlyFoldedFilters]</h1>
+                    {/* <h1>[SlyFoldedFilters]</h1> */}
+                    {text}
                 </div>
-                {text}
             </div>
         )
     }

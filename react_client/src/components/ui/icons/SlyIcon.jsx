@@ -475,6 +475,90 @@ class SlyIcon extends Component {
                         </g>
                     </svg>
                 </>
+            } else if (pattern.toLowerCase()==="download") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 67.713604,188.50606 c -21.73496,0 -39.47805,18.31043 -39.47805,40.74075 0,22.47376 17.74309,40.78047 39.47805,40.78047 21.777027,0 39.517496,-18.30671 39.517496,-40.78047 0,-22.43032 -17.740469,-40.74075 -39.517496,-40.74075 z m -2.48053,19.82841 h 5.0027 v 39.30804 l 10.08863,-10.41312 3.53234,3.6447 -14.46243,14.92319 -3.27815,0.0441 -14.50406,-14.96733 3.53014,-3.6447 10.09083,10.41312 z"
+                                style={{fill: fill}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
+            } else if (pattern.toLowerCase()==="upload") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 67.711179,188.08253 c -21.9663,0 -39.89603,18.49846 -39.89603,41.16185 0,22.70728 17.92973,41.20644 39.89603,41.20644 22.00882,0 39.940331,-18.49916 39.940331,-41.20644 0,-22.66339 -17.931511,-41.16185 -39.940331,-41.16185 z m -1.61444,14.33327 h 3.31525 l 14.61416,15.12511 -3.56772,3.68253 -10.19823,-10.52128 v 39.71644 h -5.05594 v -39.71644 l -10.19602,10.52128 -3.56994,-3.68253 z"
+                                style={{fill: fill}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
+            } else if (pattern.toLowerCase()==="dismiss") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 67.712683,188.92524 c -21.50658,0 -39.06114,18.11993 -39.06114,40.31958 0,22.24265 17.55456,40.36329 39.06114,40.36329 21.54832,0 39.102427,-18.12064 39.102427,-40.36329 0,-22.19965 -17.554107,-40.31958 -39.102427,-40.31958 z m -12.43711,23.87407 12.43711,12.83829 12.48051,-12.83829 3.49309,3.60722 -12.43711,12.83829 12.43711,12.882 -3.49309,3.60721 -12.48051,-12.83829 -12.43711,12.83829 -3.49519,-3.60721 12.43711,-12.882 -12.43711,-12.83829 z"
+                                style={{fill: fill}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
+            } else if (pattern.toLowerCase()==="depots") {
+                buttons = <>
+                    <svg
+                    width={size_x}
+                    height={size_y}
+                    viewBox="0 0 135.46666 135.46667"
+                    >
+                        <g
+                        transform="translate(0,-161.53332)"
+                        >
+                            <g
+                            // transform="translate(477.59091,19.774384)"
+                            >
+                                <path
+                                d="m 67.711915,189.3401 c -21.27958,0 -38.64877,17.9336 -38.64877,39.90495 0,22.0139 17.36919,39.94819 38.64877,39.94819 21.320655,0 38.691595,-17.93429 38.691595,-39.94819 0,-21.97135 -17.37094,-39.90495 -38.691595,-39.90495 z m -1.56405,13.89775 h 3.21169 l 14.159355,14.66108 -3.45828,3.57012 -12.348715,-12.70626 -12.30589,12.70626 -3.45828,-3.57012 z m -18.27418,23.50098 H 87.59297 v 5.05785 H 47.873685 Z m 7.53234,10.32546 12.30589,12.70843 12.348715,-12.70843 3.45828,3.57013 -14.159355,14.61998 -3.21169,0.0433 -14.20012,-14.66324 z"
+                                style={{fill: fill}}
+                                />
+                            </g>
+                        </g>
+                    </svg>
+                </>
             }
             
         } else {
@@ -517,7 +601,7 @@ SlyIcon.defaultProps = {
     dataset: [35/4, 20/4, 30/4, 15/4, 50/4],
     direction: "vertical", // horizontal/vertical/orthogonal/loading/corner/embedded
     shape: "square", // loading,corner:=square/round/pulse/avatar
-    pattern: "logo", // embedded:=logo/search/setting/new/remove/up/down/left/right/feather/topper/clock //Ignore the value of rect_width
+    pattern: "logo", // embedded:=logo/search/setting/new/remove/up/down/left/right/feather/topper/clock/download/upload/dismiss/depots //Ignore the value of rect_width
     uuid4: "", // Generate a comic background for empty, a corner image for uuid4, and an initial capital pattern for others
     funcHandle: f => f,
     extclass: "",
