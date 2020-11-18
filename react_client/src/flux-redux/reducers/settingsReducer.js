@@ -18,6 +18,8 @@ const initialState = {
         tagControlPanel: "",
         indexCard: -1,
         keywords: "",
+        el_old: {},
+        el_new: {},
     },
 }
 

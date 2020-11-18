@@ -32,12 +32,32 @@ class SlyParsingWordsControlPanel extends Component {
 
     onReset = () => {
         console.log("--> onReset")
+        const { setSelectedItem } = this.props
+        const { el_old } = this.props.parsing_words
+        const fyrb_terms_el = el_old
+        setSelectedItem({
+            tag: "el_new",
+            selected: fyrb_terms_el,
+            target: "parsing_words",
+        })
     }
     onSave = () => {
         console.log("--> onSave")
     }
     onNew = () => {
         console.log("--> onNew")
+        const { setSelectedItem } = this.props
+        // const { el_old } = this.props.parsing_words
+        const fyrb_terms_el = {
+            id: -1,
+            phrase: "",
+            annotation: ""
+        }
+        setSelectedItem({
+            tag: "el_new",
+            selected: fyrb_terms_el,
+            target: "parsing_words",
+        })
     }
 
     render () {
@@ -52,7 +72,7 @@ class SlyParsingWordsControlPanel extends Component {
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="okay"
                 funcHandle={this.onSave} />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="plus"
-                funcHandle={this.onReset} />
+                funcHandle={this.onNew} />
         </SlyServiceItem>
         </>
         return (

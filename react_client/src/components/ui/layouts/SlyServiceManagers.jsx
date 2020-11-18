@@ -97,6 +97,7 @@ class SlyServiceManagers extends Component {
         }
 
         //
+        const { setSelectedItem } = this.props
         let { fyrb_terms } = this.props.nativeData
         fyrb_terms = fyrb_terms || []
         const { tagTabPage } = this.props.parsing_words
@@ -114,10 +115,11 @@ class SlyServiceManagers extends Component {
             {buttons_default}
             </>
         } else if (tagTabPage === "edit") {
+            const el_old = _.find(fyrb_terms, {"id": indexCard})
             buttons = <>
             <div className="sly-service-managers-components-hori-center">
                 {/* <h1>[components-hori-center]</h1> */}
-                {<SlyParsingWordsCard fyrb_terms_el={_.find(fyrb_terms, {"id": indexCard})} />}
+                {<SlyParsingWordsCard fyrb_terms_el={el_old} />}
             </div>
             </>
         } else if (tagTabPage === "remove") {

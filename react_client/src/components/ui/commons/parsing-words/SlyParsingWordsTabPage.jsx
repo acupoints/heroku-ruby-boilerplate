@@ -44,10 +44,10 @@ class SlyParsingWordsTabPage extends Component {
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="topper"
                 funcHandle={this.modifySelectedItem("remove")} />
             
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="download" />
+            {/* <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="download" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="upload" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="dismiss" />
-            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="depots" />
+            <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="depots" /> */}
 
             {/* <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="search" />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="setting" />

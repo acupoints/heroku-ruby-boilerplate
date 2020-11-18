@@ -3,6 +3,7 @@ import './SlyParsingWordsCard.css'
 //
 import PropTypes from 'prop-types'
 import {UnControlled as CodeMirror} from 'react-codemirror2'
+// import {Controlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/lib/codemirror.js'
 import 'codemirror/lib/codemirror.css'
 // keymap
@@ -91,9 +92,38 @@ import { setSelectedItemAction  } from '../../../../flux-redux/actions'
 
 class SlyParsingWordsCard extends Component {
 
-    // constructor () {
-    //     super()
+    constructor (props) {
+        super(props)
+        //
+        this.state = {
+            fyrb_terms_el: {
+                ...this.props.fyrb_terms_el
+            }
+        }
+    }
+
+    // updateTerms = (editor, data, value) => {
+    //     this.setState({
+    //         fyrb_terms_el: {
+    //             ...this.state.fyrb_terms_el,
+    //             annotation: value
+    //         }
+    //     })
     // }
+
+    componentDidMount () {
+        const { setSelectedItem, fyrb_terms_el } = this.props
+        setSelectedItem({
+            tag: "el_old",
+            selected: fyrb_terms_el,
+            target: "parsing_words",
+        })
+        setSelectedItem({
+            tag: "el_new",
+            selected: fyrb_terms_el,
+            target: "parsing_words",
+        })
+    }
 
     modifySelectedItem = (tag) => {
         return () => {
@@ -115,7 +145,9 @@ class SlyParsingWordsCard extends Component {
     
 
     render () {
-        const { id, phrase, annotation } = this.props.fyrb_terms_el
+        // const { id, phrase, annotation } = this.props.fyrb_terms_el
+        const { id, phrase, annotation } = this.state.fyrb_terms_el
+
         const { indexCard, tagTabPage } = this.props.parsing_words
         let styleCardWrapper = {}
         let styleCardContent = {}
@@ -142,12 +174,24 @@ class SlyParsingWordsCard extends Component {
                 }
             }
         }
-        let cm_contents = ""
-        cm_contents = annotation + "\n"
+        
         //
         let buttons = null
-        if (indexCard === id && tagTabPage === "edit") {
+        // if (indexCard === id && tagTabPage === "edit") {
+        if (tagTabPage === "edit") {
+            const { el_old } = this.props.parsing_words
+            const { id, phrase, annotation } = el_old
+            let cm_contents = ""
+            cm_contents = annotation + "\n"
+
             buttons = <>
+            <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
+                <h1>{phrase}</h1>
+                <div className="sly-parsing-words-card-content" style={styleCardContent}>
+                    {annotation}
+                </div>
+
+            </div>
             <CodeMirror className="sly-parsing-words-code-mirror"
                 value={cm_contents}
                 options={{
@@ -176,21 +220,53 @@ class SlyParsingWordsCard extends Component {
                     matchBrackets: true,
                     autoCloseBrackets: true
                 }}
-                onChange={(editor, data, value) => {
+                onBeforeChange={(editor, data, value) => {
+                    // this.setState({value}); // must be managed here
+                    this.setState({
+                        fyrb_terms_el: {
+                            ...this.state.fyrb_terms_el,
+                            annotation: value
+                        }
+                    })
+                    const { setSelectedItem } = this.props
+                    const fyrb_terms_el = {
+                        ...this.state.fyrb_terms_el,
+                        annotation: value
+                    }
+                    setSelectedItem({
+                        tag: "el_new",
+                        selected: fyrb_terms_el,
+                        target: "parsing_words",
+                    })
+                }}
+                onChange={(editor, metadata, value) => {
+                // final value, no need to setState here
                 }}
             />
+            </>
+        } else {
+            const { id, phrase, annotation } = this.state.fyrb_terms_el
+            buttons = <>
+            <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
+                <h1>{phrase}</h1>
+                <div className="sly-parsing-words-card-content" style={styleCardContent}>
+                    {annotation}
+                </div>
+
+            </div>
             </>
         }
 
         return (
             <div className="sly-parsing-words-card-container" onClick={this.modifySelectedItem(id)}>
                 {/* <h1>[SlyParsingWordsCard]</h1> */}
-                <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
+                {/* <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
                     <h1>{phrase}</h1>
                     <div className="sly-parsing-words-card-content" style={styleCardContent}>
                         {annotation}
+                        {buttons}
                     </div>
-                </div>
+                </div> */}
                 {buttons}
             </div>
         )
