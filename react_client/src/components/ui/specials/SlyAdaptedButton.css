@@ -1,0 +1,39 @@
+.sly-adapted-button {
+  color: #fff;
+  background-color: #590297;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+  display: inline-block;
+  padding: .35rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+.sly-adapted-button:hover {
+  padding: .35rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: #470279;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .1s ease-in-out;
+}
+.sly-adapted-button.stretch {
+  flex: 1;
+}
+
+.sly-adapted-button-wrapperr {
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

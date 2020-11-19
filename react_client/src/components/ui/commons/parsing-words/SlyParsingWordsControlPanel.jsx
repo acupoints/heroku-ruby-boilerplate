@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './SlyParsingWordsControlPanel.css'
 //
 // import SlyMenuItem from '../menus/SlyMenuItem'
-import SlyLinkButton from '../../menus/SlyLinkButton'
+// import SlyLinkButton from '../../menus/SlyLinkButton'
 import SlyServiceItem from '../../services/SlyServiceItem'
 import SlyIcon from '../../icons/SlyIcon'
 //
@@ -23,41 +23,11 @@ class SlyParsingWordsControlPanel extends Component {
             const { setSelectedItem } = this.props
             console.log(`--> ${tag}`)
             setSelectedItem({
-                tag: "tagTabPage",
+                tag: "tagControlPanel",
                 selected: tag,
                 target: "parsing_words",
             })
         }
-    }
-
-    onReset = () => {
-        console.log("--> onReset")
-        const { setSelectedItem } = this.props
-        const { el_old } = this.props.parsing_words
-        const fyrb_terms_el = el_old
-        setSelectedItem({
-            tag: "el_new",
-            selected: fyrb_terms_el,
-            target: "parsing_words",
-        })
-    }
-    onSave = () => {
-        console.log("--> onSave")
-    }
-    onNew = () => {
-        console.log("--> onNew")
-        const { setSelectedItem } = this.props
-        // const { el_old } = this.props.parsing_words
-        const fyrb_terms_el = {
-            id: -1,
-            phrase: "",
-            annotation: ""
-        }
-        setSelectedItem({
-            tag: "el_new",
-            selected: fyrb_terms_el,
-            target: "parsing_words",
-        })
     }
 
     render () {
@@ -68,11 +38,11 @@ class SlyParsingWordsControlPanel extends Component {
             {/* <SlyLinkButton extraStyle="push" text="save" funcHandle={this.onSave} />
             <SlyLinkButton extraStyle="push" text="new" funcHandle={this.onReset} /> */}
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="reload"
-                funcHandle={this.onReset} />
+                funcHandle={this.modifySelectedItem("reload")} />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="okay"
-                funcHandle={this.onSave} />
+                funcHandle={this.modifySelectedItem("okay")} />
             <SlyIcon size_x={40} size_y={40} fill="#673ab7" padding="0" direction="embedded" pattern="plus"
-                funcHandle={this.onNew} />
+                funcHandle={this.modifySelectedItem("plus")} />
         </SlyServiceItem>
         </>
         return (

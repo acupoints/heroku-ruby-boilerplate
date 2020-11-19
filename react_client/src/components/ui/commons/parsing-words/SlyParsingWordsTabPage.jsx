@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './SlyParsingWordsTabPage.css'
 //
 // import SlyMenuItem from '../menus/SlyMenuItem'
-import SlyLinkButton from '../../menus/SlyLinkButton'
+// import SlyLinkButton from '../../menus/SlyLinkButton'
 import SlyServiceItem from '../../services/SlyServiceItem'
 import SlyIcon from '../../icons/SlyIcon'
 //

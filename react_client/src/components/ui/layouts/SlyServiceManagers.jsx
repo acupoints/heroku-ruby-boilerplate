@@ -97,7 +97,6 @@ class SlyServiceManagers extends Component {
         }
 
         //
-        const { setSelectedItem } = this.props
         let { fyrb_terms } = this.props.nativeData
         fyrb_terms = fyrb_terms || []
         const { tagTabPage } = this.props.parsing_words

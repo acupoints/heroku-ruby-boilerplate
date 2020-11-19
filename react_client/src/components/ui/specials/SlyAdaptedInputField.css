@@ -1,0 +1,16 @@
+.sly-adapted-input-field {
+  padding: 4px 6px;
+  border: 1px solid #6803af;
+  border-radius: 3px;
+  background-color: #fff;
+  color: indigo;
+  font-size: 1rem;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  line-height: 1.15384615;
+  margin: 2px auto;
+}
+.sly-adapted-input-field:focus {
+  outline: none;
+  border: 1px solid #310386;
+  box-shadow: 0 0 6px #7f4cd1;
+}

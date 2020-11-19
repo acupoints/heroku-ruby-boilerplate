@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import './SlyParsingWordsCard.css'
 //
 import PropTypes from 'prop-types'
-import {UnControlled as CodeMirror} from 'react-codemirror2'
-// import {Controlled as CodeMirror} from 'react-codemirror2'
+
+// import {UnControlled as CodeMirror} from 'react-codemirror2'
+import {Controlled as CodeMirror} from 'react-codemirror2'
 import 'codemirror/lib/codemirror.js'
 import 'codemirror/lib/codemirror.css'
 // keymap
@@ -88,12 +89,15 @@ import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction  } 
 import { setSelectedItemAction  } from '../../../../flux-redux/actions'
 
 //
+import SlyDeleteConfirmation from '../../specials/SlyDeleteConfirmation'
 // import * as _ from 'lodash'
 
 class SlyParsingWordsCard extends Component {
 
     constructor (props) {
         super(props)
+        //
+        this.myRef_cm = null
         //
         this.state = {
             fyrb_terms_el: {
@@ -102,25 +106,51 @@ class SlyParsingWordsCard extends Component {
         }
     }
 
-    // updateTerms = (editor, data, value) => {
-    //     this.setState({
-    //         fyrb_terms_el: {
-    //             ...this.state.fyrb_terms_el,
-    //             annotation: value
-    //         }
-    //     })
-    // }
-
     componentDidMount () {
         const { setSelectedItem, fyrb_terms_el } = this.props
+        const { tagTabPage } = this.props.parsing_words
+
+        if (tagTabPage === "edit") {
+            setSelectedItem({
+                tag: "el_old",
+                selected: fyrb_terms_el,
+                target: "parsing_words",
+            })
+            setSelectedItem({
+                tag: "el_new",
+                selected: fyrb_terms_el,
+                target: "parsing_words",
+            })
+        }
+        
+
+    }
+
+    componentDidUpdate () {
+        const { tagControlPanel } = this.props.parsing_words
+        if (tagControlPanel === "reload") {
+            this.resetFlag()
+            const { el_old } = this.props.parsing_words
+            // const { phrase, annotation } = el_old
+
+            this.myRef_cm.setValue(`${el_old.annotation}`)
+        } 
+        else if (tagControlPanel === "okay") {
+            this.resetFlag()
+            this.myRef_cm.setValue("数据已保存")
+        }
+        else if (tagControlPanel === "plus") {
+            this.resetFlag()
+            this.myRef_cm.setValue("")
+        } 
+    }
+
+    resetFlag () {
+        // 重置标识位避免进入Minified React error相互调用无止循环
+        const { setSelectedItem } = this.props
         setSelectedItem({
-            tag: "el_old",
-            selected: fyrb_terms_el,
-            target: "parsing_words",
-        })
-        setSelectedItem({
-            tag: "el_new",
-            selected: fyrb_terms_el,
+            tag: "tagControlPanel",
+            selected: "",
             target: "parsing_words",
         })
     }
@@ -142,13 +172,13 @@ class SlyParsingWordsCard extends Component {
         console.log(`--> ${id} ${phrase}:${annotation}`)
     }
 
-    
-
     render () {
-        // const { id, phrase, annotation } = this.props.fyrb_terms_el
-        const { id, phrase, annotation } = this.state.fyrb_terms_el
-
+        // 解析传入的ip
+        const { id } = this.props.fyrb_terms_el
+        // 解析刚使用过的操作
         const { indexCard, tagTabPage } = this.props.parsing_words
+        
+        // 设置不同的样式
         let styleCardWrapper = {}
         let styleCardContent = {}
         if (indexCard === id) {
@@ -174,17 +204,16 @@ class SlyParsingWordsCard extends Component {
                 }
             }
         }
-        
+
         //
         let buttons = null
-        // if (indexCard === id && tagTabPage === "edit") {
         if (tagTabPage === "edit") {
-            const { el_old } = this.props.parsing_words
-            const { id, phrase, annotation } = el_old
-            let cm_contents = ""
-            cm_contents = annotation + "\n"
-
+            
+            let { phrase, annotation } = this.state.fyrb_terms_el
+            // const cm_contents = annotation + "\n"
             buttons = <>
+            <div>{JSON.stringify(this.props.parsing_words.el_new)}</div>
+            <div>{JSON.stringify(this.props.parsing_words.el_old)}</div>
             <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
                 <h1>{phrase}</h1>
                 <div className="sly-parsing-words-card-content" style={styleCardContent}>
@@ -192,8 +221,8 @@ class SlyParsingWordsCard extends Component {
                 </div>
 
             </div>
-            <CodeMirror className="sly-parsing-words-code-mirror"
-                value={cm_contents}
+            <CodeMirror editorDidMount={editor => { this.myRef_cm = editor }} className="sly-parsing-words-code-mirror"
+                value={annotation}
                 options={{
                     mode: { name: "shell" },
                     theme: "darcula",
@@ -221,31 +250,54 @@ class SlyParsingWordsCard extends Component {
                     autoCloseBrackets: true
                 }}
                 onBeforeChange={(editor, data, value) => {
+                    // onBeforeChange(editor, data, value, [next])
+                    // * if used, next is returned via UnControlled and must be invoked to trigger onChange
                     // this.setState({value}); // must be managed here
+                    // 维护局部数据
                     this.setState({
                         fyrb_terms_el: {
                             ...this.state.fyrb_terms_el,
                             annotation: value
                         }
                     })
+                    // 维护全局数据
                     const { setSelectedItem } = this.props
+                    const escaped = editor.getValue()
                     const fyrb_terms_el = {
                         ...this.state.fyrb_terms_el,
-                        annotation: value
+                        annotation: escaped
                     }
-                    setSelectedItem({
-                        tag: "el_new",
-                        selected: fyrb_terms_el,
-                        target: "parsing_words",
-                    })
+
+                    if (escaped) {
+                        setSelectedItem({
+                            tag: "el_new",
+                            selected: fyrb_terms_el,
+                            target: "parsing_words",
+                        })
+                        
+                    }
                 }}
-                onChange={(editor, metadata, value) => {
-                // final value, no need to setState here
+                onChange={(editor, data, value) => {
+                    // final value, no need to setState here
                 }}
             />
             </>
+        } else if (tagTabPage === "remove") {
+            const { phrase, annotation } = this.props.fyrb_terms_el
+            //
+            buttons = <>
+            <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
+                <h1>{phrase}</h1>
+                <div className="sly-parsing-words-card-content" style={styleCardContent}>
+                    {annotation}
+                </div>
+
+            </div>
+            <SlyDeleteConfirmation />
+            </>
         } else {
-            const { id, phrase, annotation } = this.state.fyrb_terms_el
+            const { phrase, annotation } = this.props.fyrb_terms_el
+            //
             buttons = <>
             <div className="sly-parsing-words-card-wrapper" style={styleCardWrapper}>
                 <h1>{phrase}</h1>
