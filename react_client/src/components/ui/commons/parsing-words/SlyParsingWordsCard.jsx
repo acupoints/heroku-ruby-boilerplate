@@ -293,7 +293,7 @@ class SlyParsingWordsCard extends Component {
                 </div>
 
             </div>
-            <SlyDeleteConfirmation />
+            <SlyDeleteConfirmation title={phrase} />
             </>
         } else {
             const { phrase, annotation } = this.props.fyrb_terms_el

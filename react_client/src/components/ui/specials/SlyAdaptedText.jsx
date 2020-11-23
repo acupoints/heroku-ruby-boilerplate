@@ -11,12 +11,14 @@ class SlyAdaptedText extends Component {
     // }
 
     render () {
+        const {text} = this.props
         return (
             <div className="sly-adapted-text-container">
                 {/* <h1>[SlyAdaptedText]</h1> */}
                 <div className="sly-adapted-text-wrapper">
                     {/* <h1>[SlyAdaptedText]</h1> */}
-                    <p>adapted text wrapper</p>
+                    {/* <p>adapted text wrapper</p> */}
+                    {text}
                 </div>
             </div>
         )
