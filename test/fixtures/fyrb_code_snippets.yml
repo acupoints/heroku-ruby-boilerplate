@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source_lines: MyText
+  development_tools: MyString
+  resolved_exceptions: MyText
+  module_templates: MyText
+  languages: MyString
+  support_platforms: MyString
+  used_counts: 1
+  instructions: MyText
+  naming_conventions: MyString
+  fyrb_user: one
+
+two:
+  source_lines: MyText
+  development_tools: MyString
+  resolved_exceptions: MyText
+  module_templates: MyText
+  languages: MyString
+  support_platforms: MyString
+  used_counts: 1
+  instructions: MyText
+  naming_conventions: MyString
+  fyrb_user: two
