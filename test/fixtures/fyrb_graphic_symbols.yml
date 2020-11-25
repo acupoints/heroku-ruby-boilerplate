@@ -10,7 +10,6 @@ one:
   origins: MyString
   dialects: MyString
   themes: MyString
-  dialects: MyString
   types: MyString
   paths: MyText
   styles: MyText
@@ -31,7 +30,6 @@ two:
   origins: MyString
   dialects: MyString
   themes: MyString
-  dialects: MyString
   types: MyString
   paths: MyText
   styles: MyText

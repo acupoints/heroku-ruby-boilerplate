@@ -10,7 +10,6 @@ class CreateFyrbGraphicSymbols < ActiveRecord::Migration[6.0]
       t.string :origins
       t.string :dialects
       t.string :themes
-      t.string :dialects
       t.string :types
       t.text :paths
       t.text :styles
