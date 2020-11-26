@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_000415) do
+ActiveRecord::Schema.define(version: 2020_11_25_110705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fyrb_code_snippets", force: :cascade do |t|
+    t.text "source_lines"
+    t.string "development_tools"
+    t.text "resolved_exceptions"
+    t.text "module_templates"
+    t.string "languages"
+    t.string "support_platforms"
+    t.integer "used_counts"
+    t.text "instructions"
+    t.string "naming_conventions"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_code_snippets_on_fyrb_user_id"
+  end
 
   create_table "fyrb_exceptions", force: :cascade do |t|
     t.text "platforms"
@@ -41,6 +57,30 @@ ActiveRecord::Schema.define(version: 2020_11_05_000415) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fyrb_micropost_id"], name: "index_fyrb_fragments_on_fyrb_micropost_id"
     t.index ["fyrb_tool_id"], name: "index_fyrb_fragments_on_fyrb_tool_id"
+  end
+
+  create_table "fyrb_graphic_symbols", force: :cascade do |t|
+    t.string "uppercase_letters"
+    t.string "lowercase_letters"
+    t.string "english_phonetics"
+    t.string "chinese_phonetics"
+    t.text "meanings"
+    t.integer "alphabetical"
+    t.string "origins"
+    t.string "dialects"
+    t.string "themes"
+    t.string "types"
+    t.text "paths"
+    t.text "styles"
+    t.integer "is_vowel"
+    t.integer "is_consonant"
+    t.integer "is_unvoiced"
+    t.integer "is_voiced"
+    t.integer "is_accent"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_graphic_symbols_on_fyrb_user_id"
   end
 
   create_table "fyrb_interfaces", force: :cascade do |t|
@@ -91,6 +131,17 @@ ActiveRecord::Schema.define(version: 2020_11_05_000415) do
     t.index ["fyrb_term_id"], name: "index_fyrb_statements_on_fyrb_term_id"
   end
 
+  create_table "fyrb_surprising_links", force: :cascade do |t|
+    t.string "site_names"
+    t.string "site_categories"
+    t.text "site_descriptions"
+    t.text "site_highlights"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_surprising_links_on_fyrb_user_id"
+  end
+
   create_table "fyrb_tags", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -131,18 +182,38 @@ ActiveRecord::Schema.define(version: 2020_11_05_000415) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "fyrb_utility_functions", force: :cascade do |t|
+    t.string "imports"
+    t.string "input_parameters"
+    t.string "output_parameters"
+    t.string "return_results"
+    t.string "languages"
+    t.string "support_platforms"
+    t.integer "used_counts"
+    t.text "instructions"
+    t.string "naming_conventions"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_utility_functions_on_fyrb_user_id"
+  end
+
+  add_foreign_key "fyrb_code_snippets", "fyrb_users"
   add_foreign_key "fyrb_exceptions", "fyrb_programs"
   add_foreign_key "fyrb_exceptions", "fyrb_users"
   add_foreign_key "fyrb_fragments", "fyrb_microposts"
   add_foreign_key "fyrb_fragments", "fyrb_tools"
+  add_foreign_key "fyrb_graphic_symbols", "fyrb_users"
   add_foreign_key "fyrb_interfaces", "fyrb_programs"
   add_foreign_key "fyrb_interfaces", "fyrb_users"
   add_foreign_key "fyrb_microposts", "fyrb_users"
   add_foreign_key "fyrb_programs", "fyrb_users"
   add_foreign_key "fyrb_statements", "fyrb_microposts"
   add_foreign_key "fyrb_statements", "fyrb_terms"
+  add_foreign_key "fyrb_surprising_links", "fyrb_users"
   add_foreign_key "fyrb_tags", "fyrb_users"
   add_foreign_key "fyrb_terms", "fyrb_microposts"
   add_foreign_key "fyrb_terms", "fyrb_users"
   add_foreign_key "fyrb_tools", "fyrb_users"
+  add_foreign_key "fyrb_utility_functions", "fyrb_users"
 end

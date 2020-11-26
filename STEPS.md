@@ -3,12 +3,15 @@
 ## essentials
 ```bash
 ### Start backend
-bundle install
+# gem install bundler
+
 # npm install -g yarn
 # yarn --version
 # get-ExecutionPolicy
 # admin> set-ExecutionPolicy RemoteSigned
 # admin> Y
+
+bundle install
 yarn install
 rails server
 
@@ -168,6 +171,7 @@ rails g model FyrbGraphicSymbol uppercase_letters:string lowercase_letters:strin
 rails g controller FyrbGraphicSymbols index show create update destroy
 rails g serializer FyrbGraphicSymbol
 
+rails db:migrate
 ```
 
 ## 
