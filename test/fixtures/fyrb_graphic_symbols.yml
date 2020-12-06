@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uppercase_letters: MyString
+  lowercase_letters: MyString
+  english_phonetics: MyString
+  chinese_phonetics: MyString
+  meanings: MyText
+  alphabetical: 1
+  origins: MyString
+  dialects: MyString
+  themes: MyString
+  types: MyString
+  paths: MyText
+  styles: MyText
+  is_vowel: 1
+  is_consonant: 1
+  is_unvoiced: 1
+  is_voiced: 1
+  is_accent: 1
+  fyrb_user: one
+
+two:
+  uppercase_letters: MyString
+  lowercase_letters: MyString
+  english_phonetics: MyString
+  chinese_phonetics: MyString
+  meanings: MyText
+  alphabetical: 1
+  origins: MyString
+  dialects: MyString
+  themes: MyString
+  types: MyString
+  paths: MyText
+  styles: MyText
+  is_vowel: 1
+  is_consonant: 1
+  is_unvoiced: 1
+  is_voiced: 1
+  is_accent: 1
+  fyrb_user: two

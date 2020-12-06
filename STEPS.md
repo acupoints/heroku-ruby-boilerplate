@@ -3,12 +3,15 @@
 ## essentials
 ```bash
 ### Start backend
-bundle install
+# gem install bundler
+
 # npm install -g yarn
 # yarn --version
 # get-ExecutionPolicy
 # admin> set-ExecutionPolicy RemoteSigned
 # admin> Y
+
+bundle install
 yarn install
 rails server
 
@@ -150,8 +153,30 @@ rails destroy serializer <SerializerName>
 
 ```
 
+## 20201125
+```bash
+rails g model FyrbUtilityFunction imports:string input_parameters:string output_parameters:string return_results:string languages:string support_platforms:string used_counts:integer instructions:text naming_conventions:string fyrb_user:references
+rails g controller FyrbUtilityFunctions index show create update destroy
+rails g serializer FyrbUtilityFunction
+
+rails g model FyrbCodeSnippet source_lines:text development_tools:string resolved_exceptions:text module_templates:text languages:string support_platforms:string used_counts:integer instructions:text naming_conventions:string fyrb_user:references
+rails g controller FyrbCodeSnippets index show create update destroy
+rails g serializer FyrbCodeSnippet
+
+rails g model FyrbSurprisingLink site_names:string site_categories:string site_descriptions:text site_highlights:text  fyrb_user:references
+rails g controller FyrbSurprisingLinks index show create update destroy
+rails g serializer FyrbSurprisingLink
+
+rails g model FyrbGraphicSymbol uppercase_letters:string lowercase_letters:string english_phonetics:string chinese_phonetics:string meanings:text alphabetical:integer origins:string dialects:string themes:string types:string paths:text styles:text is_vowel:integer is_consonant:integer is_unvoiced:integer is_voiced:integer is_accent:integer fyrb_user:references
+rails g controller FyrbGraphicSymbols index show create update destroy
+rails g serializer FyrbGraphicSymbol
+
+rails db:migrate
+```
+
 ## 
 ```bash
+## The data model can be migrated after the code is pushed
 heroku login
 heroku run rails db:migrate --app damp-plateau-39759
 

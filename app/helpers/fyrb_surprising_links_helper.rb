@@ -1,0 +1,2 @@
+module FyrbSurprisingLinksHelper
+end
