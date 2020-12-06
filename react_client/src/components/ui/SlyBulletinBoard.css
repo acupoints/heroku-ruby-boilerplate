@@ -6,6 +6,18 @@
   padding: 4px;
 }
 
+.sly-comp-public-shadow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sly-comp-public-shadow > a {
+  color: ivory;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
 .sly-bulletin-board-wrapper {
   flex: 1;
   display: flex;
@@ -17,6 +29,6 @@
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }

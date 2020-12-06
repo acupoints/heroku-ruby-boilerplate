@@ -26,6 +26,9 @@ class SlyBulletinBoard extends Component {
                         <SlyIcon size_x={75/4} size_y={75/6} rect_cx={10/4} fill="#9E9E9E" />
                     </div>
                 </div>
+                <div className="sly-comp-public-shadow">
+                    <a href="http://beian.miit.gov.cn">粤ICP备2020123124号-1</a>
+                </div>
             </div>
         )
     }
