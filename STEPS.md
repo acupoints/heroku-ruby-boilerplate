@@ -1,5 +1,12 @@
 ### STEPS
 
+## 
+```bash
+# 在组件中访问public文件夹中的图像，为此注释掉了以下代码
+# react_client\\config\\webpack.config.js 311行
+# // new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+```
+
 ## essentials
 ```bash
 ### Start backend

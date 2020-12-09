@@ -3,6 +3,7 @@ import './SlyBulletinBoard.css'
 //
 // import SlyButton from './SlyButton'
 import SlyIcon from './icons/SlyIcon'
+import net_security from '../../../public/net_security.png'
 
 class SlyBulletinBoard extends Component {
 
@@ -28,6 +29,12 @@ class SlyBulletinBoard extends Component {
                 </div>
                 <div className="sly-comp-public-shadow">
                     <a href="http://beian.miit.gov.cn">粤ICP备2020123124号-1</a>
+                </div>
+                <div className="sly-comp-public-shadow">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702003499">
+                        <img src={net_security} alt="net_security" />
+                        粤公网安备 44030702003499号
+                    </a>
                 </div>
             </div>
         )
