@@ -182,6 +182,10 @@ rails g model FyrbObjectInspector object_name:string framework:string descriptio
 rails g controller FyrbObjectInspectors index show create update destroy
 rails g serializer FyrbObjectInspector
 
+rails g model FyrbRelatedMethod interface_name:string interface_type:string description:text languages:text parameters:text keywords:text return_types:text used_counts:integer fyrb_user:references fyrb_object_inspector:references
+rails g controller FyrbRelatedMethods index show create update destroy
+rails g serializer FyrbRelatedMethod
+
 rails db:migrate
 ```
 
