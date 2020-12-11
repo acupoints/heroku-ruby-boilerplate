@@ -5,7 +5,8 @@ class FyrbMicropostsController < ApplicationController
   before_action :find_micropost, only: [:update, :destroy]
   
   def index
-    @microposts = FyrbMicropost.all
+    # @microposts = FyrbMicropost.all
+    @microposts = FyrbMicropost.paginate(page: params[:page])
     render json: @microposts, status: :ok
   end
 
