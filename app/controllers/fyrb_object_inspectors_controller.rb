@@ -5,7 +5,8 @@ class FyrbObjectInspectorsController < ApplicationController
   before_action :find_object_inspector, only: [:update, :destroy]
 
   def index
-    @object_inspectors = FyrbObjectInspector.all
+    # @object_inspectors = FyrbObjectInspector.all
+    @object_inspectors = FyrbObjectInspector.paginate(page: params[:page])
     render json: @object_inspectors, status: :ok
   end
 
