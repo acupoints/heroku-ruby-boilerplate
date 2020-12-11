@@ -178,6 +178,10 @@ rails g model FyrbGraphicSymbol uppercase_letters:string lowercase_letters:strin
 rails g controller FyrbGraphicSymbols index show create update destroy
 rails g serializer FyrbGraphicSymbol
 
+rails g model FyrbObjectInspector object_name:string framework:string description:text languages:text properties:text methods:text events:text used_counts:integer fyrb_user:references
+rails g controller FyrbObjectInspectors index show create update destroy
+rails g serializer FyrbObjectInspector
+
 rails db:migrate
 ```
 
