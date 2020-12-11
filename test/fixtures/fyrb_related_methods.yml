@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interface_name: MyString
+  interface_type: MyString
+  description: MyText
+  languages: MyText
+  parameters: MyText
+  keywords: MyText
+  return_types: MyText
+  used_counts: 1
+  fyrb_user: one
+  fyrb_object_inspector: one
+
+two:
+  interface_name: MyString
+  interface_type: MyString
+  description: MyText
+  languages: MyText
+  parameters: MyText
+  keywords: MyText
+  return_types: MyText
+  used_counts: 1
+  fyrb_user: two
+  fyrb_object_inspector: two

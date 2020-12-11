@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'fyrb_related_methods/index'
+  get 'fyrb_related_methods/show'
+  get 'fyrb_related_methods/create'
+  get 'fyrb_related_methods/update'
+  get 'fyrb_related_methods/destroy'
   # get 'fyrb_object_inspectors/index'
   # get 'fyrb_object_inspectors/show'
   # get 'fyrb_object_inspectors/create'

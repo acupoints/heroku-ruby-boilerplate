@@ -42,7 +42,7 @@ class FyrbObjectInspectorsController < ApplicationController
   private
   def object_inspector_params
     params.permit(
-      :fyrb_user_id, :imports, :input_parameters, :output_parameters, :return_results, :languages, :support_platforms, :used_counts, :instructions, :naming_conventions
+      :fyrb_user_id, :object_name, :framework, :description, :languages, :properties, :methods, :events, :used_counts
     )
   end
   

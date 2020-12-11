@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_050911) do
+ActiveRecord::Schema.define(version: 2020_12_11_055232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,6 +135,23 @@ ActiveRecord::Schema.define(version: 2020_12_11_050911) do
     t.index ["fyrb_user_id"], name: "index_fyrb_programs_on_fyrb_user_id"
   end
 
+  create_table "fyrb_related_methods", force: :cascade do |t|
+    t.string "interface_name"
+    t.string "interface_type"
+    t.text "description"
+    t.text "languages"
+    t.text "parameters"
+    t.text "keywords"
+    t.text "return_types"
+    t.integer "used_counts"
+    t.bigint "fyrb_user_id", null: false
+    t.bigint "fyrb_object_inspector_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_object_inspector_id"], name: "index_fyrb_related_methods_on_fyrb_object_inspector_id"
+    t.index ["fyrb_user_id"], name: "index_fyrb_related_methods_on_fyrb_user_id"
+  end
+
   create_table "fyrb_statements", force: :cascade do |t|
     t.text "original"
     t.text "comprehension"
@@ -224,6 +241,8 @@ ActiveRecord::Schema.define(version: 2020_12_11_050911) do
   add_foreign_key "fyrb_microposts", "fyrb_users"
   add_foreign_key "fyrb_object_inspectors", "fyrb_users"
   add_foreign_key "fyrb_programs", "fyrb_users"
+  add_foreign_key "fyrb_related_methods", "fyrb_object_inspectors"
+  add_foreign_key "fyrb_related_methods", "fyrb_users"
   add_foreign_key "fyrb_statements", "fyrb_microposts"
   add_foreign_key "fyrb_statements", "fyrb_terms"
   add_foreign_key "fyrb_surprising_links", "fyrb_users"
