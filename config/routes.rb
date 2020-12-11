@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'fyrb_related_methods/index'
-  get 'fyrb_related_methods/show'
-  get 'fyrb_related_methods/create'
-  get 'fyrb_related_methods/update'
-  get 'fyrb_related_methods/destroy'
+  # get 'fyrb_related_methods/index'
+  # get 'fyrb_related_methods/show'
+  # get 'fyrb_related_methods/create'
+  # get 'fyrb_related_methods/update'
+  # get 'fyrb_related_methods/destroy'
   # get 'fyrb_object_inspectors/index'
   # get 'fyrb_object_inspectors/show'
   # get 'fyrb_object_inspectors/create'
@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   resources :fyrb_utility_functions
   
   resources :fyrb_object_inspectors
+  resources :fyrb_related_methods
 
   get '/*a', to: 'fyrb_auths#not_found'
 end
