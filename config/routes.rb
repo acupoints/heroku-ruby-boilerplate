@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'fyrb_object_inspectors/index'
-  get 'fyrb_object_inspectors/show'
-  get 'fyrb_object_inspectors/create'
-  get 'fyrb_object_inspectors/update'
-  get 'fyrb_object_inspectors/destroy'
+  # get 'fyrb_object_inspectors/index'
+  # get 'fyrb_object_inspectors/show'
+  # get 'fyrb_object_inspectors/create'
+  # get 'fyrb_object_inspectors/update'
+  # get 'fyrb_object_inspectors/destroy'
   # get '/index'
   # get 'fyrb_graphic_symbols/show'
   # get 'fyrb_graphic_symbols/create'
@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   resources :fyrb_surprising_links
   resources :fyrb_code_snippets
   resources :fyrb_utility_functions
+  
+  resources :fyrb_object_inspectors
 
   get '/*a', to: 'fyrb_auths#not_found'
 end
