@@ -1,35 +1,24 @@
 Rails.application.routes.draw do
-  # get 'fyrb_related_methods/index'
-  # get 'fyrb_related_methods/show'
-  # get 'fyrb_related_methods/create'
-  # get 'fyrb_related_methods/update'
-  # get 'fyrb_related_methods/destroy'
-  # get 'fyrb_object_inspectors/index'
-  # get 'fyrb_object_inspectors/show'
-  # get 'fyrb_object_inspectors/create'
-  # get 'fyrb_object_inspectors/update'
-  # get 'fyrb_object_inspectors/destroy'
-  # get '/index'
-  # get 'fyrb_graphic_symbols/show'
-  # get 'fyrb_graphic_symbols/create'
-  # get 'fyrb_graphic_symbols/update'
-  # get 'fyrb_graphic_symbols/destroy'
-  # get '/index'
-  # get 'fyrb_surprising_links/show'
-  # get 'fyrb_surprising_links/create'
-  # get 'fyrb_surprising_links/update'
-  # get 'fyrb_surprising_links/destroy'
-  # get '/index'
-  # get 'fyrb_code_snippets/show'
-  # get 'fyrb_code_snippets/create'
-  # get 'fyrb_code_snippets/update'
-  # get 'fyrb_code_snippets/destroy'
-  # get '/index'
-  # get 'fyrb_utility_functions/show'
-  # get 'fyrb_utility_functions/create'
-  # get 'fyrb_utility_functions/update'
-  # get 'fyrb_utility_functions/destroy'
-  
+  # get 'fyrb_useful_operations/index'
+  # get 'fyrb_useful_operations/show'
+  # get 'fyrb_useful_operations/create'
+  # get 'fyrb_useful_operations/update'
+  # get 'fyrb_useful_operations/destroy'
+  # get 'fyrb_managed_assets/index'
+  # get 'fyrb_managed_assets/show'
+  # get 'fyrb_managed_assets/create'
+  # get 'fyrb_managed_assets/update'
+  # get 'fyrb_managed_assets/destroy'
+  # get 'fyrb_answer_steps/index'
+  # get 'fyrb_answer_steps/show'
+  # get 'fyrb_answer_steps/create'
+  # get 'fyrb_answer_steps/update'
+  # get 'fyrb_answer_steps/destroy'
+  # get 'fyrb_answer_sheets/index'
+  # get 'fyrb_answer_sheets/show'
+  # get 'fyrb_answer_sheets/create'
+  # get 'fyrb_answer_sheets/update'
+  # get 'fyrb_answer_sheets/destroy'
 
   # get 'hello/index'
   root 'hello#index'
@@ -53,6 +42,10 @@ Rails.application.routes.draw do
   
   resources :fyrb_object_inspectors
   resources :fyrb_related_methods
+  resources :fyrb_answer_sheets
+  resources :fyrb_answer_steps
+  resources :fyrb_managed_assets
+  resources :fyrb_useful_operations
 
   get '/*a', to: 'fyrb_auths#not_found'
 end

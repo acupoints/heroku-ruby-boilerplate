@@ -1,13 +1,13 @@
-class FyrbObjectInspector < ApplicationRecord
+class FyrbAnswerSheet < ApplicationRecord
   belongs_to :fyrb_user
-  has_many :fyrb_related_methods, dependent: :destroy
+  has_many :fyrb_answer_steps, dependent: :destroy
 
   ## PostgreSQL's full text search
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [:object_name, :framework],
+    against: [:title, :description],
     associated_against: {
-      fyrb_related_methods: [:interface_name, :interface_type, :description],
+      fyrb_answer_steps: [:antecedent, :operation, :consequence],
       fyrb_user: :name
     },
     using: {

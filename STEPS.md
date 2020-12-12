@@ -178,6 +178,7 @@ rails g model FyrbGraphicSymbol uppercase_letters:string lowercase_letters:strin
 rails g controller FyrbGraphicSymbols index show create update destroy
 rails g serializer FyrbGraphicSymbol
 
+##
 rails g model FyrbObjectInspector object_name:string framework:string description:text languages:text properties:text methods:text events:text used_counts:integer fyrb_user:references
 rails g controller FyrbObjectInspectors index show create update destroy
 rails g serializer FyrbObjectInspector
@@ -185,6 +186,24 @@ rails g serializer FyrbObjectInspector
 rails g model FyrbRelatedMethod interface_name:string interface_type:string description:text languages:text parameters:text keywords:text return_types:text used_counts:integer fyrb_user:references fyrb_object_inspector:references
 rails g controller FyrbRelatedMethods index show create update destroy
 rails g serializer FyrbRelatedMethod
+
+## 
+rails g model FyrbAnswerSheet title:string description:text conclusion:text used_counts:integer fyrb_user:references
+rails g controller FyrbAnswerSheets index show create update destroy
+rails g serializer FyrbAnswerSheet
+
+rails g model FyrbAnswerStep antecedent:text operation:text consequence:text audio_animation:text used_counts:integer fyrb_user:references fyrb_answer_sheet:references
+rails g controller FyrbAnswerSteps index show create update destroy
+rails g serializer FyrbAnswerStep
+
+## 
+rails g model FyrbManagedAsset product_name:string specification:text unit_price:decimal amount:integer vendor:string category:string purpose:string total_price:decimal fyrb_user:references
+rails g controller FyrbManagedAssets index show create update destroy
+rails g serializer FyrbManagedAsset
+
+rails g model FyrbUsefulOperation tags:text commands:text options:text functions:text examples:text fyrb_user:references
+rails g controller FyrbUsefulOperations index show create update destroy
+rails g serializer FyrbUsefulOperation
 
 rails db:migrate
 ```

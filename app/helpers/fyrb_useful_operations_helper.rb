@@ -1,0 +1,2 @@
+module FyrbUsefulOperationsHelper
+end

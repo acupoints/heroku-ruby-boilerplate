@@ -14,6 +14,10 @@ class FyrbUserSerializer < ActiveModel::Serializer
 
   has_many :fyrb_object_inspectors, dependent: :destroy
   has_many :fyrb_related_methods, dependent: :destroy
-  
+  has_many :fyrb_answer_sheets, dependent: :destroy
+  has_many :fyrb_answer_steps, dependent: :destroy
+  has_many :fyrb_managed_assets, dependent: :destroy
+  has_many :fyrb_useful_operations, dependent: :destroy
+
   attributes :id, :name, :username, :email, :password_digest
 end

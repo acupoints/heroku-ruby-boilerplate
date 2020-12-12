@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_055232) do
+ActiveRecord::Schema.define(version: 2020_12_12_103201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fyrb_answer_sheets", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "conclusion"
+    t.integer "used_counts"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_answer_sheets_on_fyrb_user_id"
+  end
+
+  create_table "fyrb_answer_steps", force: :cascade do |t|
+    t.text "antecedent"
+    t.text "operation"
+    t.text "consequence"
+    t.text "audio_animation"
+    t.integer "used_counts"
+    t.bigint "fyrb_user_id", null: false
+    t.bigint "fyrb_answer_sheet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_answer_sheet_id"], name: "index_fyrb_answer_steps_on_fyrb_answer_sheet_id"
+    t.index ["fyrb_user_id"], name: "index_fyrb_answer_steps_on_fyrb_user_id"
+  end
 
   create_table "fyrb_code_snippets", force: :cascade do |t|
     t.text "source_lines"
@@ -94,6 +119,21 @@ ActiveRecord::Schema.define(version: 2020_12_11_055232) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fyrb_program_id"], name: "index_fyrb_interfaces_on_fyrb_program_id"
     t.index ["fyrb_user_id"], name: "index_fyrb_interfaces_on_fyrb_user_id"
+  end
+
+  create_table "fyrb_managed_assets", force: :cascade do |t|
+    t.string "product_name"
+    t.text "specification"
+    t.decimal "unit_price"
+    t.integer "amount"
+    t.string "vendor"
+    t.string "category"
+    t.string "purpose"
+    t.decimal "total_price"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_managed_assets_on_fyrb_user_id"
   end
 
   create_table "fyrb_microposts", force: :cascade do |t|
@@ -205,6 +245,18 @@ ActiveRecord::Schema.define(version: 2020_12_11_055232) do
     t.index ["fyrb_user_id"], name: "index_fyrb_tools_on_fyrb_user_id"
   end
 
+  create_table "fyrb_useful_operations", force: :cascade do |t|
+    t.text "tags"
+    t.text "commands"
+    t.text "options"
+    t.text "functions"
+    t.text "examples"
+    t.bigint "fyrb_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fyrb_user_id"], name: "index_fyrb_useful_operations_on_fyrb_user_id"
+  end
+
   create_table "fyrb_users", force: :cascade do |t|
     t.string "name"
     t.string "username"
@@ -230,6 +282,9 @@ ActiveRecord::Schema.define(version: 2020_12_11_055232) do
     t.index ["fyrb_user_id"], name: "index_fyrb_utility_functions_on_fyrb_user_id"
   end
 
+  add_foreign_key "fyrb_answer_sheets", "fyrb_users"
+  add_foreign_key "fyrb_answer_steps", "fyrb_answer_sheets"
+  add_foreign_key "fyrb_answer_steps", "fyrb_users"
   add_foreign_key "fyrb_code_snippets", "fyrb_users"
   add_foreign_key "fyrb_exceptions", "fyrb_programs"
   add_foreign_key "fyrb_exceptions", "fyrb_users"
@@ -238,6 +293,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_055232) do
   add_foreign_key "fyrb_graphic_symbols", "fyrb_users"
   add_foreign_key "fyrb_interfaces", "fyrb_programs"
   add_foreign_key "fyrb_interfaces", "fyrb_users"
+  add_foreign_key "fyrb_managed_assets", "fyrb_users"
   add_foreign_key "fyrb_microposts", "fyrb_users"
   add_foreign_key "fyrb_object_inspectors", "fyrb_users"
   add_foreign_key "fyrb_programs", "fyrb_users"
@@ -250,5 +306,6 @@ ActiveRecord::Schema.define(version: 2020_12_11_055232) do
   add_foreign_key "fyrb_terms", "fyrb_microposts"
   add_foreign_key "fyrb_terms", "fyrb_users"
   add_foreign_key "fyrb_tools", "fyrb_users"
+  add_foreign_key "fyrb_useful_operations", "fyrb_users"
   add_foreign_key "fyrb_utility_functions", "fyrb_users"
 end

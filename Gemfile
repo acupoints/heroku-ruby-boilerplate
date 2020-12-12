@@ -26,6 +26,7 @@ gem 'jwt'
 gem 'active_model_serializers', '~> 0.10.10'
 
 gem 'will_paginate', '~> 3.1.0'
+gem 'pg_search', '~> 2.3', '>= 2.3.5'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

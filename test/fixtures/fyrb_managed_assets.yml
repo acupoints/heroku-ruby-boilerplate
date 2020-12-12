@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  specification: MyText
+  unit_price: 9.99
+  amount: 1
+  vendor: MyString
+  category: MyString
+  purpose: MyString
+  total_price: 9.99
+  fyrb_user: one
+
+two:
+  product_name: MyString
+  specification: MyText
+  unit_price: 9.99
+  amount: 1
+  vendor: MyString
+  category: MyString
+  purpose: MyString
+  total_price: 9.99
+  fyrb_user: two

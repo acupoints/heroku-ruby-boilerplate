@@ -5,9 +5,22 @@ class FyrbObjectInspectorsController < ApplicationController
   before_action :find_object_inspector, only: [:update, :destroy]
 
   def index
+    ## Use the original method to query
     # @object_inspectors = FyrbObjectInspector.all
-    @object_inspectors = FyrbObjectInspector.paginate(page: params[:page])
-    render json: @object_inspectors, status: :ok
+    # render json: @object_inspectors, status: :ok
+
+    ## Use pagination method to query
+    # @object_inspectors = FyrbObjectInspector.paginate(page: params[:page], per_page: 5)
+    # render json: @object_inspectors, status: :ok, meta: pagination_dict(@object_inspectors)
+
+    ## Use full-text search method to query
+    if params[:query].present?
+      @object_inspectors_search = FyrbObjectInspector.global_search(params[:query])
+      @object_inspectors = @object_inspectors_search.paginate(page: params[:page], per_page: 5)
+    else
+      @object_inspectors = FyrbObjectInspector.paginate(page: params[:page], per_page: 5)
+    end
+    render json: @object_inspectors, status: :ok, meta: pagination_dict(@object_inspectors)
   end
 
   def show
