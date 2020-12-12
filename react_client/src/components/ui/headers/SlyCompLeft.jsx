@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { userSignoutAction, addMenuAction, removeMenuAction, clearMenuAction } from '../../../flux-redux/actions'
 import { fetchUserNativeDataAction } from '../../../flux-redux/actions'
-
+import { setSelectedItemAction  } from '../../../flux-redux/actions'
 
 class SlyCompLeft extends Component {
 
@@ -29,23 +29,32 @@ class SlyCompLeft extends Component {
 
     handleClickFeatures = () => {
         console.log("--handleClickFeatures")
-        // this.props.history.push("/my/SlyCommonMissingParts")
-
         const { history } = this.props
-        const { setServiceItem } = this.props
         console.log("-->", history.location.pathname)
         if (history.location.pathname === "/my/SlyCommonMissingParts") {
-            // setServiceItem("SlyCommonEcho")
-            setServiceItem("")
+            this.modifySelectedItem("")
         } else {
             this.props.history.push("/my/SlyCommonMissingParts")
         }
+        // this.modifySelectedItem("")
+        // this.props.history.push("/my/SlyCommonMissingParts")
     }
     
     handleClickSolutions = () => {
         console.log("--handleClickSolutions")
-        // this.props.history.push("/")
         this.props.history.push("/my/SlyCommonSolutions")
+    }
+
+    modifySelectedItem = (tag) => {
+        // return () => {
+        // }
+        const { setSelectedItem } = this.props
+        console.log(`--> ${tag}`)
+        setSelectedItem({
+            tag: "serviceItem",
+            selected: tag,
+            // target: "parsing_words",
+        })
     }
 
     render () {
@@ -98,6 +107,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchUserNativeData: (profile) => {
             dispatch(fetchUserNativeDataAction(profile))
+        },
+        setSelectedItem: (container) => {
+            dispatch(setSelectedItemAction(container))
         },
     }
 }

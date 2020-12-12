@@ -37,18 +37,19 @@ class SlyCommonEcho extends Component {
     }
 
     render () {
-        const { nativeData } = this.props
-        let buttons = null
-        buttons = <>
-        {JSON.stringify(nativeData)}
-        </>
+        // const { nativeData } = this.props
+        // let buttons = null
+        // buttons = <>
+        // {JSON.stringify(nativeData)}
+        // </>
 
         return (
             <div className="sly-common-echo-container">
                 {/* <h1>[SlyCommonEcho]</h1> */}
                 <div className="sly-common-echo-wrapper">
                     <h1>[SlyCommonEcho]</h1>
-                    {buttons}
+                    <div>托管资产与统计图表</div>
+                    {/* {buttons} */}
                 </div>
             </div>
         )

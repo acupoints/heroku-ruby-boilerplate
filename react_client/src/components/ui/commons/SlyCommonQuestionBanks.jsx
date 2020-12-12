@@ -14,6 +14,9 @@ class SlyCommonQuestionBanks extends Component {
                 {/* <h1>[SlyCommonQuestionBanks]</h1> */}
                 <div className="sly-common-question-banks-wrapper">
                     <h1>[SlyCommonQuestionBanks]</h1>
+                    <div>
+                        单选题、多选题、判断题、简答题、英汉互译、阅读理解。。。
+                    </div>
                 </div>
             </div>
         )

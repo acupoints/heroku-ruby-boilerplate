@@ -31,12 +31,30 @@ import SlyCommonEcho from './SlyCommonEcho'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { setContainerDimensionsAction } from '../../../flux-redux/actions'
+import { setSelectedItemAction  } from '../../../flux-redux/actions'
 
 class SlyCommonMissingParts extends Component {
 
     // constructor () {
     //     super()
     // }
+
+    componentWillUnmount () {
+        console.log("--卸载侧边栏")
+        // this.modifySelectedItem("")
+    }
+
+    modifySelectedItem = (tag) => {
+        // return () => {
+        // }
+        const { setSelectedItem } = this.props
+        console.log(`--> ${tag}`)
+        setSelectedItem({
+            tag: "serviceItem",
+            selected: tag,
+            // target: "parsing_words",
+        })
+    }
 
     render () {
         const {containers } = this.props
@@ -83,9 +101,9 @@ class SlyCommonMissingParts extends Component {
             buttons = <>
             <SlyCompareCharacters />
             </>
-        } else 
+        } 
         // Alternatives
-        if (serviceItem === "SlyColorExtractors") {
+        else if (serviceItem === "SlyColorExtractors") {
             buttons = <>
             <SlyColorExtractors />
             </>
@@ -168,6 +186,9 @@ const mapDispatchToProps = dispatch => {
     return {
         setContainerDimensions: (container) => {
             dispatch(setContainerDimensionsAction(container))
+        },
+        setSelectedItem: (container) => {
+            dispatch(setSelectedItemAction(container))
         },
     }
 }
