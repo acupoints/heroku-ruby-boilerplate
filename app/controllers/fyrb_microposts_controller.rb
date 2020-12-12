@@ -5,10 +5,10 @@ class FyrbMicropostsController < ApplicationController
   before_action :find_micropost, only: [:update, :destroy]
   
   def index
-    # @microposts = FyrbMicropost.all
-    @microposts = FyrbMicropost.paginate(page: params[:page]||1, per_page: 6)
-    # render json: @microposts, status: :ok
-    render json: @microposts, status: :ok, meta: pagination_dict(@microposts)
+    @microposts = FyrbMicropost.all
+    # @microposts = FyrbMicropost.paginate(page: params[:page]||1, per_page: 6)
+    render json: @microposts, status: :ok
+    # render json: @microposts, status: :ok, meta: pagination_dict(@microposts)
   end
 
   def show

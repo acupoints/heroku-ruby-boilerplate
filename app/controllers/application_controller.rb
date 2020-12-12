@@ -16,14 +16,15 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    # will_paginate
     def pagination_dict(collection)
         {
-          current_page: collection.current_page,
-          next_page: collection.next_page,
-        #   prev_page: collection.prev_page, # use collection.previous_page when using will_paginate
-          prev_page: collection.previous_page, # use collection.previous_page when using will_paginate
-          total_pages: collection.total_pages,
-          total_count: collection.total_count
+            current_page: collection.current_page,
+            next_page: collection.next_page,
+            previous_page: collection.previous_page,
+            total_pages: collection.total_pages,
+            total_entries: collection.total_entries,
+            per_page: collection.per_page,
         }
     end
     
