@@ -14,6 +14,7 @@ class SlyThreadWorkers extends Component {
                 {/* <h1>[SlyThreadWorkers]</h1> */}
                 <div className="sly-thread-workers-wrapper">
                     <h1>[SlyThreadWorkers]</h1>
+                    <h4>线程工人，可联动桌面应用进行远程测试。。。</h4>
                 </div>
             </div>
         )

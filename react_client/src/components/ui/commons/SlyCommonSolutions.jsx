@@ -14,6 +14,7 @@ class SlyCommonSolutions extends Component {
                 {/* <h1>[SlyCommonSolutions]</h1> */}
                 <div className="sly-common-solutions-wrapper">
                     <h1>[SlyCommonSolutions]</h1>
+                    <h4>命令行、快捷键、菜单项。。。</h4>
                     <div>
                         <span>图标</span>
                         <span>集GUI快捷键、CLI命令、环境搭建于一身的查询工具</span>

@@ -14,6 +14,7 @@ class SlySymbolSheets extends Component {
                 {/* <h1>[SlySymbolSheets]</h1> */}
                 <div className="sly-symbol-sheets-wrapper">
                     <h1>[SlySymbolSheets]</h1>
+                    <h4>符号表单，如希腊字母表、五十音图等。。。</h4>
                 </div>
             </div>
         )

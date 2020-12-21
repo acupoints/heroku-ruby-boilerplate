@@ -14,6 +14,7 @@ class SlyColorExtractors extends Component {
                 {/* <h1>[SlyColorExtractors]</h1> */}
                 <div className="sly-color-extractors-wrapper">
                     <h1>[SlyColorExtractors]</h1>
+                    <h4>颜色提取器</h4>
                 </div>
             </div>
         )

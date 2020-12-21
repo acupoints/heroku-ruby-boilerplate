@@ -28,6 +28,7 @@ class SlyCommonExceptions extends Component {
                 {/* <h1>[SlyCommonExceptions]</h1> */}
                 <div className="sly-common-exceptions-wrapper">
                     <h1>[SlyCommonExceptions]</h1>
+                    <h4>常规应用使用中异常的解决方案。。。</h4>
                     {buttons}
                 </div>
             </div>

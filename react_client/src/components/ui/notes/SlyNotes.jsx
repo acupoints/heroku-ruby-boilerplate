@@ -52,6 +52,7 @@ class SlyNotes extends Component {
                 {/* <h1>[SlyNotes]</h1> */}
                 <div className="sly-notes-wrapper">
                     <h1>[SlyNotes]</h1>
+                    <h4>微博、笔记、幻灯片。。。</h4>
                     {buttons}
                     {/* <SlyCategories />
                     <SlyArticles />

@@ -14,6 +14,7 @@ class SlyCompareCharacters extends Component {
                 {/* <h1>[SlyCompareCharacters]</h1> */}
                 <div className="sly-compare-characters-wrapper">
                     <h1>[SlyCompareCharacters]</h1>
+                    <h4>比较文本文件或文本片断。。。</h4>
                 </div>
             </div>
         )

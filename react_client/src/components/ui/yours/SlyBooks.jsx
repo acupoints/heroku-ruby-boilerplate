@@ -14,6 +14,7 @@ class SlyBooks extends Component {
                 {/* <h1>[SlyBooks]</h1> */}
                 <div className="sly-books-wrapper">
                     <h1>[SlyBooks]</h1>
+                    <h4>课本，撰写分级教程。。。</h4>
                 </div>
             </div>
         )

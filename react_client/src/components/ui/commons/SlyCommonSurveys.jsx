@@ -15,7 +15,7 @@ class SlyCommonSurveys extends Component {
                 <div className="sly-common-surveys-wrapper">
                     <h1>[SlyCommonSurveys]</h1>
                     <div>
-                        博展投票、民意调查、食旅攻略。。。
+                        博展投票、民意调查、食旅攻略、专题研讨、角色模板。。。
                     </div>
                 </div>
             </div>

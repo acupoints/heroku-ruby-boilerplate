@@ -14,6 +14,7 @@ class SlyIconModifiers extends Component {
                 {/* <h1>[SlyIconModifiers]</h1> */}
                 <div className="sly-icon-modifiers-wrapper">
                     <h1>[SlyIconModifiers]</h1>
+                    <h4>图标修改器，加载图片生成配套缩略，可通过模板调整装饰。。。</h4>
                 </div>
             </div>
         )

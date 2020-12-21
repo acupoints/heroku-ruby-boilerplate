@@ -14,6 +14,7 @@ class SlyWorkflows extends Component {
                 {/* <h1>[SlyWorkflows]</h1> */}
                 <div className="sly-workflows-wrapper">
                     <h1>[SlyWorkflows]</h1>
+                    <h4>培训、简化、交接。。。</h4>
                 </div>
             </div>
         )

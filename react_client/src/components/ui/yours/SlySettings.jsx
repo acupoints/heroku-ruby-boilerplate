@@ -14,6 +14,7 @@ class SlySettings extends Component {
                 {/* <h1>[SlySettings]</h1> */}
                 <div className="sly-settings-wrapper">
                     <h1>[SlySettings]</h1>
+                    <h4>修改用户账户信息。。。</h4>
                 </div>
             </div>
         )

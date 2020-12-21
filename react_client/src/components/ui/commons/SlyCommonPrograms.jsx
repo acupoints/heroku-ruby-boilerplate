@@ -28,6 +28,7 @@ class SlyCommonPrograms extends Component {
                 {/* <h1>[SlyCommonPrograms]</h1> */}
                 <div className="sly-common-programs-wrapper">
                     <h1>[SlyCommonPrograms]</h1>
+                    <h4>常规应用的安装与卸载及简易使用指南。。。</h4>
                     {buttons}
                 </div>
             </div>

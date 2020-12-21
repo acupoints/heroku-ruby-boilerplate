@@ -14,6 +14,7 @@ class SlyBatchGenerators extends Component {
                 {/* <h1>[SlyBatchGenerators]</h1> */}
                 <div className="sly-batch-generators-wrapper">
                     <h1>[SlyBatchGenerators]</h1>
+                    <h4>生成批量SQL脚本。。。</h4>
                 </div>
             </div>
         )

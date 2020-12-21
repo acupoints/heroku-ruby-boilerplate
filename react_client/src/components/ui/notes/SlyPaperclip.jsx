@@ -49,6 +49,7 @@ class SlyPaperclip extends Component {
                 {/* <h1>[SlyPaperclip]</h1> */}
                 <div className="sly-paperclip-wrapper">
                     <h1>[SlyPaperclip]</h1>
+                    <h4>对已有切片进行整理，既可以在各种类型间相互转换调整主题，又可以完成公开或收回等诸多操作。。。</h4>
                     {buttons}
                 </div>
             </div>
