@@ -14,7 +14,7 @@ class SlyDashboards extends Component {
                 {/* <h1>[SlyDashboards]</h1> */}
                 <div className="sly-dashboards-wrapper">
                     <h1>[SlyDashboards]</h1>
-                    <h4>各类监测图表。。。</h4>
+                    <h4>各类监测图表，如映射用户在线的旋转地球，资源使用的热度折线。。。</h4>
                 </div>
             </div>
         )
